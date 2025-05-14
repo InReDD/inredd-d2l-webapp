@@ -1,0 +1,28 @@
+@import "../../variables.module.scss";
+
+.cardlogin {
+  background-color: $neutral-2;
+  border-radius: 18px;
+  border: none;
+  cursor: default;
+  transition: 0.2s all ease;
+  position: relative;
+  top: -85px;
+  width: 100%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.14);
+
+  .card-body {
+    background-color: transparent;
+    border-radius: inherit;
+    padding: 40px;
+  }
+
+  .btn.medium {
+    height: 56px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 34px;
+    padding: 8px 39px;
+    border-radius: 6px;
+  }
+}

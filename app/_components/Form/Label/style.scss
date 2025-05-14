@@ -1,0 +1,15 @@
+@import "../../../variables.module.scss";
+
+.form-label {
+  font-size: 18px !important;
+  width: fit-content !important;
+  cursor: pointer !important;
+  margin-bottom: 0 !important;
+
+  color: $neutral-1 !important;
+  font-family: var(--font-ibm_plex_sans_devanagari);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

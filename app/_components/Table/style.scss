@@ -1,0 +1,75 @@
+@import "../../default-imports.scss";
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.table {
+  thead {
+    th {
+      padding-bottom: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      font-family: "IBM Plex Sans", sans-serif;
+      text-align: left;
+
+      &.center {
+        text-align: center;
+      }
+    }
+
+    border-bottom: 1px solid #000;
+  }
+
+  tbody {
+    tr {
+      td {
+        text-align: left;
+        padding: 6px 8px;
+        font-size: 18px;
+        font-family: "IBM Plex Sans", sans-serif;
+        color: #1d1d1f;
+        cursor: pointer;
+
+        &.center {
+          text-align: center;
+        }
+      }
+
+      &:first-child {
+        td {
+          background: linear-gradient(
+            to bottom,
+            transparent 18px,
+            #f0f0f0 18px
+          ) !important;
+          padding-top: 24px;
+        }
+      }
+
+      &:nth-child(odd) {
+        td {
+          background-color: #f0f0f0;
+        }
+      }
+
+      &:hover {
+        td {
+          opacity: 0.8;
+        }
+      }
+
+      &.not-found {
+        td {
+          cursor: default;
+        }
+
+        &:hover {
+          td {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

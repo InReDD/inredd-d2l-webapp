@@ -1,0 +1,57 @@
+@import "../../variables.module.scss";
+
+.cardpaper {
+  background-color: $neutral-2;
+  border-radius: 18px;
+  box-shadow: 4px 6px 7px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: default;
+  transition: 0.2s all ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 10px $grey-2;
+  }
+
+  .card-body {
+    background-color: transparent;
+    border-radius: inherit;
+    padding: 36px;
+  }
+
+  .card-title {
+    background-color: transparent;
+    color: $neutral-1;
+    font-size: 32px;
+    font-family: var(--font-ibm_plex_sans);
+    font-weight: 600;
+  }
+
+  .card-text {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    background-color: transparent;
+    color: $neutral-1;
+    font-size: 16px;
+    font-family: var(--font-ibm_plex_sans);
+  }
+
+  .card-links-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .card-link {
+    background-color: transparent;
+    color: $neutral-1;
+    font-size: 16px;
+    font-family: var(--font-ibm_plex_sans);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

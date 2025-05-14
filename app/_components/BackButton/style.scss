@@ -1,0 +1,12 @@
+@import "../../default-imports.scss";
+
+.back-button {
+  display: inline-flex;
+  align-self: center;
+  padding: 3px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  background-color: $neutral-2;
+  font-size: 16px;
+  color: $neutral-1;
+}

@@ -1,0 +1,41 @@
+@import "../../variables.module.scss";
+
+.card-request {
+    overflow: hidden;
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    height: fit-content;
+    width: 461px;
+    margin: 0 auto;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.15);
+
+    .text-center {
+      color: $neutral-1 !important;
+      font-size: 48px;
+    }
+
+    .input-mail {
+      margin-top: 27px;
+    }
+  
+    .form-item {
+      width: 100%;
+    }
+    
+    .card-content {
+        width: 100%;
+        margin-bottom: 0 !important;
+
+    }
+
+    .form-item:last-of-type {
+      margin-bottom: 0;
+    }
+  
+    .btn {
+      width: 80%;
+    }
+
+}
+  

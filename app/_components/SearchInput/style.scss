@@ -1,0 +1,50 @@
+@import "../../default-imports.scss";
+
+.search-input {
+  display: flex;
+  width: 100%;
+
+  .form-control {
+    background-color: $neutral-2 !important;
+    padding: 8px !important;
+    border: none !important;
+    border-radius: 0 !important;
+    line-height: 19px !important;
+  }
+
+  .btn {
+    border-radius: 2px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    padding: 6px 12px;
+  }
+
+  &.disableOptions {
+    .form-control {
+      border: 1px solid $grey-2 !important;
+    }
+
+    .btn {
+      height: 37px !important;
+    }
+  }
+
+  .dd-container {
+    display: flex;
+    align-items: center;
+    background-color: $primary-1;
+    padding: 6px 8px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+
+    button {
+      font-weight: 600;
+    }
+
+    .float {
+      padding: 8px;
+      border-top-left-radius: 0;
+      background-color: $primary-1;
+    }
+  }
+}

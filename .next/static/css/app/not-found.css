@@ -1,0 +1,1914 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Accordion/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.accordion-container {
+  width: 100%;
+  margin-bottom: 14px;
+}
+.accordion-container .details .summary {
+  list-style: none;
+  border-bottom: 1px solid #6E6E73;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 2px;
+}
+.accordion-container .details .summary::-webkit-details-marker {
+  display: none; /* Remove a seta no Safari */
+}
+.accordion-container .details .children {
+  margin-top: 16px;
+  line-height: 20px;
+  width: 100%;
+}
+.accordion-container .details .children > p {
+  font-size: 16px;
+}
+.accordion-container .details[open] .summary {
+  border-bottom: none;
+}
+.accordion-container .details[open] .is-open-line {
+  border-bottom: 1px solid #6E6E73;
+  margin-top: 24px;
+}
+
+@media screen and (max: 756px) {
+  .accordion-container .details .children {
+    margin-top: 16px;
+    line-height: 18px;
+    width: 100%;
+  }
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Anchor/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.btn-link {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.btn-link.btn-primary {
+  color: #F4BA18 !important;
+}
+.btn-link.btn-primary a {
+  color: #F4BA18 !important;
+}
+.btn-link.btn-primary:hover {
+  color: #f0c95c !important;
+}
+.btn-link.btn-primary:hover a {
+  color: #F4BA18 !important;
+}
+.btn-link.btn-black {
+  color: #000000 !important;
+}
+.btn-link.btn-black a {
+  color: #000000 !important;
+}
+.btn-link.btn-black:hover {
+  color: #f0c95c !important;
+}
+.btn-link.btn-black:hover a {
+  color: #F4BA18 !important;
+}
+.btn-link.btn-white {
+  color: #FFFFFF !important;
+}
+.btn-link.btn-white a {
+  color: #FFFFFF !important;
+  text-shadow: 0.5px 0.5px 0.5px black;
+}
+.btn-link.btn-white:hover {
+  color: #F4BA18 !important;
+}
+.btn-link.btn-white:hover a {
+  color: #F4BA18 !important;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/BackButton/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.back-button {
+  display: inline-flex;
+  align-self: center;
+  padding: 3px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  background-color: #FFFFFF;
+  font-size: 16px;
+  color: #000000;
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Button/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.btn {
+  border-radius: 4px;
+  border: none !important;
+  cursor: pointer;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.btn.btn-primary {
+  background-color: #F4BA18 !important;
+  color: #000000;
+}
+.btn.btn-primary a {
+  text-decoration: none;
+  color: #000000;
+}
+.btn.btn-primary:hover {
+  background-color: #f0c95c !important;
+  color: #000000 !important;
+}
+.btn.btn-primary:hover a {
+  color: #000000 !important;
+}
+.btn.btn-blank {
+  font-weight: bold;
+  padding: 0 !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+}
+.btn.btn-blank {
+  font-weight: bold;
+  padding: 0 !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+}
+.btn.btn-secondary {
+  background-color: #000000 !important;
+  color: #F4BA18 !important;
+}
+.btn.btn-secondary a {
+  text-decoration: none;
+  color: #F4BA18 !important;
+}
+.btn.btn-secondary:hover {
+  background-color: #3b3b3b !important;
+  color: #F4BA18 !important;
+}
+.btn.btn-secondary:hover a {
+  color: #F4BA18 !important;
+}
+.btn.btn-error {
+  background-color: #DC3545 !important;
+  color: #FFFFFF !important;
+}
+.btn.btn-error a {
+  text-decoration: none;
+  color: #FFFFFF !important;
+}
+.btn.btn-black {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+.btn.btn-black a {
+  text-decoration: none;
+  color: #FFFFFF !important;
+}
+.btn.btn-black:hover {
+  background-color: #3b3b3b !important;
+  color: #FFFFFF !important;
+}
+.btn.btn-black:hover a {
+  color: #FFFFFF !important;
+}
+.btn.btn-white {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+.btn.btn-white a {
+  text-decoration: none;
+  color: #000000 !important;
+}
+.btn.btn-white:hover {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+.btn.btn-white:hover a {
+  color: #FFFFFF !important;
+}
+.btn a {
+  color: #FFFFFF !important;
+}
+.btn.small {
+  height: 35px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 6px 16px;
+}
+.btn.medium {
+  height: 42px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 21px;
+  padding: 8px 18px;
+}
+.btn.large {
+  height: 56px;
+  font-weight: 600;
+  font-size: 22px;
+  padding: 8px 18px;
+}
+.btn .childrenWithIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn .childrenWithIcon img {
+  margin-left: 6px;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/ButtonLink/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.btn {
+  border-radius: 4px;
+  border: none !important;
+  cursor: pointer;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.btn.btn-primary {
+  background-color: #F4BA18 !important;
+  color: #000000 !important;
+}
+.btn.btn-primary a {
+  text-decoration: none;
+  color: #000000;
+}
+.btn.btn-primary:hover {
+  background-color: #f0c95c !important;
+  color: #000000 !important;
+}
+.btn.btn-primary:hover a {
+  color: #000000 !important;
+}
+.btn.btn-secondary {
+  background-color: #000000 !important;
+  color: #F4BA18 !important;
+}
+.btn.btn-secondary a {
+  text-decoration: none;
+  color: #F4BA18 !important;
+}
+.btn.btn-secondary:hover {
+  background-color: #3b3b3b !important;
+  color: #F4BA18 !important;
+}
+.btn.btn-secondary:hover a {
+  color: #F4BA18 !important;
+}
+.btn.btn-black {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+.btn.btn-black a {
+  text-decoration: none;
+  color: #FFFFFF !important;
+}
+.btn.btn-black:hover {
+  background-color: #3b3b3b !important;
+  color: #FFFFFF !important;
+}
+.btn.btn-black:hover a {
+  color: #FFFFFF !important;
+}
+.btn.btn-white {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+.btn.btn-white a {
+  text-decoration: none;
+  color: #000000 !important;
+}
+.btn.btn-white:hover {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+.btn.btn-white:hover a {
+  color: #FFFFFF !important;
+}
+.btn a {
+  color: #FFFFFF !important;
+}
+.btn.small {
+  height: 35px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 6px 16px;
+}
+.btn.medium {
+  height: 42px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 21px;
+  padding: 8px 18px;
+}
+.btn.large {
+  height: 56px;
+  font-weight: 600;
+  font-size: 22px;
+  padding: 8px 18px;
+}
+.btn .childrenWithIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn .childrenWithIcon img {
+  margin-left: 6px;
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/CardSolution/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.card-solution {
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  box-shadow: 4px 6px 7px rgba(0, 0, 0, 0.1);
+  padding: 28px 25px;
+  border: none;
+  cursor: default;
+  transition: 0.2s all ease;
+  height: 412px;
+}
+.card-solution:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 10px #A7A7A7;
+}
+.card-solution .card-body {
+  background-color: transparent;
+  border-radius: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.card-solution .card-title {
+  background-color: transparent;
+  color: #000000;
+  font-size: 24px;
+  font-family: var(--font-ibm_plex_sans);
+  font-weight: 600;
+  display: flex;
+}
+.card-solution .card-text {
+  margin-top: 24px;
+  background-color: transparent;
+  color: #000000;
+  font-size: 24px;
+  font-family: var(--font-ibm_plex_sans);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+.card-solution .card-links-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+.card-solution .know-more {
+  color: #000000;
+}
+.card-solution .access {
+  color: #000000;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+}
+.card-solution .access img {
+  margin-bottom: 0 !important;
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Modal/styles.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.modal-commom, .modal-dialog .modal-footer, .modal-dialog .modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+}
+
+.modal-dialog .modal-content {
+  border: none;
+  border-radius: 18px;
+  background-color: #FFFFFF;
+}
+.modal-dialog .modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border: 0;
+}
+.modal-dialog .modal-header.no-pb {
+  padding-bottom: 0;
+}
+.modal-dialog .modal-header .modal-title {
+  font-size: 48px;
+  font-weight: 600;
+  font-family: "IBM Plex Sans", sans-serif;
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 24px;
+}
+.modal-dialog .modal-header .cuttom-close-button {
+  border: 0;
+  background-color: transparent;
+}
+.modal-dialog .modal-body {
+  padding: 40px 16px;
+  font-size: 18px;
+}
+.modal-dialog .modal-body::-webkit-scrollbar-thumb {
+  width: 2px;
+  background-color: #000000;
+  border-radius: 10px;
+}
+.modal-dialog .modal-body::-webkit-scrollbar {
+  width: 2px;
+}
+.modal-dialog .modal-footer {
+  border-top: 1px solid #d9d9d9;
+  padding: 24px 16px;
+}
+.modal-dialog .modal-static {
+  position: static;
+  display: block;
+  background: none;
+  padding: 2rem 0;
+}
+.modal-dialog .btn.medium {
+  height: 56px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 21px;
+  padding: 8px 40px;
+  border-radius: 6px;
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Typography/typography.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.title {
+  font-size: 72px;
+  font-family: var(--font-rhodium_libre);
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.subTitle {
+  font-size: 48px;
+  font-family: var(--font-ibm_plex_sans);
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.paragraph1 {
+  font-size: 24px;
+  font-family: var(--font-ibm_plex_sans_devanagari);
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.paragraph2 {
+  font-size: 18px;
+  font-family: var(--font-ibm_plex_sans_devanagari);
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.paragraph3 {
+  font-size: 16px;
+  font-family: var(--font-ibm_plex_sans_devanagari);
+  font-weight: 400;
+  margin-bottom: 0;
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Dropdown/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.dd-container {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.dd-container button {
+  width: -moz-fit-content;
+  width: fit-content;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-end;
+  text-align: left;
+  line-height: 18px;
+}
+
+img {
+  margin-bottom: 5px;
+}
+
+.dd-options {
+  display: none;
+  font-size: 14px;
+  font-weight: normal;
+  width: 100%;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 8px 0;
+  width: 200px;
+}
+.dd-options ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 125px;
+}
+.dd-options ul a {
+  color: #000000;
+  text-decoration: none;
+}
+.dd-options ul li,
+.dd-options ul option {
+  text-align: left;
+  color: #000000;
+  margin-bottom: 8px;
+}
+.dd-options ul li:last-child,
+.dd-options ul option:last-child {
+  margin-bottom: 0;
+}
+.dd-options ul li a,
+.dd-options ul option a {
+  color: #000000;
+  text-decoration: none;
+}
+.dd-options ul li:hover,
+.dd-options ul option:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.dd-options hr {
+  margin: 12px 0;
+}
+.dd-options.float {
+  width: -moz-fit-content;
+  width: fit-content;
+  max-height: none;
+  position: absolute;
+  z-index: 100;
+  top: calc(100% + 6px);
+  left: 0px;
+  padding: 12px 8px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.25);
+}
+.dd-options.float.menu-direction-right {
+  right: 0px;
+  left: unset;
+}
+.dd-options.large {
+  padding: 40px;
+  width: none;
+}
+.dd-options.opened {
+  display: flex;
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/SelectDropdown/style.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.select-dd-container {
+  position: relative;
+  width: 100%;
+}
+.select-dd-container button {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #6E6E73;
+  padding-bottom: 8px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.select-dd-container button.right {
+  justify-content: flex-end;
+}
+.select-dd-container .dd-options {
+  display: none;
+  width: 100%;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 0;
+}
+.select-dd-container .dd-options ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.select-dd-container .dd-options ul li {
+  padding: 8px 0;
+  width: 100%;
+}
+.select-dd-container .dd-options ul li.active, .select-dd-container .dd-options ul li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #000000;
+}
+.select-dd-container .dd-options::-webkit-scrollbar-thumb {
+  width: 2px;
+  background-color: #000000;
+  border-radius: 10px;
+}
+.select-dd-container .dd-options::-webkit-scrollbar {
+  width: 2px;
+  background-color: transparent;
+}
+.select-dd-container .dd-options.float {
+  max-height: none;
+  position: absolute;
+  z-index: 100;
+  top: calc(100% + 8px);
+  padding: 0 16px;
+  background-color: #FFFFFF;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.25);
+}
+.select-dd-container .dd-options.opened {
+  display: flex;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Pagination/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.pagination .page-link {
+  background-color: transparent;
+  border: none;
+  border-radius: initial;
+  color: #000000;
+  padding: 0px 5px;
+  font-size: 18px;
+  font-family: var(--font-ibm_plex_sans_devanagari);
+}
+.pagination .page-link.page-link-active {
+  color: #000000;
+  font-weight: 400;
+  background-color: #F4BA18;
+}
+.pagination .page-link:hover, .pagination .page-link:focus {
+  color: #000000;
+  background-color: #F4BA18;
+  border-radius: 2px;
+}
+.pagination .page-dots {
+  color: #000000;
+  cursor: default;
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/SearchInput/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.search-input {
+  display: flex;
+  width: 100%;
+}
+.search-input .form-control {
+  background-color: #FFFFFF !important;
+  padding: 8px !important;
+  border: none !important;
+  border-radius: 0 !important;
+  line-height: 19px !important;
+}
+.search-input .btn {
+  border-radius: 2px !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  padding: 6px 12px;
+}
+.search-input.disableOptions .form-control {
+  border: 1px solid #A7A7A7 !important;
+}
+.search-input.disableOptions .btn {
+  height: 37px !important;
+}
+.search-input .dd-container {
+  display: flex;
+  align-items: center;
+  background-color: #F4BA18;
+  padding: 6px 8px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.search-input .dd-container button {
+  font-weight: 600;
+}
+.search-input .dd-container .float {
+  padding: 8px;
+  border-top-left-radius: 0;
+  background-color: #F4BA18;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Form/Form/styles.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.btn-input {
+  width: 400px;
+  position: relative;
+  margin-left: 10px;
+  border: none;
+}
+
+.was-validated .form-select:invalid:not([multiple]):not([size]) {
+  --bs-form-select-bg-icon: none !important;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Form/Input/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.font, .form-item .form-control {
+  color: #F4BA18;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+}
+.form-item .form-control {
+  width: 100%;
+  padding: 8px 16px;
+  color: #000000;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  border: 1px solid #A7A7A7;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+}
+.form-item .form-control::placeholder {
+  font-size: 14px;
+  color: #000000;
+  opacity: 0.5;
+}
+.form-item .input-password-container {
+  position: relative;
+}
+.form-item .input-password-container .icon-eye {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  z-index: 1;
+}
+
+.error-field {
+  border: 1px solid #000000 !important;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.was-validated .form-control:invalid, .was-validated .form-control.is-invalid {
+  border-color: #DC3545 !important;
+  background-image: none !important;
+}
+.was-validated .form-control:invalid:focus, .was-validated .form-control.is-invalid:focus {
+  border-color: #DC3545 !important;
+  box-shadow: none !important;
+}
+.was-validated .form-control:valid, .was-validated .form-control.is-valid {
+  border-color: #6E6E73 !important;
+  background-image: none !important;
+}
+.was-validated .form-control:valid:focus, .was-validated .form-control.is-valid:focus {
+  border-color: #6E6E73 !important;
+  box-shadow: none !important;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Form/Radio/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.radio {
+  padding-left: 0;
+}
+.radio input + label:before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: 1px solid #A7A7A7;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 14px;
+  margin-bottom: 3px;
+}
+.radio input:checked + label:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #F4BA18;
+  box-shadow: inset 0 0 0 3px #FFFFFF;
+  border: 1px solid #A7A7A7;
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Form/CheckBox/style.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.error-field {
+  border: 1px solid #000000 !important;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-check input {
+  display: none;
+}
+
+.check {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 16px;
+  padding-left: 0;
+}
+.check input {
+  display: none;
+}
+.check input + label:before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  border: 1px solid #A7A7A7;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 14px;
+  margin-bottom: 3px;
+  flex-shrink: 0;
+}
+.check input:checked + label:before {
+  border-radius: 2px;
+  background-color: #F4BA18;
+  border: 1px solid #A7A7A7;
+  box-shadow: inset 0 0 0 3px #FFFFFF;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  padding: 1px;
+  background-color: #F4BA18;
+  flex-shrink: 0;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Form/Label/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.form-label {
+  font-size: 18px !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  cursor: pointer !important;
+  margin-bottom: 0 !important;
+  color: #000000 !important;
+  font-family: var(--font-ibm_plex_sans_devanagari);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Form/Select/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.font {
+  font-family: var(--font-poppins) !important;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.form-item {
+  width: 100%;
+}
+
+.form-select {
+  width: 100%;
+  padding: 8px 16px;
+  padding-right: 30px;
+  border-radius: 4px;
+  border: 1px solid #A7A7A7;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #000000;
+  --bs-form-select-bg-icon: none !important;
+}
+.form-select .was-validated .form-control:invalid, .form-select .was-validated .form-control.is-invalid {
+  border-color: #DC3545 !important;
+  background-image: none !important;
+}
+.form-select .was-validated .form-control:invalid:focus, .form-select .was-validated .form-control.is-invalid:focus {
+  border-color: #DC3545 !important;
+  box-shadow: none !important;
+}
+.form-select .was-validated .form-control:valid, .form-select .was-validated .form-control.is-valid {
+  border-color: #6E6E73 !important;
+  background-image: none !important;
+}
+.form-select .was-validated .form-control:valid:focus, .form-select .was-validated .form-control.is-valid:focus {
+  border-color: #6E6E73 !important;
+  box-shadow: none !important;
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Form/CheckboxGroup/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.group input {
+  display: none;
+}
+
+.group-wrap {
+  flex-wrap: wrap;
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Form/RadioGroup/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.group input {
+  display: none;
+}
+
+.group-wrap {
+  flex-wrap: wrap;
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Form/InputButton/style.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.container-input {
+  width: 100%;
+  display: flex;
+  border: none;
+  display: flex;
+}
+.container-input.default .input {
+  width: 100%;
+  height: 34px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border: 1px solid #6E6E73 !important;
+  padding-right: 18px;
+}
+.container-input.default .input:focus {
+  border: none;
+  outline: none;
+}
+.container-input.default .button {
+  height: 34px;
+  font-size: 16px;
+}
+.container-input.large .input {
+  width: 100%;
+  height: 48px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border: 1px solid #6E6E73;
+  padding-right: 18px;
+}
+.container-input.large .input:focus {
+  border: none;
+  outline: none;
+}
+.container-input.large .button {
+  height: 48px;
+  font-size: 18px;
+}
+.container-input .button {
+  margin-left: -10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 6px 16px;
+  border-radius: 4px;
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #000000 !important;
+  font-weight: bold;
+}
+.container-input .button:hover {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+.container-input.default .input {
+  height: 34px;
+  border: 1px solid #6E6E73 !important;
+  -webkit-padding-start: 8px;
+          padding-inline-start: 8px;
+}
+.container-input.default .input:focus {
+  border: none;
+  outline: none;
+}
+.container-input.default .button {
+  height: 34px;
+  font-size: 16px;
+}
+.container-input.large .input {
+  height: 48px;
+  border: 1px solid #000000 !important;
+  -webkit-padding-start: 8px;
+          padding-inline-start: 8px;
+}
+.container-input.large .input:focus {
+  border: none;
+  outline: none;
+}
+.container-input.large .button {
+  height: 48px;
+  font-size: 18px;
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Form/InputPassword/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.input-password-container {
+  position: relative;
+}
+.input-password-container .icon-eye {
+  position: absolute;
+  right: 8px;
+  top: 7px;
+  z-index: 1;
+  cursor: pointer;
+}
+.input-password-container .input {
+  width: 100%;
+  padding: 8px 16px;
+  color: #262626;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  border: 1px solid #A7A7A7;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+.input-password-container .input[type=password]::-ms-reveal {
+  display: none;
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Form/TextArea/style.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.font, .form-item .form-control {
+  color: #F4BA18;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+}
+.form-item .form-control {
+  width: 100%;
+  padding: 8px 16px;
+  color: #000000;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  border: 1px solid #A7A7A7;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+}
+.form-item .form-control::placeholder {
+  font-size: 14px;
+  color: #000000;
+  opacity: 0.5;
+}
+.form-item .input-password-container {
+  position: relative;
+}
+.form-item .input-password-container .icon-eye {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  z-index: 1;
+}
+
+.error-field {
+  border: 1px solid #000000 !important;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.was-validated .form-control:invalid, .was-validated .form-control.is-invalid {
+  border-color: #DC3545 !important;
+  background-image: none !important;
+}
+.was-validated .form-control:invalid:focus, .was-validated .form-control.is-invalid:focus {
+  border-color: #DC3545 !important;
+  box-shadow: none !important;
+}
+.was-validated .form-control:valid, .was-validated .form-control.is-valid {
+  border-color: #6E6E73 !important;
+  background-image: none !important;
+}
+.was-validated .form-control:valid:focus, .was-validated .form-control.is-valid:focus {
+  border-color: #6E6E73 !important;
+  box-shadow: none !important;
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/ProfilePicture/style.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.profile-picture {
+  position: relative;
+}
+.profile-picture img.image-profile {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  background-color: #000000;
+  border: 3px solid #FFFFFF;
+  box-shadow: -2px 2px 12px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+.profile-picture.small {
+  width: 40px;
+  height: 40px;
+  aspect-ratio: auto 40/40;
+}
+.profile-picture.medium {
+  width: 80px;
+  height: 80px;
+  aspect-ratio: auto 80/80;
+}
+.profile-picture.medium-large {
+  width: 120px;
+  height: 120px;
+  aspect-ratio: auto 120/120;
+}
+.profile-picture.large {
+  width: 242px;
+  height: 242px;
+  aspect-ratio: auto 242/242;
+}
+.profile-picture.empty-image {
+  background-color: #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: default;
+  border-radius: 50%;
+  border: 3px solid #FFFFFF;
+  box-shadow: -2px 2px 12px rgba(0, 0, 0, 0.25);
+}
+.profile-picture.empty-image.small {
+  font-size: 10px;
+}
+.profile-picture.empty-image.medium {
+  font-size: 24px;
+}
+.profile-picture.empty-image.medium-large {
+  font-size: 24px;
+}
+.profile-picture.empty-image.large {
+  font-size: 52px;
+}
+.profile-picture button {
+  padding: 8px 6px !important;
+  border: 1px solid #FFFFFF !important;
+  position: absolute;
+  bottom: 10px;
+  left: 14px;
+}
+.profile-picture button img {
+  margin: 0 !important;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[14].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[14].oneOf[13].use[5]!./app/_components/Table/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+:export {
+  primary-1: #F4BA18;
+  neutral-1: #000000;
+  neutral-2: #FFFFFF;
+  grey-1: #6E6E73;
+  grey-2: #A7A7A7;
+  primary-hover-1: #f0c95c;
+  neutral-hover-1: #3b3b3b;
+  form-feedback-invalid-color: #DC3545;
+  blue-1: #006699;
+  spacing4: 4px;
+  spacing8: 8px;
+  spacing10: 10px;
+  spacing12: 12px;
+  spacing14: 14px;
+  spacing16: 16px;
+  spacing20: 20px;
+  spacing24: 24px;
+  spacing28: 28px;
+  spacing32: 32px;
+  spacing40: 40px;
+  spacing52: 52px;
+  spacing62: 62px;
+  spacing80: 80px;
+  spacing120: 120px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.table thead {
+  border-bottom: 1px solid #000;
+}
+.table thead th {
+  padding-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-align: left;
+}
+.table thead th.center {
+  text-align: center;
+}
+.table tbody tr td {
+  text-align: left;
+  padding: 6px 8px;
+  font-size: 18px;
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #1d1d1f;
+  cursor: pointer;
+}
+.table tbody tr td.center {
+  text-align: center;
+}
+.table tbody tr:first-child td {
+  background: linear-gradient(to bottom, transparent 18px, #f0f0f0 18px) !important;
+  padding-top: 24px;
+}
+.table tbody tr:nth-child(odd) td {
+  background-color: #f0f0f0;
+}
+.table tbody tr:hover td {
+  opacity: 0.8;
+}
+.table tbody tr.not-found td {
+  cursor: default;
+}
+.table tbody tr.not-found:hover td {
+  opacity: 1;
+}

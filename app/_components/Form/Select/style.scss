@@ -1,0 +1,51 @@
+@import "../../../default-imports.scss";
+
+.font {
+  font-family: var(--font-poppins) !important;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.form-item {
+  width: 100%;
+}
+
+.form-select {
+  width: 100%;
+  padding: 8px 16px;
+  padding-right: 30px;
+  border-radius: 4px;
+  border: 1px solid $grey-2;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: $neutral-1;
+
+  // Remover o ícone de fundo do select
+  --bs-form-select-bg-icon: none !important;
+
+  // Adicionar estilo extra se necessário para campos inválidos
+  .was-validated .form-control {
+    &:invalid,
+    &.is-invalid {
+      border-color: $form-feedback-invalid-color !important;
+      background-image: none !important;
+
+      &:focus {
+        border-color: $form-feedback-invalid-color !important;
+        box-shadow: none !important;
+      }
+    }
+
+    &:valid,
+    &.is-valid {
+      border-color: $grey-1 !important;
+      background-image: none !important;
+
+      &:focus {
+        border-color: $grey-1 !important;
+        box-shadow: none !important;
+      }
+    }
+  }
+}

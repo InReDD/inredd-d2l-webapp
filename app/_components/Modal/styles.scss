@@ -1,0 +1,79 @@
+@import "../../variables.module.scss";
+
+.modal-commom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+}
+
+.modal-dialog {
+  .modal-content {
+    border: none;
+    border-radius: 18px;
+    background-color: $neutral-2;
+  }
+
+  .modal-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border: 0;
+
+    &.no-pb {
+      padding-bottom: 0;
+    }
+
+    .modal-title {
+      font-size: 48px;
+      font-weight: 600;
+      font-family: "IBM Plex Sans", sans-serif;
+      border-bottom: 1px solid #d9d9d9;
+      padding-bottom: 24px;
+    }
+
+    .cuttom-close-button {
+      border: 0;
+      background-color: transparent;
+    }
+  }
+
+  .modal-body {
+    @extend .modal-commom;
+
+    padding: 40px 16px;
+    font-size: 18px;
+
+    &::-webkit-scrollbar-thumb {
+      width: 2px;
+      background-color: $neutral-1;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+  }
+
+  .modal-footer {
+    @extend .modal-commom;
+    border-top: 1px solid #d9d9d9;
+    padding: 24px 16px;
+  }
+
+  .modal-static {
+    position: static;
+    display: block;
+    background: none;
+    padding: 2rem 0;
+  }
+
+  .btn.medium {
+    height: 56px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 21px;
+    padding: 8px 40px;
+    border-radius: 6px;
+  }
+}

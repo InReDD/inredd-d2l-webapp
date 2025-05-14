@@ -1,0 +1,77 @@
+@import "../../../variables.module.scss";
+
+.font {
+  color: $primary-1;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+
+  .form-control {
+    @extend .font;
+    width: 100%;
+    padding: 8px 16px;
+    color: $neutral-1;
+    background-color: $neutral-2;
+
+    border-radius: 2px;
+    border: 1px solid $grey-2;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+
+    &::placeholder {
+      font-size: 14px;
+      color: $neutral-1;
+      opacity: 0.5;
+    }
+  }
+
+  .input-password-container {
+    position: relative;
+
+    .icon-eye {
+      position: absolute;
+      right: 10px;
+      top: 8px;
+      z-index: 1;
+    }
+  }
+}
+
+.error-field {
+  border: 1px solid $neutral-1 !important;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.was-validated .form-control {
+  &:invalid,
+  &.is-invalid {
+    border-color: $form-feedback-invalid-color !important;
+    background-image: none !important;
+
+    &:focus {
+      border-color: $form-feedback-invalid-color !important;
+      box-shadow: none !important;
+    }
+  }
+
+  &:valid,
+  &.is-valid {
+    border-color: $grey-1 !important;
+    background-image: none !important;
+
+    &:focus {
+      border-color: $grey-1 !important;
+      box-shadow: none !important;
+    }
+  }
+}

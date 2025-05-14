@@ -1,0 +1,246 @@
+@import "./default-imports";
+
+// margins
+.m {
+  &-4 {
+    margin: $spacing-4 !important;
+  }
+  &-8 {
+    margin: $spacing-8 !important;
+  }
+  &-10 {
+    margin: $spacing-10 !important;
+  }
+  &-12 {
+    margin: $spacing-12 !important;
+  }
+  &-14 {
+    margin: $spacing-14 !important;
+  }
+  &-16 {
+    margin: $spacing-16 !important;
+  }
+  &-20 {
+    margin: $spacing-20 !important;
+  }
+  &-24 {
+    margin: $spacing-24 !important;
+  }
+  &-28 {
+    margin: $spacing-28 !important;
+  }
+  &-32 {
+    margin: $spacing-32 !important;
+  }
+  &-40 {
+    margin: $spacing-40 !important;
+  }
+  &-52 {
+    margin: $spacing-52 !important;
+  }
+  &-62 {
+    margin: $spacing-62 !important;
+  }
+  &-80 {
+    margin: $spacing-80 !important;
+  }
+  &-120 {
+    margin: $spacing-120 !important;
+  }
+
+  // margin top
+  &t {
+    &-4 {
+      margin-top: $spacing-4 !important;
+    }
+    &-8 {
+      margin-top: $spacing-8 !important;
+    }
+    &-10 {
+      margin-top: $spacing-10;
+    }
+    &-12 {
+      margin-top: $spacing-12 !important;
+    }
+    &-14 {
+      margin-top: $spacing-14 !important;
+    }
+    &-16 {
+      margin-top: $spacing-16 !important;
+    }
+    &-20 {
+      margin-top: $spacing-20;
+    }
+    &-24 {
+      margin-top: $spacing-24 !important;
+    }
+    &-28 {
+      margin-top: $spacing-28 !important;
+    }
+    &-32 {
+      margin-top: $spacing-32;
+    }
+    &-40 {
+      margin-top: $spacing-40 !important;
+    }
+    &-52 {
+      margin-top: $spacing-52 !important;
+    }
+    &-62 {
+      margin-top: $spacing-62 !important;
+    }
+    &-80 {
+      margin-top: $spacing-80 !important;
+    }
+    &-120 {
+      margin-top: $spacing-120 !important;
+    }
+  }
+
+  // margin bottom
+  &b {
+    &-4 {
+      margin-bottom: $spacing-4 !important;
+    }
+    &-8 {
+      margin-bottom: $spacing-8 !important;
+    }
+    &-10 {
+      margin-bottom: $spacing-10;
+    }
+    &-12 {
+      margin-bottom: $spacing-12 !important;
+    }
+    &-14 {
+      margin-bottom: $spacing-14 !important;
+    }
+    &-16 {
+      margin-bottom: $spacing-16 !important;
+    }
+    &-20 {
+      margin-bottom: $spacing-20 !important;
+    }
+    &-24 {
+      margin-bottom: $spacing-24 !important;
+    }
+    &-28 {
+      margin-bottom: $spacing-28 !important;
+    }
+    &-32 {
+      margin-bottom: $spacing-32 !important;
+    }
+    &-40 {
+      margin-bottom: $spacing-40 !important;
+    }
+    &-52 {
+      margin-bottom: $spacing-52 !important;
+    }
+    &-62 {
+      margin-bottom: $spacing-62 !important;
+    }
+    &-80 {
+      margin-bottom: $spacing-80 !important;
+    }
+    &-120 {
+      margin-bottom: $spacing-120 !important;
+    }
+  }
+
+  // margin right
+  &r {
+    &-4 {
+      margin-right: $spacing-4 !important;
+    }
+    &-8 {
+      margin-right: $spacing-8 !important;
+    }
+    &-10 {
+      margin-right: $spacing-10 !important;
+    }
+    &-12 {
+      margin-right: $spacing-12 !important;
+    }
+    &-14 {
+      margin-right: $spacing-14 !important;
+    }
+    &-16 {
+      margin-right: $spacing-16 !important;
+    }
+    &-20 {
+      margin-right: $spacing-20 !important;
+    }
+    &-24 {
+      margin-right: $spacing-24 !important;
+    }
+    &-28 {
+      margin-right: $spacing-28 !important;
+    }
+    &-32 {
+      margin-right: $spacing-32 !important;
+    }
+    &-40 {
+      margin-right: $spacing-40 !important;
+    }
+    &-52 {
+      margin-right: $spacing-52 !important;
+    }
+    &-62 {
+      margin-right: $spacing-62 !important;
+    }
+    &-80 {
+      margin-right: $spacing-80 !important;
+    }
+    &-120 {
+      margin-right: $spacing-120 !important;
+    }
+  }
+
+  // margin left
+  &l {
+    &-4 {
+      margin-left: $spacing-4 !important;
+    }
+    &-8 {
+      margin-left: $spacing-8 !important;
+    }
+    &-10 {
+      margin-left: $spacing-10 !important;
+    }
+    &-12 {
+      margin-left: $spacing-12 !important;
+    }
+    &-14 {
+      margin-left: $spacing-14 !important;
+    }
+    &-16 {
+      margin-left: $spacing-16 !important;
+    }
+    &-20 {
+      margin-left: $spacing-20 !important;
+    }
+    &-24 {
+      margin-left: $spacing-24 !important;
+    }
+    &-28 {
+      margin-left: $spacing-28 !important;
+    }
+    &-32 {
+      margin-left: $spacing-32 !important;
+    }
+    &-40 {
+      margin-left: $spacing-40 !important;
+    }
+    &-52 {
+      margin-left: $spacing-52 !important;
+    }
+    &-62 {
+      margin-left: $spacing-62 !important;
+    }
+    &-80 {
+      margin-left: $spacing-80 !important;
+    }
+    &-120 {
+      margin-left: $spacing-120 !important;
+    }
+  }
+}

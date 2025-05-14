@@ -1,0 +1,140 @@
+@import "../../default-imports.scss";
+
+.footer-container {
+  background-color: #1e1e1e;
+  padding-bottom: 30px;
+
+  .main-title {
+    font-size: 50px !important;
+  }
+
+  .main-subtitle {
+    font-size: 12px !important;
+    margin-top: -12px;
+  }
+
+  .find-out {
+    font-size: 18px !important;
+    color: $neutral-2;
+    font-weight: bold !important;
+  }
+
+  .about-us {
+    font-size: 18px !important;
+    color: $neutral-2;
+    text-decoration: underline;
+  }
+
+  .group-heads {
+    font-size: 18px !important;
+    color: $neutral-2;
+    text-decoration: underline;
+  }
+
+  .solutions-1 {
+    font-size: 18px !important;
+    color: $neutral-2;
+    text-decoration: underline;
+  }
+
+  .recent-publications {
+    font-size: 18px !important;
+    color: $neutral-2;
+    text-decoration: underline;
+  }
+
+  .research-group {
+    font-size: 18px !important;
+    color: $neutral-2;
+    font-weight: bold !important;
+  }
+
+  .team-members {
+    font-size: 18px !important;
+    color: $neutral-2;
+    text-decoration: underline;
+  }
+
+  .digital-library {
+    font-size: 18px !important;
+    color: $neutral-2;
+    font-weight: bold !important;
+  }
+
+  .search {
+    font-size: 18px !important;
+    color: $neutral-2;
+    text-decoration: underline;
+  }
+
+  .solutions-2 {
+    font-size: 18px !important;
+    color: $neutral-2;
+    font-weight: bold !important;
+  }
+
+  .open-data {
+    font-size: 18px !important;
+    color: $neutral-2;
+    text-decoration: underline;
+  }
+
+  .d2l {
+    font-size: 18px !important;
+    color: $neutral-2;
+    text-decoration: underline;
+  }
+
+  .contacts {
+    font-size: 18px !important;
+    color: $neutral-2;
+    font-weight: bold !important;
+  }
+
+  .email {
+    font-size: 18px !important;
+    color: $neutral-2;
+    font-weight: bold !important;
+  }
+
+  .mail {
+    font-size: 18px !important;
+    color: $neutral-2;
+  }
+
+  .phone {
+    font-size: 18px !important;
+    color: $neutral-2;
+    font-weight: bold !important;
+  }
+
+  .number {
+    font-size: 18px !important;
+    color: $neutral-2;
+  }
+
+  .hline {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #d9d9d9;
+    margin: 1em 0;
+    padding: 0;
+  }
+
+  .copyright {
+    color: $grey-2;
+  }
+
+  .privacy-policy {
+    color: $neutral-2;
+  }
+
+  .vertical-bar {
+    color: $neutral-2;
+  }
+
+  .accept-terms {
+    color: $neutral-2;
+  }
+}

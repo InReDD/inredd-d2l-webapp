@@ -1,0 +1,62 @@
+// Cores :hover de Components
+$primary-hover-1: #f0c95c;
+$neutral-hover-1: #3b3b3b;
+
+// Cores do Stylesheet
+$primary-1: #F4BA18;
+$neutral-1: #000000;
+$neutral-2: #FFFFFF;
+$grey-1: #6E6E73;
+$grey-2: #A7A7A7;
+$blue-1: #006699;
+
+// Bootstrap variables
+$form-feedback-invalid-color:  #DC3545;
+
+//espaços
+$spacing-4: 4px;
+$spacing-8: 8px;
+$spacing-10: 10px;
+$spacing-12: 12px;
+$spacing-14: 14px;
+$spacing-16: 16px;
+$spacing-20: 20px;
+$spacing-24: 24px;
+$spacing-28: 28px;
+$spacing-32: 32px;
+$spacing-40: 40px;
+$spacing-52: 52px;
+$spacing-62: 62px;
+$spacing-80: 80px;
+$spacing-120: 120px;
+
+$grid-columns: 15;
+$grid-gutter-width: 16px;
+
+:export {
+  primary-1: $primary-1;
+  neutral-1: $neutral-1;
+  neutral-2: $neutral-2;
+  grey-1: $grey-1;
+  grey-2: $grey-2;
+  primary-hover-1: $primary-hover-1;
+  neutral-hover-1: $neutral-hover-1;
+  form-feedback-invalid-color: $form-feedback-invalid-color;
+  blue-1: #006699;
+
+  spacing4: $spacing-4;
+  spacing8: $spacing-8;
+  spacing10: $spacing-10;
+  spacing12: $spacing-12;
+  spacing14: $spacing-14;
+  spacing16: $spacing-16;
+  spacing20: $spacing-20;
+  spacing24: $spacing-24;
+  spacing28: $spacing-28;
+  spacing32: $spacing-32;
+  spacing40: $spacing-40;
+  spacing52: $spacing-52;
+  spacing62: $spacing-62;
+  spacing80: $spacing-80;
+  spacing120: $spacing-120;
+}

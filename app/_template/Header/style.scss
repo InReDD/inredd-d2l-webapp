@@ -1,0 +1,98 @@
+@import "../../default-imports.scss";
+
+.header-container {
+  background-color: $neutral-1;
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  color: $neutral-2;
+  font-size: 18px;
+  font-family: var(--font-ibm_plex_sans_devanagari);
+  box-shadow: 0 8px 20px 4px rgba(0, 0, 0, 0.3);
+
+  @include media-breakpoint-down(lg) {
+    box-shadow: none;
+    padding-bottom: 0;
+  }
+
+  .usp-logo {
+    width: 100%;
+    max-width: 364px;
+    height: auto;
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .menus-container-wrapper {
+    white-space: nowrap;
+
+    @include media-breakpoint-down(lg) {
+      border-top: 1px solid rgba(167, 167, 167, 0.5);
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+  }
+
+  .menus-container {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+    > li {
+      color: $neutral-2;
+
+      > a {
+        color: $neutral-2;
+        text-decoration: none;
+        font-weight: 400;
+      }
+
+      .dd-container {
+        button {
+          color: $neutral-2;
+        }
+      }
+
+      &.active {
+        > a {
+          color: $primary-1;
+          font-weight: 600;
+        }
+
+        color: $primary-1;
+        font-weight: 600;
+      }
+
+      .btn-logout {
+        border: none;
+        background-color: transparent;
+        color: $neutral-1 !important;
+      }
+    }
+
+    &::-webkit-scrollbar-thumb {
+      width: 2px;
+      background-color: transparent;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      background-color: transparent;
+    }
+
+    @include media-breakpoint-down(lg) {
+      justify-content: space-around;
+      border-left: none;
+      border-right: none;
+      padding: 6px 0;
+    }
+  }
+}

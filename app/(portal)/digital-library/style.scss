@@ -1,0 +1,98 @@
+@import "../../default-imports.scss";
+
+#library {
+  overflow: hidden;
+
+  .bg-library {
+    width: 100%;
+    margin-top: -2px;
+    background: linear-gradient(to bottom, #000 90%, #292929 100%);
+    min-height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .main-tile {
+      @include media-breakpoint-down(lg) {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+    }
+
+    .main-subtitle {
+      font-size: 24px !important;
+      text-align: center;
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .main-showing {
+    @include media-breakpoint-down(lg) {
+      .showing {
+        font-size: 22px;
+      }
+      flex: 0 0 auto;
+      width: 100%;
+    }
+  }
+
+  .first-buttons {
+    .export {
+      margin-right: 16px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      .export {
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+      .set-alert {
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+      flex: 0 0 auto;
+      width: 100%;
+    }
+  }
+
+  .hline {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #d9d9d9;
+    margin: 1em 0;
+    padding: 0;
+  }
+
+  .filters {
+    font-size: 24px;
+  }
+
+  .articles {
+    .from {
+      width: 75px;
+      height: 35px;
+      margin-left: 13px;
+      margin-right: 17px;
+      text-align: center;
+    }
+
+    .to {
+      width: 75px;
+      height: 35px;
+      text-align: center;
+    }
+
+    .form-check.check {
+      margin: 0;
+    }
+  }
+
+  .btn {
+    font-size: 18px;
+  }
+}

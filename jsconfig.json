@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@/components": [
+        "./app/_components/index"
+      ],
+      "@/components/*": [
+        "./app/_components/*"
+      ]
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@import "../../default-imports.scss";
+
+.profile-picture {
+  position: relative;
+
+  img.image-profile {
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    background-color: $neutral-1;
+    border: 3px solid $neutral-2;
+    box-shadow: -2px 2px 12px rgba(0, 0, 0, 0.25);
+    position: relative;
+  }
+
+  &.small {
+    width: 40px;
+    height: 40px;
+    aspect-ratio: auto 40 / 40;
+  }
+
+  &.medium {
+    width: 80px;
+    height: 80px;
+    aspect-ratio: auto 80 / 80;
+  }
+
+  &.medium-large {
+    width: 120px;
+    height: 120px;
+    aspect-ratio: auto 120 / 120;
+  }
+
+  &.large {
+    width: 242px;
+    height: 242px;
+    aspect-ratio: auto 242 / 242;
+  }
+
+  &.empty-image {
+    background-color: #d9d9d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    cursor: default;
+    border-radius: 50%;
+    border: 3px solid $neutral-2;
+    box-shadow: -2px 2px 12px rgba(0, 0, 0, 0.25);
+
+    &.small {
+      font-size: 10px;
+    }
+
+    &.medium {
+      font-size: 24px;
+    }
+
+    &.medium-large {
+      font-size: 24px;
+    }
+
+    &.large {
+      font-size: 52px;
+    }
+  }
+
+  button {
+    padding: 8px 6px !important;
+    border: 1px solid $neutral-2 !important;
+    position: absolute;
+    bottom: 10px;
+    left: 14px;
+
+    img {
+      margin: 0 !important;
+    }
+  }
+}

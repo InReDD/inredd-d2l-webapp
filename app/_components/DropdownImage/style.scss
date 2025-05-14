@@ -1,0 +1,36 @@
+@import "../../default-imports.scss";
+
+.dropdown-image {
+  display: flex;
+
+  .card-container {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 6px 8px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .dd-container button {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+  }
+
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: var(--font-ibm_plex_sans_devanagari);
+  }
+
+  .card-subtitle {
+    font-size: 12px;
+    font-family: var(--font-ibm_plex_sans_devanagari);
+  }
+}

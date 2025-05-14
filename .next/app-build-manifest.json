@@ -1,0 +1,45 @@
+{
+  "pages": {
+    "/(portal)/(home)/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(portal)/(home)/page.css",
+      "static/chunks/app/(portal)/(home)/page.js"
+    ],
+    "/(portal)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(portal)/layout.css",
+      "static/chunks/app/(portal)/layout.js"
+    ],
+    "/(portal)/not-found": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(portal)/not-found.css",
+      "static/chunks/app/(portal)/not-found.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/not-found": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/not-found.css",
+      "static/chunks/app/not-found.js"
+    ],
+    "/(portal)/[...not-found]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(portal)/[...not-found]/page.js"
+    ],
+    "/(portal)/digital-library/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(portal)/digital-library/page.css",
+      "static/chunks/app/(portal)/digital-library/page.js"
+    ]
+  }
+}

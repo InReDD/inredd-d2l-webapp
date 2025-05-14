@@ -1,0 +1,34 @@
+@import "../../../variables.module.scss";
+
+.input-password-container {
+  position: relative;
+
+  .icon-eye {
+    position: absolute;
+    right: 8px;
+    top: 7px;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .input {
+    width: 100%;
+    padding: 8px 16px;
+    color: #262626;
+    background-color: $neutral-2;
+    border-radius: 2px;
+    border: 1px solid $grey-2;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+
+    &[type="password"]::-ms-reveal {
+      display: none;
+    }
+
+    // &:focus-visible {
+    //   outline: 1px solid $neutral-1 !important;
+    //   box-shadow: none !important;
+    // }
+  }
+}

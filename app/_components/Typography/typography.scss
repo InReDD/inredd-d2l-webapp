@@ -1,0 +1,36 @@
+@import "../../default-imports.scss";
+
+.title {
+  font-size: 72px;
+  font-family: var(--font-rhodium_libre);
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.subTitle {
+  font-size: 48px;
+  font-family: var(--font-ibm_plex_sans);
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.paragraph1 {
+  font-size: 24px;
+  font-family: var(--font-ibm_plex_sans_devanagari);
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.paragraph2 {
+  font-size: 18px;
+  font-family: var(--font-ibm_plex_sans_devanagari);
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.paragraph3 {
+  font-size: 16px;
+  font-family: var(--font-ibm_plex_sans_devanagari);
+  font-weight: 400;
+  margin-bottom: 0;
+}

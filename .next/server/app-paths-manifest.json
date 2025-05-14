@@ -1,0 +1,4 @@
+{
+  "/(portal)/(home)/page": "app/(portal)/(home)/page.js",
+  "/(portal)/digital-library/page": "app/(portal)/digital-library/page.js"
+}

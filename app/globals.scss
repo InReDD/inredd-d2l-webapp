@@ -1,0 +1,162 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "variables.module.scss";
+
+@import "./margins.scss";
+@import "./paddings.scss";
+@import "./color.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+html,
+body {
+  font-family: var(--font-ibm_plex_sans);
+  max-width: 100vw;
+  background-color: $neutral-2;
+}
+
+.container {
+  &--medium {
+    max-width: 1140px;
+  }
+
+  &--large {
+    max-width: 1440px;
+  }
+
+  &--small {
+    max-width: 750px;
+  }
+}
+
+.w-15 {
+  width: 15% !important;
+}
+
+.w-25 {
+  width: 25% !important;
+}
+
+.w-30 {
+  width: 30% !important;
+}
+
+.w-40 {
+  width: 40% !important;
+}
+
+.w-50 {
+  width: 50% !important;
+}
+
+.w-70 {
+  width: 70% !important;
+}
+
+.w-75 {
+  width: 75% !important;
+}
+
+.w-100 {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.modal-add-card {
+  width: 528px !important;
+  height: 857px !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.modal-add-data {
+  width: 848px !important;
+  height: 717px !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.modal-edit-data {
+  width: 848px !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.modal-confirmation {
+  width: 654px !important;
+  height: 202px !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px $neutral-2 inset !important;
+}
+
+// ::-webkit-scrollbar-thumb {
+//   width: 2px;
+//   background-color: $grey-2;
+//   border-radius: 10px;
+// }
+
+// ::-webkit-scrollbar {
+//   width: 5px;
+//   background-color: $grey-2;
+// }
+
+.invalid-feedback {
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 15px !important;
+  color: $form-feedback-invalid-color !important;
+  display: none;
+  visibility: hidden;
+}
+
+.was-validated :invalid ~ .invalid-feedback,
+.was-validated :invalid ~ .invalid-tooltip,
+.is-invalid ~ .invalid-feedback,
+.is-invalid ~ .invalid-tooltip {
+  display: block;
+  visibility: visible;
+}
+
+.carousel-item-next:not(.carousel-item-start),
+.active.carousel-item-end {
+  transform: translateX(calc(100% + 16px));
+}
+.carousel-item-prev:not(.carousel-item-end),
+.active.carousel-item-start {
+  transform: translateX(calc(-100% - 16px));
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+hr {
+  margin: 8px 0;
+}
+
+option[value="default"] {
+  color: rgba(0, 0, 0, 0.25);
+}

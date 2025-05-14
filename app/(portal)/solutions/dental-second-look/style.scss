@@ -1,0 +1,73 @@
+@import "../../../default-imports.scss";
+
+#d2l {
+  background: linear-gradient(to bottom, #000 90%, #292929 100%);
+  overflow: hidden;
+  position: relative;
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  @include media-breakpoint-down(lg) {
+    text-align: center;
+  }
+
+  .title-d2l {
+    color: $primary-1;
+    font-size: 60px;
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .icon {
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .paragrafo-1,
+  .paragrafo-2 {
+    color: $neutral-2;
+    margin-top: 12px;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .card-request {
+    margin-top: 56px;
+    margin-left: 0;
+    font-size: 48px;
+    width: 100%;
+    height: auto;
+
+    @include media-breakpoint-down(lg) {
+      margin-top: 20px;
+    }
+  }
+
+  .solutions {
+    position: absolute;
+    width: 1094px;
+    height: auto;
+    right: -364px;
+    bottom: -50px;
+    z-index: 0;
+    transform: rotate(148deg);
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
+  .video {
+    margin-top: 56px;
+    width: 100%;
+    height: auto;
+  }
+}

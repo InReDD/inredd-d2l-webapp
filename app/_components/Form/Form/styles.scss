@@ -1,0 +1,10 @@
+.btn-input {
+  width: 400px;
+  position: relative;
+  margin-left: 10px;
+  border: none;
+}
+
+.was-validated .form-select:invalid:not([multiple]):not([size]) {
+  --bs-form-select-bg-icon: none !important;
+}

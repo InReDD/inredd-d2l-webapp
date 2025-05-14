@@ -1,0 +1,32 @@
+@import "../../variables.module.scss";
+
+.pagination {
+  .page-link {
+    background-color: transparent;
+    border: none;
+    border-radius: initial;
+    color: $neutral-1;
+    padding: 0px 5px;
+
+    font-size: 18px;
+    font-family: var(--font-ibm_plex_sans_devanagari);
+
+    &.page-link-active {
+      color: $neutral-1;
+      font-weight: 400;
+      background-color: $primary-1;
+    }
+
+    &:hover,
+    &:focus {
+      color: $neutral-1;
+      background-color: $primary-1;
+      border-radius: 2px;
+    }
+  }
+
+  .page-dots {
+    color: $neutral-1;
+    cursor: default;
+  }
+}

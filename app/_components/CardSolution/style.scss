@@ -1,0 +1,72 @@
+@import "../../variables.module.scss";
+
+.card-solution {
+  background-color: $neutral-2;
+  border-radius: 18px;
+  box-shadow: 4px 6px 7px rgba(0, 0, 0, 0.1);
+  padding: 28px 25px;
+  border: none;
+  cursor: default;
+  transition: 0.2s all ease;
+  height: 412px;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 10px $grey-2;
+  }
+
+  .card-body {
+    background-color: transparent;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .card-title {
+    background-color: transparent;
+    color: $neutral-1;
+    font-size: 24px;
+    font-family: var(--font-ibm_plex_sans);
+    font-weight: 600;
+    display: flex;
+  }
+
+  .card-text {
+    margin-top: 24px;
+    background-color: transparent;
+    color: $neutral-1;
+    font-size: 24px;
+    font-family: var(--font-ibm_plex_sans);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+  }
+
+  .card-links-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .know-more {
+    color: $neutral-1;
+  }
+
+  .access {
+    color: $neutral-1;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 18px;
+
+    img {
+      margin-bottom: 0 !important;
+    }
+  }
+}
