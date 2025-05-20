@@ -1,5 +1,4 @@
 import { Paragraph1, Title } from "@/app/_components/Typography";
-import "./style.scss";
 import CardLogin from "@/app/_components/CardLogin";
 import { generateMetadata as generate } from "@/helpers";
 
