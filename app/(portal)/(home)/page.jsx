@@ -16,8 +16,7 @@ export default async function DashboardHome() {
       <div className="container">
         <div className="row">
           <div className="col-12 d-flex align-items-center flex-column-reverse flex-lg-row justify-content-center">
-            <div className="d-flex flex-column align-items-center">
-            </div>
+          
           </div>
         </div>
       </div>
