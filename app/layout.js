@@ -55,11 +55,11 @@ export const jsonLd = {
 export default async function RootLayout({ children }) {
   let user = null;
   const cookiesStore = cookies();
-  const token = cookiesStore.get("app-token")?.value;
+  // const token = cookiesStore.get("app-token")?.value;
 
-  if (token) {
-    user = jwtDecode(token, { header: false });
-  }
+  // if (token) {
+  //   user = jwtDecode(token, { header: false });
+  // }
 
   return (
     <html lang="pt-BR" className={`${poppins.variable} ${yesevaOne.variable} ${rhodiumLibre.variable} ${ibmPlexSans.variable} ${ibmPlexSansDevanagari.variable}`}>

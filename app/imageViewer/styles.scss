@@ -1,0 +1,149 @@
+// styles.scss
+
+// Optional: Basic Reset and Global Styles
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif; // Example font
+  background-color: #282c34; // Dark background from the image
+  color: #fff;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+// Main Grid Container for the Dental Viewer
+.dental-viewer-grid-container {
+  display: grid;
+  // Defines two columns:
+  // 1st column (viewer-pane) takes flexible space (1fr)
+  // 2nd column (viewer-sidebar) is fixed at 300px wide
+  grid-template-columns: 1fr 300px;
+
+  // Defines two rows:
+  // 1st row (header) takes height based on its content (auto)
+  // 2nd row (viewer-pane & viewer-sidebar) takes remaining flexible space (1fr)
+  grid-template-rows: auto 1fr;
+
+  // Assigns names to grid areas for layout
+  grid-template-areas:
+    "header header"    // Header spans both columns
+    "viewer sidebar";  // 'viewer' is left, 'sidebar' is right
+  height: 100vh;       // Make the grid container take full viewport height
+}
+
+// Header Area Styling
+.viewer-header {
+  grid-area: header; // Assigns this element to the "header" grid area
+  background-color: #1e1e1e;
+  padding: 10px 20px;
+  border-bottom: 1px solid #444;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; // If you have items to push to the right of the header
+
+  .header-left-content {
+    display: flex;
+    align-items: center;
+    button {
+      margin-right: 20px;
+      padding: 8px 15px;
+      background-color: #555;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+  
+  .header-right-content {
+    display: flex;
+    align-items: center;
+    }
+}
+
+// Viewer Pane (Left Content Area) Styling
+.viewer-pane {
+  grid-area: viewer; // Assigns this element to the "viewer" grid area (left column)
+  background-color: #333;
+  padding: 15px;
+  display: grid; // Internal grid for xray display and image cuts
+  grid-template-rows: 1fr auto; // Xray display takes most space, image cuts auto height
+  gap: 15px; // Space between xray display and image cuts
+  overflow: hidden; // Handles overflow for the pane itself
+
+  .xray-display-area {
+    background-color: #000; // Black background for X-ray
+    border: 1px solid #555;
+    overflow: auto; // If X-ray content needs scrolling
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .image-cuts-area {
+    background-color: #2a2a2a;
+    border: 1px solid #555;
+    padding: 10px;
+    overflow-x: auto; // Horizontal scrolling for thumbnails
+    white-space: nowrap; // Keep thumbnails in a single line
+  }
+}
+
+// Sidebar (Right Content Area) Styling
+.viewer-sidebar {
+  grid-area: sidebar; // Assigns this element to the "sidebar" grid area (right column)
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-left: 1px solid #444;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; // Space between sidebar elements
+  overflow-y: auto; // Allow vertical scrolling if sidebar content is long
+
+  .sidebar-title-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+  }
+
+  .sidebar-search-input {
+    width: 100%;
+    padding: 8px 10px;
+    background-color: #333;
+    border: 1px solid #555;
+    color: white;
+    border-radius: 4px;
+  }
+
+  .dental-chart-placeholder {
+    background-color: #333;
+    border: 1px solid #555;
+    min-height: 150px; // Example height
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      padding: 10px 5px;
+      border-bottom: 1px solid #444;
+      cursor: pointer;
+      &:last-child {
+        border-bottom: none;
+      }
+      &:hover {
+        background-color: #333;
+      }
+    }
+  }
+}
