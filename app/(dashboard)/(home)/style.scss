@@ -1,134 +1,63 @@
 @import "../../default-imports.scss";
 
-#home {
+#dashboardhome {
   overflow: hidden;
 
-  .bg-home {
-    width: 100%;
-    margin-top: -2px;
-    background: linear-gradient(to bottom, #000 90%, #292929 100%);
-    min-height: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 0;
-
-    .inreed-main-logo {
-      @include media-breakpoint-down(lg) {
-        width: 213px;
-        height: auto;
-        margin-bottom: 32px;
-      }
-    }
-
-    .main-title {
-      font-size: 144px !important;
-      line-height: 50px;
-      margin-bottom: 32px;
-
-      @include media-breakpoint-down(lg) {
-        font-size: 72px !important;
-        margin-bottom: 10px;
-      }
-    }
-
-    .main-subtitle {
-      font-size: 15px;
-      text-align: center;
-
-      @include media-breakpoint-down(lg) {
-        max-width: 270px;
-      }
-    }
+//-------------------STYLE ATUAL------------------//
+    
+  body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: $neutral-1;
   }
 
-  .bg-solutions {
-    width: 100%;
-    background: linear-gradient(to left, #000 45%, #292929 100%);
-    min-height: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  header {
+    padding: 21px;
+    background: #EFEFEF;
+    color: $neutral-1;
+    font-size: 20px;
+    font-family: var(--font-ibm_plex_sans_devanagari);
+  }
+  
+  .sidenav {
+    width: 281px;
+    background: #EFEFEF;
+    position: absolute;
+    height: 95vh;
+    padding: 0 10px;
+    left: -100%;
+    transition: all 1s;
   }
 
-  .vector-wrapper {
-    position: relative;
-
-    @include media-breakpoint-down(lg) {
-      display: flex;
-      justify-content: center;
-      transform: translateX(25px);
-    }
-
-    .vector-1 {
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-image: url("/images/vector-1-home.png");
-      width: 880px;
-      height: 911px;
-      position: absolute;
-      top: -140px;
-
-      @include media-breakpoint-down(lg) {
-        width: 410px;
-        height: 425px;
-        position: relative;
-        top: 0;
-      }
-    }
+  .sidenav.active {
+    left: 0;
   }
 
-  .vector-row {
-    @include media-breakpoint-down(lg) {
-      display: flex;
-      flex-direction: column-reverse;
-    }
+  ul {
+    padding: 0;
   }
 
-  .solutions-image {
-    @include media-breakpoint-down(lg) {
-      width: 414px;
-      height: 197px;
-    }
+  ul li {
+    list-style-type: none;
   }
 
-  .foto-video-solutions {
-    @include media-breakpoint-down(lg) {
-      width: 100%;
-      height: 180px;
-    }
+  a {
+    color: $neutral-1;
   }
 
-  @media (min-width: 768px) {
-    // .carousel-inner {
-    //   display: flex;
-    // }
-    .carousel-item {
-      margin-right: 0;
-      flex: 0 0 33.333333%;
-      display: block;
-    }
+  a:hover,
+  a:active {
+    color: blue;
   }
 
-  .carousel .carousel-item {
-    display: none;
-    transition: transform 0.6s ease-in-out;
-    width: 100%;
-    justify-content: center;
+  .paragrafo {
+    color: $neutral-1;
+    font-size: 20px;
+    display: block;
+    border-radius: 4px;
   }
 
-  .carousel .carousel-item.active {
-    display: flex;
-  }
 
-  .carousel-control-prev,
-  .carousel-control-next {
-    background-color: #e1e1e1;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-  }
 }
+

@@ -1,6 +1,9 @@
-import { Paragraph1, SubTitle, Title } from "@/app/_components/Typography";
 import "./style.scss";
 import { generateMetadata as generate } from "@/helpers";
+import Navbar from "@/app/_components/Navbar";
+import Image from "next/image";
+// import { useState } from "react";
+import { Paragraph2 } from "@/app/_components/Typography";
 
 export async function generateMetadata() {
   return generate({
@@ -10,17 +13,33 @@ export async function generateMetadata() {
 }
 
 export default async function DashboardHome() {
-
+  // const { showNav, setShowNav } = useState(false)
   return (
-    <main id="dashboardhome">
-      <div className="container">
-        <div className="row">
-          <div className="col-12 d-flex align-items-center flex-column-reverse flex-lg-row justify-content-center">
-            <div className="d-flex flex-column align-items-center">
-            </div>
-          </div>
+    <div id="dashboardhome" className="home"> 
+      <header>
+        <div className="col-2 d-flex justify-content-between">
+          <Image
+          className="d2l.png"
+          src={"/icons/d2l.png"}
+          width={35}
+          height={35}
+          alt="D2L Icon"
+          // onClick={() => setShowNav(!showNav)}
+          />
+          <Paragraph2 className="paragrafo">
+              Dental Second Look
+          </Paragraph2>
         </div>
-      </div>
-    </main>
+      </header>
+      
+      <Navbar />
+      {/* {showNav && <Navbar />} */}
+    </div>
   );
 }
+
+
+
+
+
+
