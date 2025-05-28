@@ -18,15 +18,27 @@ export default function Header() {
               <span className="text-neutral-2">Dashboard</span>
             </Paragraph1>
           </div>
+        </div>
+      </div>
 
-          <div className="col-auto">
-            <Dropdown
-              title={"Solutions"}
-              iconType="white"
-              direction={"down"}
-            >
-              aaaa
-            </Dropdown>
+      <div className="row col-12">
+        <div className="bg-Dashboard">
+          <div className="container-fluid">
+            <div className="d-flex justify-content-between align-items-center">
+              <div className="col-12 col-md-6 text-start ">
+                <Paragraph1 className="mb-0">
+                  <span className="text-neutral-2">Dashboard</span>
+                </Paragraph1>
+              </div>
+              <div className="col-12">
+                <Dropdown
+                  title={"Solutions"}
+                  iconType="white"
+                  direction="down"
+                >
+                </Dropdown>
+              </div>
+            </div>
           </div>
         </div>
       </div> */}
