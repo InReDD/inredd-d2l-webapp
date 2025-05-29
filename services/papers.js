@@ -1,4 +1,4 @@
-import { getWorkByDOI } from "@/services/crossref";
+import { getWorkByDOI } from "@/src/services/crossref";
 import { API } from "@/helpers/api";
 
 const INREDD_WEB_API_BASE = process.env.NEXT_PUBLIC_API_URL;
