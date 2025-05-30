@@ -5,6 +5,7 @@ import './styles.scss'; // Adjust path
 import { ViewerProvider } from '../context/ViewerContext';
 import ImageViewer from './_components/ImageViewer'
 import Upload from './_components/Upload'
+import EntitySpace from './_components/EntitySpace';
 
 export default function D2LViewer() {
   return (

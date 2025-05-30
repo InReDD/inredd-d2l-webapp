@@ -6,6 +6,7 @@ import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three'; // Import THREE
 import { useViewer } from '@/app/context/ViewerContext'; // Adjust path if needed
+import { EntitySpace } from './EntitySpace';
 
 // ImagePlane component to display the image within the Three.js scene
 function ImagePlane() {
@@ -74,9 +75,11 @@ export default function ImageViewer() {
     <div
       ref={containerRef} // Attach the ref from context to the container div
       style={{
-        // Add a subtle border for visual separation from the black background
+        width: '100%', // Added to fill parent width
+        height: '100%', // Added to fill parent height
         border: '1px solid rgba(255, 255, 255, 0.1)',
         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)', // Optional: subtle shadow
+        position: 'relative', // Good practice for containers, ensures proper positioning of children like the canvas
       }}
     >
       <Canvas
@@ -92,6 +95,7 @@ export default function ImageViewer() {
 
         {/* Render the ImagePlane component which will display the loaded image */}
         <ImagePlane />
+        <EntitySpace />
 
         {/* OrbitControls configured for 2D movement */}
         <OrbitControls
