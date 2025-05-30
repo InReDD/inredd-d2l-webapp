@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei'; // For camera controls
 
 // --- Mock useViewer hook ---
 // In your actual application, this would be your implemented hook.
