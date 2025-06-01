@@ -12,27 +12,70 @@
     color: $neutral-1;
   }
 
+
   header {
-    padding: 21px;
-    background: #EFEFEF;
+    background: $neutral-2;
     color: $neutral-1;
     font-size: 20px;
     font-family: var(--font-ibm_plex_sans_devanagari);
+    border-bottom: 1px solid #777777;
+  }
+
+  .homepage {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 283px);
+    left: 283px;
+    padding: 0px;
+  }
+
+  .card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+    color: #333;
+    width: 79px;
+    height: 79px;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    flex-shrink: 0;
+    box-shadow: 0px 4px 10px $grey-2;
+    border: 2px solid #ffffff;
   }
   
   .sidenav {
-    width: 281px;
-    background: #EFEFEF;
-    position: absolute;
+    width: 283px;
+    background: $neutral-2;
+    position: fixed;
     height: 95vh;
-    padding: 0 10px;
     left: -100%;
-    transition: all 1s;
+    transition: all 0.3s;
+    border-right: 1px solid #777777;
   }
 
   .sidenav.active {
     left: 0;
   }
+
+  .dashboardheader {
+    background: $neutral-1;
+    color: $neutral-2;
+    font-size: 20px;
+    font-family: var(--font-ibm_plex_sans_devanagari);
+    position: fixed;
+    top: 0px;
+    left: 282px;
+    width: 100%;
+    height: 90px;
+  }
+
+  .dashboardparagraph2 {
+    font-size: 20px;
+    font-family: var(--font-ibm_plex_sans_devanagari);
+  }
+
 
   ul {
     padding: 0;
@@ -57,7 +100,6 @@
     display: block;
     border-radius: 4px;
   }
-
 
 }
 
