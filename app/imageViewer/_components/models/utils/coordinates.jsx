@@ -38,3 +38,12 @@ export default function transformCoordinates(
 
     return [newX, newY];
 }
+
+
+export const transformCoordinateToPlane = (pixelCoord, imageMaxDimension, planeWorldDimension, isY = false) => {
+    const normalized = pixelCoord / imageMaxDimension;
+    if (isY) {
+        return (0.5 - normalized) * planeWorldDimension;
+    }
+    return (normalized - 0.5) * planeWorldDimension;
+};
