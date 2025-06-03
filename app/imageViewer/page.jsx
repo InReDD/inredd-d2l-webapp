@@ -2,10 +2,30 @@
 
 import React from 'react';
 import './styles.scss'; // Adjust path
-import { ViewerProvider } from '../context/ViewerContext';
-import ImageViewer from './_components/ImageViewer'
-import Upload from './_components/Upload'
-import EntitySpace from './_components/EntitySpace';
+import { ViewerProvider } from '../context/ViewerContext'; // Assuming this context exists
+import ImageViewer from './_components/ImageViewer';
+import Upload from './_components/Upload';
+// import EntitySpace from './_components/EntitySpace'; // Not used in the provided snippet
+
+// Placeholder Icon components (you can replace these with actual SVGs or an icon library)
+const PlaceholderIcon = ({ label }) => (
+  <div style={{
+    width: '40px',
+    height: '40px',
+    backgroundColor: '#555',
+    borderRadius: '4px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#fff',
+    cursor: 'pointer',
+    fontSize: '0.8em',
+    textAlign: 'center',
+    marginBottom: '10px'
+  }} title={label}>
+    {label.substring(0, 3)}
+  </div>
+);
 
 export default function D2LViewer() {
   return (
@@ -20,22 +40,26 @@ export default function D2LViewer() {
             </div>
           </div>
           <div className="header-right-content">
-              <Upload></Upload> 
-
+            <Upload />
           </div>
         </header>
 
-        <section className="viewer-pane"> {/* This will be the left content area */}
+        <section className="viewer-pane"> {/* This will be the main left content area */}
           <div className="xray-display-area">
-            <ImageViewer></ImageViewer>
+            <ImageViewer />
           </div>
           <div className="image-cuts-area">
-            {/* Placeholder for image cuts/thumbnails / Upload component or part of ImageViewer */}
             <p>Image Cuts / Thumbnails Area</p>
           </div>
         </section>
 
-        <aside className="viewer-sidebar"> {/* This will be the right sidebar */}
+        {/* NEW: Icons Sidebar - to the left of the detailed viewer-sidebar */}
+        <aside className="icons-sidebar-vertical"> {/* Changed class name for clarity */}
+          <PlaceholderIcon label="Camera" />
+        </aside>
+
+        {/* Existing Right Sidebar (Detailed) */}
+        <aside className="viewer-sidebar-details"> {/* Changed class name for clarity */}
           <div className="sidebar-title-search">
             <span>Patient's dentition</span>
             <span>🔍</span> {/* Search Icon */}

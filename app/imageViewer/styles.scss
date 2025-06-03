@@ -1,11 +1,9 @@
-// styles.scss
-
 // Optional: Basic Reset and Global Styles
 body, html {
   height: 100%;
   margin: 0;
   font-family: Arial, sans-serif; // Example font
-  background-color: #282c34; // Dark background from the image
+  background-color: #282c34; // Dark background
   color: #fff;
 }
 
@@ -16,21 +14,22 @@ body, html {
 // Main Grid Container for the Dental Viewer
 .dental-viewer-grid-container {
   display: grid;
-  // Defines two columns:
+  // Defines three columns for the main content area:
   // 1st column (viewer-pane) takes flexible space (1fr)
-  // 2nd column (viewer-sidebar) is fixed at 300px wide
-  grid-template-columns: 1fr 300px;
+  // 2nd column (icons-sidebar-vertical) is fixed at 60px wide
+  // 3rd column (viewer-sidebar-details) is fixed at 300px wide
+  grid-template-columns: 1fr 60px 300px;
 
   // Defines two rows:
   // 1st row (header) takes height based on its content (auto)
-  // 2nd row (viewer-pane & viewer-sidebar) takes remaining flexible space (1fr)
+  // 2nd row (content area) takes remaining flexible space (1fr)
   grid-template-rows: auto 1fr;
 
   // Assigns names to grid areas for layout
   grid-template-areas:
-    "header header"    // Header spans both columns
-    "viewer sidebar";  // 'viewer' is left, 'sidebar' is right
-  height: 100vh;       // Make the grid container take full viewport height
+    "header header header"             // Header spans all three columns
+    "viewer-main icons-bar details-bar"; // Layout for viewer, new icons sidebar, and details sidebar
+  height: 100vh;                      // Make the grid container take full viewport height
 }
 
 // Header Area Styling
@@ -41,7 +40,7 @@ body, html {
   border-bottom: 1px solid #444;
   display: flex;
   align-items: center;
-  justify-content: space-between; // If you have items to push to the right of the header
+  justify-content: space-between;
 
   .header-left-content {
     display: flex;
@@ -54,18 +53,21 @@ body, html {
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      &:hover {
+        background-color: #666;
+      }
     }
   }
-  
+ 
   .header-right-content {
     display: flex;
     align-items: center;
-    }
+  }
 }
 
-// Viewer Pane (Left Content Area) Styling
+// Viewer Pane (Main Content Area) Styling
 .viewer-pane {
-  grid-area: viewer; // Assigns this element to the "viewer" grid area (left column)
+  grid-area: viewer-main; // Assigns this element to the "viewer-main" grid area
   background-color: #333;
   padding: 15px;
   display: grid; // Internal grid for xray display and image cuts
@@ -89,15 +91,32 @@ body, html {
     padding: 10px;
     overflow-x: auto; // Horizontal scrolling for thumbnails
     white-space: nowrap; // Keep thumbnails in a single line
+    // Example: add some height if it's holding thumbnails
+    min-height: 80px; 
+    display: flex;
+    align-items: center;
   }
 }
 
-// Sidebar (Right Content Area) Styling
-.viewer-sidebar {
-  grid-area: sidebar; // Assigns this element to the "sidebar" grid area (right column)
+// NEW: Icons Sidebar (Vertical Icon Bar) Styling
+.icons-sidebar-vertical {
+  grid-area: icons-bar; // Assigns this element to the "icons-bar" grid area
+  background-color: #1e1e1e; // Same as header/details sidebar for consistency
+  padding: 15px 10px; // Adjust padding as needed
+  border-left: 1px solid #444;
+  border-right: 1px solid #444;
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Center icons horizontally
+  // gap: 10px; // Space between icon elements (or use margin on children)
+}
+
+// Sidebar (Right Detailed Content Area) Styling
+.viewer-sidebar-details {
+  grid-area: details-bar; // Assigns this element to the "details-bar" grid area
   background-color: #1e1e1e;
   padding: 15px;
-  border-left: 1px solid #444;
+  // border-left: 1px solid #444; // Removed as icons-sidebar-vertical now has right border
   display: flex;
   flex-direction: column;
   gap: 15px; // Space between sidebar elements
