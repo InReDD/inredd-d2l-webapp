@@ -1,0 +1,86 @@
+@import "../../variables.module.scss";
+
+.accordion-container {
+  width: 100%;
+  margin-bottom: 14px;
+
+  .details {
+    .summary {
+      list-style: none;
+      border-bottom: 1px solid #DDDDDD;
+
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 30px;
+      color: $neutral-1;
+
+      display: flex;
+      justify-content: flex-start;
+      padding-inline: 2px;
+
+      &::-webkit-details-marker {
+        display: none; /* Remove a seta no Safari */
+      }
+    }
+
+  .avatar-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #D9D9D9;
+      color: #333;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 8px;
+      margin-bottom: 10px;
+      font-size: 12px;
+      font-weight: bold;
+      flex-shrink: 0;
+      box-shadow: 0px 4px 10px $grey-2;
+      border: 2px solid #ffffff;
+    }
+    
+    .image {
+      margin-left: 80px;
+      display: flex;
+      justify-content: end;
+    }
+
+    .paragrafo3 {
+      font-size: 12px;
+    }
+
+    .children {
+      margin-top: 5px;
+      line-height: 20px;
+      font-size: 12px;
+      width: 100%;
+
+      & > p {
+        font-size: 16px;
+      }
+    }
+
+    &[open] .summary {
+      border-bottom: none;
+    } 
+
+    &[open] .is-open-line {
+      border-bottom: 1px solid #DDDDDD;
+      margin-top: 14px;
+    } 
+  } 
+}
+
+@media screen and (max: 756px) {
+  .accordion-container {
+    .details {
+      .children {
+        margin-top: 16px;
+        line-height: 18px;
+        width: 100%;
+      }
+    }
+  }
+}
