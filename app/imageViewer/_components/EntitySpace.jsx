@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useViewer } from '@/app/context/ViewerContext';
-import mapModels from "./models/mapModels"
+import serviceHandlers from "./models/serviceHandlers"
 
 export function EntitySpace() {
   const { setInstances, response, instances, canvasState } = useViewer();
@@ -17,23 +17,25 @@ export function EntitySpace() {
     }
 
     Object.entries(response.outputs).forEach(([resultKey, dataFromResponse]) => {
-      const handler = mapModels[resultKey];
+
+      // Call specific handler for the json key
+      const handler = serviceHandlers[resultKey];
       if (!handler) {
         return;
       }
 
+
+      // Call the model-specific handler to get an array of instances
       try {
-        // Call the model-specific handler to get an array of instances
         const resultInstances = handler(dataFromResponse, canvasState, idGenerator);
 
+        // Ensure IDs are unique across all generated instances in this pass
         if (Array.isArray(resultInstances)) {
-          // Ensure IDs are unique across all generated instances in this pass
           resultInstances.forEach(instance => {
             if(instance.id === undefined || typeof instance.id === 'number') {}
           });
 
-          // Increment for next handler's unique ID
-          idGenerator += resultInstances.length; ase
+          idGenerator += resultInstances.length; // Increment for next handler's unique ID
           newInstances = [...newInstances, ...resultInstances];
         } else {
           console.error(`Handler for ${resultKey} did not return a valid array. Received:`, resultInstances);
