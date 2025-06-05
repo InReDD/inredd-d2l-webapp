@@ -1,5 +1,5 @@
 import React from 'react';
-import BoundingBoxAnnotationR3F from './BoundingBoxAnnotationR3F';
+import BoundingBoxAnnotationR3F from '../annotations/BoundingBoxAnnotationR3F';
 
 const MouthDetectionVisual = ({ data, imageInfo, planeInfo, keyPrefix }) => {
   if (

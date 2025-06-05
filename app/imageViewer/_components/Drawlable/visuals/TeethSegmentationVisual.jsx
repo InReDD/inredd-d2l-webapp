@@ -1,5 +1,5 @@
 import React from 'react';
-import BoundingBoxAnnotationR3F from './BoundingBoxAnnotationR3F';
+import BoundingBoxAnnotationR3F from '../annotations/BoundingBoxAnnotationR3F';
 
 const TeethSegmentationVisual = ({ data, imageInfo, planeInfo, keyPrefix }) => {
   if (!data || !data.teeth_segmentation || !Array.isArray(data.teeth_segmentation.pred_boxes)) return null;

@@ -5,7 +5,7 @@ import { Canvas } from '@react-three/fiber';
 import { CameraControls, Text } from '@react-three/drei';
 import * as THREE from 'three';
 import { useViewer } from '@/app/context/ViewerContext';
-import { EntitySpace } from './EntitySpace';
+import EntitySpace from './EntitySpace';
 import ImagePlane from './ImagePlane'; 
 import { useControls, button, buttonGroup, folder } from 'leva';
 const { DEG2RAD } = THREE.MathUtils;
@@ -167,6 +167,7 @@ function ErrorImage({}){
   );
 }
 
+// R3F Scene render
 export default function ImageViewer() {
   const { image } = useViewer(); 
 
