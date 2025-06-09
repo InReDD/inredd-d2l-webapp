@@ -1,19 +1,16 @@
+"use client";
+
 import React, {
   createContext,
   useContext,
   useState,
-  ReactNode,
-  useEffect,
   useRef,
   useMemo,
-  Dispatch,
-  SetStateAction,
+  useEffect,
 } from 'react';
+import { Vector2 } from 'three'; // Importar Vector2
 
-import { Vector2 } from 'three';
-
-// Providing a default value can be useful, but note that if a component
-// is rendered without the provider, these defaults will be used.
+// O valor padrão continua o mesmo
 const defaultViewerValue = {
   image: null,
   response: null,
@@ -30,92 +27,83 @@ const defaultViewerValue = {
   },
 };
 
-const ViewerContext = createContext(defaultViewerValue);
+const ViewerContext = createContext(undefined);
 
 const ViewerProvider = ({ children }) => {
   const [image, setImage] = useState(null);
   const [response, setResponse] = useState(null);
   const [instances, setInstances] = useState([]);
-
   const containerRef = useRef(null);
 
-  // Canvas Dynamic Adjust:
-  // Track the size of the parent container.
-  const { width: containerWidth, height: containerHeight } =
-    useContainerSize(containerRef);
-
-  // Track the loaded image dimensions.
+  const { width: containerWidth, height: containerHeight } = useContainerSize(containerRef);
   const { width: imgWidth, height: imgHeight } = useImageSize(image);
 
-  // Memoize canvas state so it isn’t a new object every render.
   const canvasState = useMemo(
     () => ({
       imgWidth,
       imgHeight,
       canvasWidth: containerWidth,
       canvasHeight: containerHeight,
-      resolution: new Vector2(containerWidth, containerHeight),
     }),
     [imgWidth, imgHeight, containerWidth, containerHeight]
   );
 
+  const value = useMemo(() => ({
+    image,
+    response,
+    instances,
+    canvasState,
+    containerRef,
+    setImage,
+    setResponse,
+    setInstances,
+  }), [image, response, instances, canvasState]);
+
   return (
-    <ViewerContext.Provider
-      value={{
-        image,
-        response,
-        instances,
-        canvasState,
-        containerRef,
-        setImage,
-        setResponse,
-        setInstances,
-      }}
-    >
+    <ViewerContext.Provider value={value}>
       {children}
     </ViewerContext.Provider>
   );
 };
 
 const useViewer = () => {
-  return useContext(ViewerContext);
+  const context = useContext(ViewerContext);
+
+  // Se o 'context' for 'undefined', significa que não há um Provider acima na árvore.
+  if (context === undefined) {
+    throw new Error(
+      "Erro: O hook 'useViewer' foi chamado por um componente que não está dentro do <ViewerProvider>. Verifique a sua árvore de componentes."
+    );
+  }
+
+  return context;
 };
 
 function useContainerSize(ref) {
   const [size, setSize] = useState({ width: 0, height: 0 });
-
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
-
     const observer = new ResizeObserver(([entry]) => {
       const { width, height } = entry.contentRect;
       setSize({ width, height });
     });
-
     observer.observe(element);
     return () => observer.disconnect();
   }, [ref]);
-
   return size;
 }
 
 function useImageSize(url) {
   const [size, setSize] = useState({ width: 0, height: 0 });
-
   useEffect(() => {
-    if (!url) {
-      setSize({ width: 0, height: 0 });
-      return;
-    }
+    if (!url) { setSize({ width: 0, height: 0 }); return; }
     const img = new Image();
     img.src = url;
-    img.onload = () => {
-      setSize({ width: img.width, height: img.height });
-    };
+    img.onload = () => { setSize({ width: img.width, height: img.height }); };
   }, [url]);
-
   return size;
 }
+
 
 export { ViewerProvider, useViewer };

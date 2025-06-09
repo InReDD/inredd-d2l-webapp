@@ -5,10 +5,8 @@ import { useViewer } from '@/app/context/ViewerContext';
 // --- Estilos Padrão (podem ser sobrescritos por props) ---
 
 const DEFAULT_LABEL_TEXT_STYLE = {
-  // IMPORTANTE: Substitua pelo caminho real para seu arquivo de fonte typeface.json
-  // fontPath: '/fonts/helvetiker_regular.typeface.json',
-  fontSize: 0.1, // Ajuste com base na escala da sua cena
-  color: 'white',
+  fontPath: '/fonts/helvetiker_regular.typeface.json',
+  fontSize: 0.1,  color: 'white',
   anchorX: 'center',
   anchorY: 'middle',
 };
@@ -113,7 +111,7 @@ const BoundingBoxAnnotationR3F = ({
           
           {/* Texto do Rótulo */}
           <Text3D
-            // font={labelTextStyle.fontPath}
+            font={labelTextStyle.fontPath}
             size={labelTextStyle.fontSize}
             height={0.001} // Profundidade mínima para texto "plano"
             curveSegments={4}
