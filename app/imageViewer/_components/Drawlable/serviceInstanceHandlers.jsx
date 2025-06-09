@@ -25,12 +25,12 @@ const serviceInstanceHandlers = {
             return [];
         }
 
-        const predBox = serviceData.mouth_detection.pred_boxes;
+        const predBoxes = serviceData.mouth_detection.pred_boxes;
 
         // Retorna um array com um único objeto de instância
         return [{
             id: "deteccao_da_boca_0", // ID estático, pois geralmente há apenas uma
-            component: <DeteccaoDaBoca initialState={predBox} />,
+            component: <DeteccaoDaBoca predBoxes={predBoxes} />,
             configs: { ...initialConfig, label: "Detecção da Boca" },
         }];
     },

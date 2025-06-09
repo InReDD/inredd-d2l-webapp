@@ -20,25 +20,23 @@ const mapOutputsToDrawableInstances = (outputs, initialIdStartIndex = 0) => {
     });
 };
 
-/**
- * Um componente que recebe os outputs de um modelo de IA,
- * processa-os para criar instâncias de componentes visuais,
- * e os prepara para renderização.
- *
- * @param {object} outputs - O objeto de outputs do modelo de IA.
- */
-const EntitySpace = ({ outputs }) => {
+const EntitySpace = ({response}) => {
     const [drawableInstances, setDrawableInstances] = useState([]);
 
     useEffect(() => {
-      console.log(outputs)
-      const newInstances = mapOutputsToDrawableInstances(outputs);
-      console.log(newInstances)
-      setDrawableInstances(newInstances);
-    }, [outputs])
+        if (response !== undefined && response !== null) {
+            if (Object.hasOwn(response, "outputs")){
+              console.log(response)
+              const newInstances = mapOutputsToDrawableInstances(response.outputs);
+              console.log(newInstances)
+              setDrawableInstances(newInstances);
+        }
+      }
+    }, [response])
 
     if (drawableInstances.length === 0) {
-        return <div>Nenhuma análise visual para exibir. Aguardando dados...</div>;
+        // return <div>Nenhuma análise visual para exibir. Aguardando dados...</div>;
+        return
     }
 
     return (

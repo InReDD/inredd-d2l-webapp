@@ -85,7 +85,7 @@ function handleCameraControls(planeDimensions, cameraControlsRef, imagePlaneRef,
 
 // Scene component with CameraControls
 function Scene({}){
-  const { containerRef } = useViewer();
+  const { containerRef, response } = useViewer();
   const [planeDimensions, setPlaneDimensions] = useState({ height: null, width: null });
   const [cameraControlsConfig, setCameraControlsConfig] = useState({
     minDistance: 0.1, 
@@ -136,7 +136,7 @@ function Scene({}){
 
         <ImagePlane ref={imagePlaneRef} onSized={handleImageSized} /> 
         
-        <EntitySpace />
+        <EntitySpace response={response}/>
 
         <CameraControls
           ref={cameraControlsRef}
