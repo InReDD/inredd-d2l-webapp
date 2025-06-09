@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import serviceInstanceHandlers from './Drawlable/serviceInstanceHandlers';
+import { useViewer } from '@/app/context/ViewerContext';
 
 // Função de mapeamento 
 const mapOutputsToDrawableInstances = (outputs, initialIdStartIndex = 0) => {
@@ -20,28 +21,31 @@ const mapOutputsToDrawableInstances = (outputs, initialIdStartIndex = 0) => {
     });
 };
 
-const EntitySpace = ({response}) => {
+const EntitySpace = () => {
+    const {response} = useViewer()
     const [drawableInstances, setDrawableInstances] = useState([]);
 
     useEffect(() => {
-        if (response !== undefined && response !== null) {
-            if (Object.hasOwn(response, "outputs")){
-              console.log(response)
-              const newInstances = mapOutputsToDrawableInstances(response.outputs);
-              console.log(newInstances)
-              setDrawableInstances(newInstances);
+        const outputs = response?.outputs;
+
+        if (outputs && typeof outputs === 'object') {
+            const newInstances = mapOutputsToDrawableInstances(outputs);
+            setDrawableInstances(newInstances);
+        } else {
+            console.log("Nenhum output para processar. Limpando instâncias.");
+            setDrawableInstances([]);
         }
-      }
     }, [response])
 
     if (drawableInstances.length === 0) {
-        // return <div>Nenhuma análise visual para exibir. Aguardando dados...</div>;
-        return
+        return <></>;
     }
 
     return (
         <>
-            {drawableInstances.map(instance => (
+        {drawableInstances
+            .filter(instance=> instance.component !== null && instance.component !== undefined) 
+            .map(instance => (
                 <React.Fragment key={instance.id}>
                     {instance.component}
                 </React.Fragment>

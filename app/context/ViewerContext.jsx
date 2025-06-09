@@ -10,6 +10,8 @@ import React, {
   SetStateAction,
 } from 'react';
 
+import { Vector2 } from 'three';
+
 // Providing a default value can be useful, but note that if a component
 // is rendered without the provider, these defaults will be used.
 const defaultViewerValue = {
@@ -52,6 +54,7 @@ const ViewerProvider = ({ children }) => {
       imgHeight,
       canvasWidth: containerWidth,
       canvasHeight: containerHeight,
+      resolution: new Vector2(containerWidth, containerHeight),
     }),
     [imgWidth, imgHeight, containerWidth, containerHeight]
   );
