@@ -53,7 +53,7 @@ const serviceInstanceHandlers = {
             const currentId = idGeneratorState.current + index;
             instances.push({
                 id: `segmentacao_do_dente_${currentId}`,
-                component: <SegmentacaoDaDente initialState={box} />,
+                component: <SegmentacaoDaDente predBox={box} />,
                 configs: { ...initialConfig, label: `Dente ${index + 1}` },
             });
         });
