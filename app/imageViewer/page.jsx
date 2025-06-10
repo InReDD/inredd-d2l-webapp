@@ -74,8 +74,7 @@ export default function D2LViewer() {
             </div>
             <input type="text" placeholder="Search..." className="sidebar-search-input" />
             <div className="dental-chart-container">
-               {/* Ensure DentalChart is passed the required props */}
-              <DentalChart instances={instances} setInstances={setInstances} />
+              <DentalChart />
             </div>
             <nav className="sidebar-menu">
               <ul>
