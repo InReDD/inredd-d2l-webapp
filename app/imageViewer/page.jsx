@@ -6,6 +6,7 @@ import { ViewerProvider } from '../context/ViewerContext';
 import ImageViewer from './_components/ImageViewer'
 import Upload from './_components/Upload'
 import EntitySpace from './_components/EntitySpace';
+import { ModelsMenu, FindingsMenu, SavedCutsMenu, AnnotationsMenu, EHRMenu, TreatmentPlanningMenu, ExportMenu } from './_components/Menu';
 
 export default function D2LViewer() {
   return (
