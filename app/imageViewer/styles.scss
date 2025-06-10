@@ -1,40 +1,74 @@
-// Optional: Basic Reset and Global Styles
-body, html {
+//===============================================
+// Basic Reset and Global Styles
+//===============================================
+body,
+html {
   height: 100%;
   margin: 0;
-  font-family: Arial, sans-serif; // Example font
-  background-color: #282c34; // Dark background
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #282c34;
   color: #fff;
+  overflow: hidden; // Prevents whole page from scrolling
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-// Main Grid Container for the Dental Viewer
+
+//===============================================
+// Main Grid Layout
+//===============================================
 .dental-viewer-grid-container {
   display: grid;
-  // Defines three columns for the main content area:
-  // 1st column (viewer-pane) takes flexible space (1fr)
-  // 2nd column (icons-sidebar-vertical) is fixed at 60px wide
-  // 3rd column (viewer-sidebar-details) is fixed at 300px wide
-  grid-template-columns: 1fr 60px 300px;
-
-  // Defines two rows:
-  // 1st row (header) takes height based on its content (auto)
-  // 2nd row (content area) takes remaining flexible space (1fr)
+  height: 100vh;
+  // Define rows: header is auto-sized, content fills remaining space
   grid-template-rows: auto 1fr;
 
-  // Assigns names to grid areas for layout
+  // Define named areas for clarity
   grid-template-areas:
-    "header header header"             // Header spans all three columns
-    "viewer-main icons-bar details-bar"; // Layout for viewer, new icons sidebar, and details sidebar
-  height: 100vh;                      // Make the grid container take full viewport height
+    "header header header"
+    "viewer-main icons-bar details-bar";
+
+  // Define columns. The third column (details-bar) will be controlled by the data attribute.
+  grid-template-columns: 1fr 60px 300px;
+  transition: grid-template-columns 0.3s ease-in-out;
+
+  // When the details bar is hidden, its column collapses to 0
+  &[data-details-visible="false"] {
+    grid-template-columns: 1fr 60px 0;
+  }
 }
 
-// Header Area Styling
+
+//===============================================
+// Grid Area Assignments
+//===============================================
 .viewer-header {
-  grid-area: header; // Assigns this element to the "header" grid area
+  grid-area: header;
+}
+
+.viewer-pane {
+  grid-area: viewer-main;
+}
+
+.icons-sidebar-vertical {
+  grid-area: icons-bar;
+}
+
+.viewer-sidebar-details {
+  grid-area: details-bar;
+}
+
+
+//===============================================
+// Component Styling
+//===============================================
+
+// --- Header ---
+.viewer-header {
   background-color: #1e1e1e;
   padding: 10px 20px;
   border-bottom: 1px solid #444;
@@ -45,40 +79,45 @@ body, html {
   .header-left-content {
     display: flex;
     align-items: center;
-    button {
-      margin-right: 20px;
-      padding: 8px 15px;
-      background-color: #555;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      &:hover {
-        background-color: #666;
-      }
-    }
+    gap: 20px;
   }
- 
-  .header-right-content {
-    display: flex;
-    align-items: center;
+  
+  .patient-info {
+    font-weight: 600;
+  }
+
+  .visit-date {
+    font-size: 0.8em;
+    color: #aaa;
+  }
+  
+  .header-button {
+    padding: 8px 15px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    &:hover {
+      background-color: #666;
+    }
   }
 }
 
-// Viewer Pane (Main Content Area) Styling
+// --- Main Content Pane ---
 .viewer-pane {
-  grid-area: viewer-main; // Assigns this element to the "viewer-main" grid area
   background-color: #333;
   padding: 15px;
-  display: grid; // Internal grid for xray display and image cuts
-  grid-template-rows: 1fr auto; // Xray display takes most space, image cuts auto height
-  gap: 15px; // Space between xray display and image cuts
-  overflow: hidden; // Handles overflow for the pane itself
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 15px;
+  overflow: hidden;
 
   .xray-display-area {
-    background-color: #000; // Black background for X-ray
-    border: 1px solid #555;
-    overflow: auto; // If X-ray content needs scrolling
+    background-color: #000;
+    border-radius: 8px;
+    overflow: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,45 +127,49 @@ body, html {
   .image-cuts-area {
     background-color: #2a2a2a;
     border: 1px solid #555;
+    border-radius: 8px;
     padding: 10px;
-    overflow-x: auto; // Horizontal scrolling for thumbnails
-    white-space: nowrap; // Keep thumbnails in a single line
-    // Example: add some height if it's holding thumbnails
-    min-height: 80px; 
+    overflow-x: auto;
+    white-space: nowrap;
+    min-height: 100px;
     display: flex;
     align-items: center;
   }
 }
 
-// NEW: Icons Sidebar (Vertical Icon Bar) Styling
+// --- Vertical Icons Sidebar ---
 .icons-sidebar-vertical {
-  grid-area: icons-bar; // Assigns this element to the "icons-bar" grid area
-  background-color: #1e1e1e; // Same as header/details sidebar for consistency
-  padding: 15px 10px; // Adjust padding as needed
-  border-left: 1px solid #444;
+  background-color: #1e1e1e;
+  padding: 15px 10px;
   border-right: 1px solid #444;
   display: flex;
   flex-direction: column;
-  align-items: center; // Center icons horizontally
-  // gap: 10px; // Space between icon elements (or use margin on children)
+  align-items: center;
+  gap: 10px;
 }
 
-// Sidebar (Right Detailed Content Area) Styling
+// --- Detailed Sidebar ---
 .viewer-sidebar-details {
-  grid-area: details-bar; // Assigns this element to the "details-bar" grid area
   background-color: #1e1e1e;
   padding: 15px;
-  // border-left: 1px solid #444; // Removed as icons-sidebar-vertical now has right border
   display: flex;
   flex-direction: column;
-  gap: 15px; // Space between sidebar elements
-  overflow-y: auto; // Allow vertical scrolling if sidebar content is long
+  gap: 15px;
+  overflow-y: auto; // Allow scrolling
+  // Hide scrollbar but keep functionality
+  &::-webkit-scrollbar { width: 0 !important; }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
   .sidebar-title-search {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.1em;
+    font-weight: 600;
+    .search-icon {
+        cursor: pointer;
+    }
   }
 
   .sidebar-search-input {
@@ -136,16 +179,13 @@ body, html {
     border: 1px solid #555;
     color: white;
     border-radius: 4px;
+    outline: none;
+    &:focus {
+        border-color: #777;
+    }
   }
 
-  .dental-chart-placeholder {
-    background-color: #333;
-    border: 1px solid #555;
-    min-height: 150px; // Example height
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  .dental-chart-container {
     padding: 10px;
   }
 
@@ -154,15 +194,33 @@ body, html {
     padding: 0;
     margin: 0;
     li {
-      padding: 10px 5px;
-      border-bottom: 1px solid #444;
+      padding: 12px 10px;
+      border-radius: 4px;
       cursor: pointer;
-      &:last-child {
-        border-bottom: none;
-      }
+      transition: background-color 0.2s;
       &:hover {
         background-color: #333;
       }
     }
+  }
+}
+
+// --- Reusable Placeholder Icon ---
+.placeholder-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #555;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.8em;
+  text-align: center;
+  font-weight: 600;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: #6a6a6a;
   }
 }

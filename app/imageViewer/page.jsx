@@ -1,42 +1,41 @@
 "use client"
 
-import React from 'react';
-import './styles.scss'; // Adjust path
-import { ViewerProvider } from '../context/ViewerContext'; // Assuming this context exists
+import React, { useState } from 'react';
+import './styles.scss'; // Ensure this path is correct
+
+// Import your actual components
+import { ViewerProvider } from '../context/ViewerContext';
 import ImageViewer from './_components/ImageViewer';
 import Upload from './_components/Upload';
-// import EntitySpace from './_components/EntitySpace'; // Not used in the provided snippet
+import DentalChart from './_components/Menu/dentalChart';
 
-// Placeholder Icon components (you can replace these with actual SVGs or an icon library)
-const PlaceholderIcon = ({ label }) => (
-  <div style={{
-    width: '40px',
-    height: '40px',
-    backgroundColor: '#555',
-    borderRadius: '4px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#fff',
-    cursor: 'pointer',
-    fontSize: '0.8em',
-    textAlign: 'center',
-    marginBottom: '10px'
-  }} title={label}>
+// Placeholder Icon components (replace with a real icon library like react-icons)
+const PlaceholderIcon = ({ label, onClick }) => (
+  <div className="placeholder-icon" title={label} onClick={onClick}>
     {label.substring(0, 3)}
   </div>
 );
 
+
 export default function D2LViewer() {
+  // State to manage the visibility of the details sidebar
+  const [isDetailsVisible, setIsDetailsVisible] = useState(true);
+
+  // This would be the state for your instances, passed to DentalChart
+  const [instances, setInstances] = useState([]);
+
   return (
     <ViewerProvider>
-      <div className="dental-viewer-grid-container">
+      {/* The 'data-details-visible' attribute helps control the layout via CSS */}
+      <div className="dental-viewer-grid-container" data-details-visible={isDetailsVisible}>
+
+        {/* Header */}
         <header className="viewer-header">
           <div className="header-left-content">
-            <button>Go back</button>
+            <button className="header-button">Go back</button>
             <div>
-              <div>Patient: #43523 - Paciente 123</div>
-              <div style={{ fontSize: '0.8em', color: '#aaa' }}>Visit date: 20/01/2025</div>
+              <div className="patient-info">Patient: #43523 - Paciente 123</div>
+              <div className="visit-date">Visit date: 20/01/2025</div>
             </div>
           </div>
           <div className="header-right-content">
@@ -44,42 +43,51 @@ export default function D2LViewer() {
           </div>
         </header>
 
-        <section className="viewer-pane"> {/* This will be the main left content area */}
+        {/* Main Viewer Pane */}
+        <section className="viewer-pane">
           <div className="xray-display-area">
             <ImageViewer />
           </div>
           <div className="image-cuts-area">
+            {/* You can map over image thumbnails here */}
             <p>Image Cuts / Thumbnails Area</p>
           </div>
         </section>
 
-        {/* NEW: Icons Sidebar - to the left of the detailed viewer-sidebar */}
-        <aside className="icons-sidebar-vertical"> {/* Changed class name for clarity */}
+        {/* Vertical Icons Sidebar */}
+        <aside className="icons-sidebar-vertical">
           <PlaceholderIcon label="Camera" />
+          <PlaceholderIcon label="Tools" />
+          {/* This button will toggle the detailed sidebar */}
+          <PlaceholderIcon
+            label={isDetailsVisible ? "Hide" : "Show"}
+            onClick={() => setIsDetailsVisible(!isDetailsVisible)}
+          />
         </aside>
 
-        {/* Existing Right Sidebar (Detailed) */}
-        <aside className="viewer-sidebar-details"> {/* Changed class name for clarity */}
-          <div className="sidebar-title-search">
-            <span>Patient's dentition</span>
-            <span>🔍</span> {/* Search Icon */}
-          </div>
-          <input type="text" placeholder="Search..." className="sidebar-search-input" />
-          <div className="dental-chart-placeholder">
-            <p>Dental Chart Area</p>
-          </div>
-          <nav className="sidebar-menu">
-            <ul>
-              <li>Models &gt;</li>
-              <li>Findings &gt;</li>
-              <li>Saved cuts &gt;</li>
-              <li>Annotations &gt;</li>
-              <li>Electronic Health Record (EHR) &gt;</li>
-              <li>Treatment planning &gt;</li>
-              <li>Export &gt;</li>
-            </ul>
-          </nav>
-        </aside>
+        {/* Detailed Information Sidebar */}
+        {isDetailsVisible && (
+          <aside className="viewer-sidebar-details">
+            <div className="sidebar-title-search">
+              <span>Patient's dentition</span>
+              <span className="search-icon">🔍</span>
+            </div>
+            <input type="text" placeholder="Search..." className="sidebar-search-input" />
+            <div className="dental-chart-container">
+               {/* Ensure DentalChart is passed the required props */}
+              <DentalChart instances={instances} setInstances={setInstances} />
+            </div>
+            <nav className="sidebar-menu">
+              <ul>
+                <li>Models &gt;</li>
+                <li>Findings &gt;</li>
+                <li>Annotations &gt;</li>
+                <li>Export &gt;</li>
+              </ul>
+            </nav>
+          </aside>
+        )}
+
       </div>
     </ViewerProvider>
   );
