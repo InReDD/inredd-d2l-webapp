@@ -1,30 +1,91 @@
 "use client"
 
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 
 import { useViewer } from '@/app/context/ViewerContext';
 import { useDropzone } from "react-dropzone";
 
 export default function Upload() {
     const {setImage, setResponse} = useViewer()
+    const [isUploading, setIsUploading] = useState(false);
+    const [uploadError, setUploadError] = useState(null);
 
     const uploadToServer = async (blob, filename) => {
-        const body = new FormData();
+        const serverEndpoint = process.env.NEXT_PUBLIC_SERVER_ENDPOINT;
 
-        body.append("file", blob, filename);
-
-        if (process.env.NEXT_PUBLIC_SERVER_ENDPOINT == undefined) {
-            console.log("don't have endpoint server");
-            return;
+        if (!serverEndpoint) {
+            const errMsg = "Upload failed: Server endpoint is not configured.";
+            console.error(errMsg);
+            setUploadError(errMsg);
+            return { success: false, error: errMsg, data: null }; 
         }
 
-        // const serverBaseURLd = process.env.NEXT_PUBLIC_SERVER_ENDPOINT;
-        const fetch_path = new URL("localhost:3002").href;
+        setIsUploading(true);
+        setUploadError(null); 
 
-        const response_data = await fetch(fetch_path, { method: "POST", body })
-            .then(response => response.json())
-            .catch(error => console.error('[Server Side Error] \n', error));
-        return response_data;
+        const body = new FormData();
+        body.append("file", blob, filename);
+
+        let fetchPath;
+        try {
+            fetchPath = new URL(serverEndpoint).href;
+        } catch (urlError) {
+            const errMsg = "Upload failed: Invalid server endpoint URL.";
+            console.error(errMsg, urlError);
+            setUploadError(errMsg);
+            setIsUploading(false);
+            return { success: false, error: errMsg, data: null };
+        }
+
+        try {
+            const httpResponse = await fetch(fetchPath, {
+                method: "POST",
+                body: body,
+                headers: {
+                  'Accept': 'application/json',
+                },
+            });
+
+            // Check if the HTTP response status is OK (e.g., 200-299)
+            if (!httpResponse.ok) {
+                let errorPayload = null;
+                try {
+                    // Attempt to parse error response as JSON
+                    errorPayload = await httpResponse.json();
+                } catch (e) {
+                    // If not JSON, try to get as text
+                    errorPayload = await httpResponse.text();
+                }
+                const errMsg = `Upload failed with status: ${httpResponse.status}.`;
+                console.error(errMsg, "Server response:", errorPayload);
+                setUploadError(errMsg + (typeof errorPayload === 'string' ? ` ${errorPayload}` : ''));
+                setResponse(null); // Clear previous successful data
+                return { success: false, error: errMsg, data: errorPayload };
+            }
+
+            // If response is OK, parse the JSON data
+            const responseData = await httpResponse.json();
+            setResponse(responseData); // Update state with successful data
+            setIsUploading(false);
+            return { success: true, data: responseData, error: null }; // Return success and data
+
+        } catch (networkOrOtherError) {
+            const errMsg = `Upload failed: ${networkOrOtherError.message || "Network error"}`;
+            console.error('[Upload Error]', networkOrOtherError);
+            setUploadError(errMsg);
+            setIsUploading(false);
+            setResponse(null);
+            return { success: false, error: errMsg, data: null };
+        }
+    };
+
+    const handleImage = (blob) => {
+        try {
+            const url = URL.createObjectURL(blob);
+            setImage(url);
+        } catch (error) {
+            console.error("[FrontEnd] Handle image Error \n", error);
+        }
     };
 
     const onDrop = useCallback((acceptedFiles) => {
@@ -45,22 +106,11 @@ export default function Upload() {
                 const blob = new Blob([content]);
 
                 handleImage(blob)
-
                 uploadToServer(blob, filename)
-                    .then(data => handleImage(blob, data));
 
             };
         });
     }, []);
-
-    const handleImage = (blob) => {
-        try {
-            const url = URL.createObjectURL(blob);
-            setImage(url);
-        } catch (error) {
-            console.error("[FrontEnd] Handle image Error \n", error);
-        }
-    };
 
     const { getRootProps, getInputProps } = useDropzone({ onDrop, noClick: true });
 
