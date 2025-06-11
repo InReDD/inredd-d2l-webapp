@@ -115,7 +115,6 @@ export default function Upload() {
     const { getRootProps, getInputProps } = useDropzone({ onDrop, noClick: true });
 
     return (
-        <></>
         <div {...getRootProps()} className="w-full h-full body">
             <div className="flex items-center justify-center h-full w-full">
                 <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer">

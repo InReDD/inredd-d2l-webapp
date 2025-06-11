@@ -8,6 +8,11 @@ import { ViewerProvider } from '../context/ViewerContext';
 import ImageViewer from './_components/ImageViewer';
 import Upload from './_components/Upload';
 import DentalChart from './_components/Menu/dentalChart';
+import ModelsMenu from './_components/Menu/ModelsMenu';
+import FindingsMenu from './_components/Menu/FindingsMenu';
+import AnnotationsMenu from './_components/Menu/AnnotationsMenu';
+import ExportMenu from './_components/Menu/ExportMenu';
+import SideMenu from './_components/Menu/SideMenu';
 
 // Placeholder Icon components (replace with a real icon library like react-icons)
 const PlaceholderIcon = ({ label, onClick }) => (
@@ -15,6 +20,7 @@ const PlaceholderIcon = ({ label, onClick }) => (
     {label.substring(0, 3)}
   </div>
 );
+
 
 export default function D2LViewer() {
   // State to manage the visibility of the details sidebar
@@ -66,24 +72,25 @@ export default function D2LViewer() {
 
         {/* Detailed Information Sidebar */}
         {isDetailsVisible && (
-          <aside className="viewer-sidebar-details">
-            <div className="sidebar-title-search">
-              <span>Patient's dentition</span>
-              <span className="search-icon">🔍</span>
-            </div>
-            <input type="text" placeholder="Search..." className="sidebar-search-input" />
-            <div className="dental-chart-container">
-              <DentalChart />
-            </div>
-            <nav className="sidebar-menu">
-              <ul>
-                <li>Models &gt;</li>
-                <li>Findings &gt;</li>
-                <li>Annotations &gt;</li>
-                <li>Export &gt;</li>
-              </ul>
-            </nav>
-          </aside>
+          // <aside className="viewer-sidebar-details">
+          //   <div className="sidebar-title-search">
+          //     <span>Patient's dentition</span>
+          //     <span className="search-icon">🔍</span>
+          //   </div>
+          //   <input type="text" placeholder="Search..." className="sidebar-search-input" />
+          //   <div className="dental-chart-container">
+          //     <DentalChart />
+          //   </div>
+          //   <nav className="sidebar-menu">
+          //     <ul>
+          //       <ModelsMenu></ModelsMenu>
+          //       <FindingsMenu></FindingsMenu>
+          //       <AnnotationsMenu></AnnotationsMenu>
+          //       <ExportMenu></ExportMenu>
+          //     </ul>
+          //   </nav>
+          // </aside>
+          <SideMenu></SideMenu>
         )}
 
       </div>
