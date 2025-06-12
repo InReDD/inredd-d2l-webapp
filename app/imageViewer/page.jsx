@@ -2,69 +2,95 @@
 
 import React, { useState } from 'react';
 import './styles.scss';
+import './menu.scss';
 
-// Import your actual components
-import { ViewerProvider } from '../context/ViewerContext';
-import ImageViewer from './_components/ImageViewer';
-import Upload from './_components/Upload';
-import DentalChart from './_components/Menu/dentalChart';
+// Import your section components
 import ModelsMenu from './_components/Menu/ModelsMenu';
 import FindingsMenu from './_components/Menu/FindingsMenu';
 import AnnotationsMenu from './_components/Menu/AnnotationsMenu';
 import ExportMenu from './_components/Menu/ExportMenu';
-import AccordionMenuItem from './_components/Menu/AccordionMenuItem';
+import PlaceholderMenu from './_components/Menu/PlaceholderMenu'; // Import the placeholder
 
-// Placeholder Icon components (replace with a real icon library like react-icons)
+// Other imports
+import { ViewerProvider } from '../context/ViewerContext';
+import ImageViewer from './_components/ImageViewer';
+import Upload from './_components/Upload';
+import DentalChart from './_components/Menu/dentalChart';
+
+// Placeholder Icon components
 const PlaceholderIcon = ({ label, onClick }) => (
-  <div className="placeholder-icon" title={label} onClick={onClick}>
-    {label.substring(0, 3)}
-  </div>
+  <div className="placeholder-icon" title={label} onClick={onClick}>{label.substring(0, 3)}</div>
 );
 
 
 export default function D2LViewer() {
-  // State to manage the visibility of the details sidebar
   const [isDetailsVisible, setIsDetailsVisible] = useState(true);
 
-  // This would be the state for your instances, passed to DentalChart
-  const [instances, setInstances] = useState([]);
+  // --- STATE MANAGEMENT FOR NAVIGATION ---
+  // 'main' shows the initial menu. Other values ('models', 'findings', etc.) show the specific section.
+  const [activeView, setActiveView] = useState('main');
 
-  // State to track the currently open accordion menu item. 'models' is open by default.
-  const [activeMenu, setActiveMenu] = useState('models');
+  // Handlers to navigate between views
+  const navigateTo = (viewId) => setActiveView(viewId);
+  const navigateBack = () => setActiveView('main');
 
-  // Handler to change the active menu, or close it if it's already active
-  const handleMenuToggle = (menuId) => {
-    setActiveMenu(prevActiveMenu => (prevActiveMenu === menuId ? null : menuId));
-  };
-
-  // Define menu items in an array for cleaner, scalable code
+  // --- MENU CONFIGURATION ---
   const menuItems = [
-    {
-      id: 'models',
-      title: 'Models',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      Component: ModelsMenu
-    },
-    {
-      id: 'findings',
-      title: 'Findings',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      Component: FindingsMenu
-    },
-    {
-      id: 'annotations',
-      title: 'Annotations',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      Component: AnnotationsMenu
-    },
-    {
-      id: 'export',
-      title: 'Export',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      Component: ExportMenu
-    }
+    { id: 'models', title: 'Models', Component: () => <PlaceholderMenu title="Models" /> },
+    { id: 'findings', title: 'Findings', Component: FindingsMenu },
+    { id: 'saved_cuts', title: 'Saved cuts', Component: () => <PlaceholderMenu title="Saved Cuts" /> },
+    { id: 'annotations', title: 'Annotations', Component: AnnotationsMenu },
+    { id: 'export', title: 'Export', Component: () => <PlaceholderMenu title="Export" /> },
   ];
 
+  // Find the current component and title based on the active view
+  const currentView = menuItems.find(item => item.id === activeView);
+  const ActiveComponent = currentView?.Component;
+
+  // --- RENDER LOGIC ---
+  const renderSidebarContent = () => {
+    // If we are in a specific section view (not 'main')
+    if (activeView !== 'main' && ActiveComponent) {
+      return (
+        <div className="section-view">
+          <div className="section-view-header">
+            <button onClick={navigateBack} className="back-button">
+              &lt;
+            </button>
+            <h2>{currentView.title}</h2>
+          </div>
+          <div className="section-view-content">
+            <ActiveComponent />
+          </div>
+        </div>
+      );
+    }
+
+    // Otherwise, render the Main Menu View
+    return (
+      <div className="main-menu-view">
+        <div className="sidebar-header">
+          <h2>Patient's dentition</h2>
+          <span className="help-icon">?</span>
+        </div>
+        <div className="dental-chart-container">
+          <DentalChart />
+        </div>
+        <nav className="main-nav-list">
+          <ul>
+            {menuItems.map(({ id, title }) => (
+              <li key={id}>
+                <button className="main-nav-item" onClick={() => navigateTo(id)}>
+                  <span>{title}</span>
+                  <span className="chevron">&gt;</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    );
+  };
 
   return (
     <ViewerProvider>
@@ -107,34 +133,10 @@ export default function D2LViewer() {
           />
         </aside>
 
-        {/* Detailed Information Sidebar */}
+        {/* DETAILED SIDEBAR: Renders content based on the activeView state */}
         {isDetailsVisible && (
           <aside className="viewer-sidebar-details">
-            <div className="sidebar-title-search">
-              <span>Patient's dentition</span>
-              <span className="search-icon">🔍</span>
-            </div>
-            <input type="text" placeholder="Search..." className="sidebar-search-input" />
-            <div className="dental-chart-container">
-              <DentalChart />
-            </div>
-
-            {/* Replaced static list with dynamic accordion */}
-            <nav className="sidebar-menu">
-              <ul>
-                {menuItems.map(({ id, title, description, Component }) => (
-                  <AccordionMenuItem
-                    key={id}
-                    title={title}
-                    description={description}
-                    isOpen={activeMenu === id}
-                    onClick={() => handleMenuToggle(id)}
-                  >
-                    <Component />
-                  </AccordionMenuItem>
-                ))}
-              </ul>
-            </nav>
+            {renderSidebarContent()}
           </aside>
         )}
 
