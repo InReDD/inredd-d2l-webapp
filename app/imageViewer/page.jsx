@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
-import './styles.scss'; // Ensure this path is correct
+import './styles.scss';
 
 // Import your actual components
 import { ViewerProvider } from '../context/ViewerContext';
@@ -12,7 +12,7 @@ import ModelsMenu from './_components/Menu/ModelsMenu';
 import FindingsMenu from './_components/Menu/FindingsMenu';
 import AnnotationsMenu from './_components/Menu/AnnotationsMenu';
 import ExportMenu from './_components/Menu/ExportMenu';
-import SideMenu from './_components/Menu/SideMenu';
+import AccordionMenuItem from './_components/Menu/AccordionMenuItem';
 
 // Placeholder Icon components (replace with a real icon library like react-icons)
 const PlaceholderIcon = ({ label, onClick }) => (
@@ -28,6 +28,43 @@ export default function D2LViewer() {
 
   // This would be the state for your instances, passed to DentalChart
   const [instances, setInstances] = useState([]);
+
+  // State to track the currently open accordion menu item. 'models' is open by default.
+  const [activeMenu, setActiveMenu] = useState('models');
+
+  // Handler to change the active menu, or close it if it's already active
+  const handleMenuToggle = (menuId) => {
+    setActiveMenu(prevActiveMenu => (prevActiveMenu === menuId ? null : menuId));
+  };
+
+  // Define menu items in an array for cleaner, scalable code
+  const menuItems = [
+    {
+      id: 'models',
+      title: 'Models',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      Component: ModelsMenu
+    },
+    {
+      id: 'findings',
+      title: 'Findings',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      Component: FindingsMenu
+    },
+    {
+      id: 'annotations',
+      title: 'Annotations',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      Component: AnnotationsMenu
+    },
+    {
+      id: 'export',
+      title: 'Export',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      Component: ExportMenu
+    }
+  ];
+
 
   return (
     <ViewerProvider>
@@ -72,25 +109,33 @@ export default function D2LViewer() {
 
         {/* Detailed Information Sidebar */}
         {isDetailsVisible && (
-          // <aside className="viewer-sidebar-details">
-          //   <div className="sidebar-title-search">
-          //     <span>Patient's dentition</span>
-          //     <span className="search-icon">🔍</span>
-          //   </div>
-          //   <input type="text" placeholder="Search..." className="sidebar-search-input" />
-          //   <div className="dental-chart-container">
-          //     <DentalChart />
-          //   </div>
-          //   <nav className="sidebar-menu">
-          //     <ul>
-          //       <ModelsMenu></ModelsMenu>
-          //       <FindingsMenu></FindingsMenu>
-          //       <AnnotationsMenu></AnnotationsMenu>
-          //       <ExportMenu></ExportMenu>
-          //     </ul>
-          //   </nav>
-          // </aside>
-          <SideMenu></SideMenu>
+          <aside className="viewer-sidebar-details">
+            <div className="sidebar-title-search">
+              <span>Patient's dentition</span>
+              <span className="search-icon">🔍</span>
+            </div>
+            <input type="text" placeholder="Search..." className="sidebar-search-input" />
+            <div className="dental-chart-container">
+              <DentalChart />
+            </div>
+
+            {/* Replaced static list with dynamic accordion */}
+            <nav className="sidebar-menu">
+              <ul>
+                {menuItems.map(({ id, title, description, Component }) => (
+                  <AccordionMenuItem
+                    key={id}
+                    title={title}
+                    description={description}
+                    isOpen={activeMenu === id}
+                    onClick={() => handleMenuToggle(id)}
+                  >
+                    <Component />
+                  </AccordionMenuItem>
+                ))}
+              </ul>
+            </nav>
+          </aside>
         )}
 
       </div>

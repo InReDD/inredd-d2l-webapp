@@ -1,7 +1,157 @@
-.back {
+/* Define color palette for easy theme management */
+:root {
+  --background-color: #1e1e1e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --border-color: #333;
+  --carie-color: #ff9800;
+  --bone-loss-color: #00bcd4;
+  --switch-bg-off: #4f4f4f;
+  --switch-bg-on-carie: #ff9800;
+  --switch-handle: #fff;
+  --button-hover-bg: #444;
+}
+
+.findings-menu-container {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  padding: 16px;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.findings-header h2 {
+  margin: 0 0 4px 0;
+  font-size: 1.2em;
+}
+
+.findings-header p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9em;
+}
+
+.toggle-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.toggle-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.label-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.label-dot.carie { background-color: var(--carie-color); }
+.label-dot.bone-loss { background-color: var(--bone-loss-color); }
+
+/* Toggle Switch Styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  margin-left: auto; /* Pushes switch to the right */
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--switch-bg-off);
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--switch-handle);
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--switch-bg-on-carie); /* This can be customized per toggle */
+}
+
+input:checked:focus + .slider {
+  box-shadow: 0 0 1px var(--switch-bg-on-carie);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Findings List Styles */
+.findings-list-section h3 {
+  margin: 0 0 12px 0;
+  font-size: 1em;
+  font-weight: normal;
+  color: var(--text-secondary);
+}
+
+.findings-list-header,
+.finding-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 0.9em;
+}
+
+.findings-list-header {
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+.finding-item {
+  border-bottom: 1px solid var(--border-color);
+}
+.finding-item:last-child {
+  border-bottom: none;
+}
+
+.possibility {
+  color: var(--text-secondary);
+}
+
+.action-btn {
   background: none;
   border: none;
-  color: white;
-  font-size: 20px;
-  margin-bottom: 10px;
+  color: var(--text-primary);
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  margin-left: auto;
+  line-height: 1;
+}
+
+.action-btn:hover {
+  background-color: var(--button-hover-bg);
 }
