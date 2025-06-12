@@ -5,17 +5,17 @@ import './styles.scss';
 import './menu.scss';
 
 // Import your section components
-import ModelsMenu from './_components/Menu/ModelsMenu';
-import FindingsMenu from './_components/Menu/FindingsMenu';
-import AnnotationsMenu from './_components/Menu/AnnotationsMenu';
-import ExportMenu from './_components/Menu/ExportMenu';
-import PlaceholderMenu from './_components/Menu/PlaceholderMenu'; // Import the placeholder
+import ModelsMenu from './_components/Menu/SidebarMenu/ModelsMenu';
+import FindingsMenu from './_components/Menu/SidebarMenu/FindingsMenu';
+import AnnotationsMenu from './_components/Menu/SidebarMenu/AnnotationsMenu';
+import ExportMenu from './_components/Menu/SidebarMenu/ExportMenu';
+import PlaceholderMenu from './_components/Menu/SidebarMenu/PlaceholderMenu'; // Import the placeholder
 
 // Other imports
 import { ViewerProvider } from '../context/ViewerContext';
 import ImageViewer from './_components/ImageViewer';
 import Upload from './_components/Upload';
-import DentalChart from './_components/Menu/dentalChart';
+import DentalChart from './_components/Menu/DentalChart';
 
 // Placeholder Icon components
 const PlaceholderIcon = ({ label, onClick }) => (

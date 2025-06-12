@@ -20,12 +20,12 @@ const serviceInstanceHandlers = {
      */
     MouthDetService: (serviceData, idGeneratorState) => {
         // serviceData esperado: { mouth_detection: { pred_boxes: [x1, y1, x2, y2] } }
-        if (!serviceData?.mouth_detection?.pred_boxes) {
+        if (!serviceData?.pred_boxes) {
             console.warn("MouthDetService: Dados inválidos ou ausentes.");
             return [];
         }
 
-        const predBoxes = serviceData.mouth_detection.pred_boxes;
+        const predBoxes = serviceData.pred_boxes;
 
         // Retorna um array com um único objeto de instância
         return [{
@@ -41,13 +41,13 @@ const serviceInstanceHandlers = {
      */
     TeethSegService: (serviceData, idGeneratorState) => {
         // serviceData esperado: { teeth_segmentation: { pred_boxes: [[...], [...]] } }
-        if (!serviceData?.teeth_segmentation?.pred_boxes) {
+        if (!serviceData?.pred_boxes) {
             console.warn("TeethSegService: Dados inválidos ou ausentes.");
             return [];
         }
 
         const instances = [];
-        const predBoxes = serviceData.teeth_segmentation.pred_boxes;
+        const predBoxes = serviceData.pred_boxes;
 
         predBoxes.forEach((box, index) => {
             const currentId = idGeneratorState.current + index;
