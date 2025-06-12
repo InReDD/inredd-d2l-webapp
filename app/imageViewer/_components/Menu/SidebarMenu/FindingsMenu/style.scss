@@ -13,13 +13,11 @@
 }
 
 .findings-menu-container {
-  background-color: var(--background-color);
   color: var(--text-primary);
-  padding: 16px;
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 14px;
 }
 
 .findings-header h2 {

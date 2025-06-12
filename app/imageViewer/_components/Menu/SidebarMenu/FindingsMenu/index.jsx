@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ToggleItem from "@/app/_components/ToggleItem"
 import './style.scss'; // We'll create this file for styling
 
 // Mock data based on the design. In a real app, this would come from props or an API.
@@ -23,44 +24,25 @@ const FindingsMenu = () => {
   return (
     // This would be a `<li>` if it's inside a `<ul>` as in your SideMenu example
     <div className="findings-menu-container">
-      <div className="findings-header">
-        <h2>Findings</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-
       <div className="toggle-group">
-        {/* Caries Toggle */}
-        <div className="toggle-item">
-          <span className="label-dot carie"></span>
-          <span>Caries</span>
-          <label className="switch">
-            <input
-              type="checkbox"
-              checked={showCaries}
-              onChange={() => setShowCaries(!showCaries)}
-            />
-            <span className="slider"></span>
-          </label>
-        </div>
+        {/* 2. Use the new ToggleItem component */}
+        <ToggleItem
+          label="Caries"
+          type="carie" // Corresponds to the .carie CSS class
+          checked={showCaries}
+          onChange={() => setShowCaries(!showCaries)}
+        />
 
-        {/* Bone Loss Toggle */}
-        <div className="toggle-item">
-          <span className="label-dot bone-loss"></span>
-          <span>Bone loss</span>
-          <label className="switch">
-            <input
-              type="checkbox"
-              checked={showBoneLoss}
-              onChange={() => setShowBoneLoss(!showBoneLoss)}
-            />
-            <span className="slider"></span>
-          </label>
-        </div>
+        <ToggleItem
+          label="Bone loss"
+          type="bone-loss" // Corresponds to the .bone-loss CSS class
+          checked={showBoneLoss}
+          onChange={() => setShowBoneLoss(!showBoneLoss)}
+        />
       </div>
-
       <div className="findings-list-section">
         <h3>Findings list ({filteredFindings.length})</h3>
-        
+
         <div className="findings-list-header">
           <span>Finding</span>
           <span>Possibility</span>

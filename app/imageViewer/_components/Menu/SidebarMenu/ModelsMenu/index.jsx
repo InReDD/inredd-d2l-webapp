@@ -1,28 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import ToggleItem from "@/app/_components/ToggleItem";
 import "./style.scss";
 
 const ModelsMenu = ({ onClose }) => {
+  // 1. Use a single state object to manage all toggles
+  const [modelToggles, setModelToggles] = useState({
+    mouthDetection: true,
+    teethSegmentation: true, 
+  });
+
+  // 2. Create a single handler function to update the state
+  const handleToggleChange = (toggleName) => {
+    setModelToggles((prevState) => ({
+      ...prevState,
+      [toggleName]: !prevState[toggleName],
+    }));
+  };
+
   return (
     <div className="Menu">
-      <button className="back" onClick={onClose}>←</button>
-      <h3>Models</h3>
-      <p>Lorem ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <div className="toggle-group">
+        <ToggleItem
+          label="Mouth detection"
+          type="yellow"
+          checked={modelToggles.mouthDetection}
+          onChange={() => handleToggleChange("mouthDetection")}
+        />
 
-      <div className="option">
-        <span className="dot orange"></span> Pathologies
-        <input type="checkbox" defaultChecked />
-      </div>
-      <div className="option">
-        <span className="dot yellow"></span> Mouth detection
-        <input type="checkbox" defaultChecked />
-      </div>
-      <div className="option">
-        <span className="dot cyan"></span> Bone loss
-        <input type="checkbox" defaultChecked />
-      </div>
-      <div className="option">
-        <span className="dot pink"></span> Implants
-        <input type="checkbox" />
+        <ToggleItem
+          label="Teeth Segmentation"
+          type="pink"
+          checked={modelToggles.implants}
+          onChange={() => handleToggleChange("teethSegmentation")}
+        />
       </div>
     </div>
   );

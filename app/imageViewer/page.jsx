@@ -7,9 +7,7 @@ import './menu.scss';
 // Import your section components
 import ModelsMenu from './_components/Menu/SidebarMenu/ModelsMenu';
 import FindingsMenu from './_components/Menu/SidebarMenu/FindingsMenu';
-import AnnotationsMenu from './_components/Menu/SidebarMenu/AnnotationsMenu';
-import ExportMenu from './_components/Menu/SidebarMenu/ExportMenu';
-import PlaceholderMenu from './_components/Menu/SidebarMenu/PlaceholderMenu'; // Import the placeholder
+import PlaceholderMenu from './_components/Menu/SidebarMenu/PlaceholderMenu'; 
 
 // Other imports
 import { ViewerProvider } from '../context/ViewerContext';
@@ -36,10 +34,10 @@ export default function D2LViewer() {
 
   // --- MENU CONFIGURATION ---
   const menuItems = [
-    { id: 'models', title: 'Models', Component: () => <PlaceholderMenu title="Models" /> },
+    { id: 'models', title: 'Models', Component: ModelsMenu},
     { id: 'findings', title: 'Findings', Component: FindingsMenu },
     { id: 'saved_cuts', title: 'Saved cuts', Component: () => <PlaceholderMenu title="Saved Cuts" /> },
-    { id: 'annotations', title: 'Annotations', Component: AnnotationsMenu },
+    { id: 'annotations', title: 'Annotations', Component: () => <PlaceholderMenu title="Anottations"/> },
     { id: 'export', title: 'Export', Component: () => <PlaceholderMenu title="Export" /> },
   ];
 
