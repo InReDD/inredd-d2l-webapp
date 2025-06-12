@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
+import routes from "@/helpers/routes"
 import './styles.scss';
 import './menu.scss';
 
@@ -14,6 +15,7 @@ import { ViewerProvider } from '../context/ViewerContext';
 import ImageViewer from './_components/ImageViewer';
 import Upload from './_components/Upload';
 import DentalChart from './_components/Menu/DentalChart';
+import ButtonLink from '@/app/_components/ButtonLink';
 
 // Placeholder Icon components
 const PlaceholderIcon = ({ label, onClick }) => (
@@ -98,7 +100,7 @@ export default function D2LViewer() {
         {/* Header */}
         <header className="viewer-header">
           <div className="header-left-content">
-            <button className="header-button">Go back</button>
+            <ButtonLink href={routes.DASHBOARD_HOME} className="header-button">Go back</ButtonLink>
             <div>
               <div className="patient-info">Patient: #43523 - Paciente 123</div>
               <div className="visit-date">Visit date: 20/01/2025</div>
