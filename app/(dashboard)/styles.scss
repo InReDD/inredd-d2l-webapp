@@ -24,8 +24,7 @@ body {
 
 /* --- FIXED SIDEBAR (Left) --- */
 #D2L-sidebar {
-  // 1. This is the most important rule: It locks the sidebar to the screen
-  position: fixed; 
+  position: absolute; 
   top: 0;
   left: 0;
   width: $sidebar-width;
@@ -55,8 +54,7 @@ body {
 
 /* --- FIXED HEADER (Top) --- */
 #D2L-header {
-  // 2. This locks the header to the top
-  position: fixed;
+  position: absolute;
   top: 0;
   left: $sidebar-width; // Starts where the sidebar ends
   width: calc(100% - #{$sidebar-width}); // Fills the rest of the screen

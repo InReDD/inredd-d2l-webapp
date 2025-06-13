@@ -8,6 +8,7 @@ import Bootstrap from "./bootstrap";
 import AppProvider from ".";
 import { cookies } from "next/headers";
 import jwtDecode from "jwt-decode";
+import DemoBar from "./_components/Demobar";
 
 const yesevaOne = Yeseva_One({
   subsets: ['latin'],
@@ -74,10 +75,13 @@ export default async function RootLayout({ children }) {
         />
       </Head>
       <body>
-        <AppProvider>{children}</AppProvider>
-        <Suspense>
-          <Bootstrap />
-        </Suspense>
+        <DemoBar />
+        <div className="app-wrapper">
+          <AppProvider>{children}</AppProvider>
+          <Suspense>
+            <Bootstrap />
+          </Suspense>
+        </div>
       </body>
     </html>
   );

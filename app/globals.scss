@@ -160,3 +160,9 @@ hr {
 option[value="default"] {
   color: rgba(0, 0, 0, 0.25);
 }
+
+.app-wrapper {
+  flex-grow: 1; // Allows this wrapper to take up all available remaining space
+  overflow-y: auto; // Makes ONLY the main app scrollable
+  position: relative; // Important for child layouts
+}
