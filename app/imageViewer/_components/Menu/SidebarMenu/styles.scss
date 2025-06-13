@@ -1,0 +1,101 @@
+@import "@/app/globals.scss";
+
+/* =============================================== */
+/* Sidebar Base & Layout                           */
+/* =============================================== */
+.viewer-sidebar-details {
+  background-color: $sidebar-bg;
+  color: $text-primary;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 $base-padding; // Add horizontal padding to the main container
+}
+
+
+/* =============================================== */
+/* Header ("Patient's dentition")                  */
+/* =============================================== */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $base-padding 0; // Vertical padding, horizontal is inherited
+  flex-shrink: 0; // Prevent header from shrinking
+
+  h2 {
+    margin: 0;
+    font-size: $header-title-font-size;
+    font-weight: 500;
+  }
+
+  .help-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: $help-icon-size;
+    height: $help-icon-size;
+    border: $help-icon-border-width solid $text-secondary;
+    border-radius: 50%;
+    color: $text-secondary;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+
+/* =============================================== */
+/* Dental Chart                                    */
+/* =============================================== */
+.dental-chart-container {
+  margin-bottom: $base-padding; // Space between chart and the menu
+  flex-shrink: 0;
+}
+
+
+/* =============================================== */
+/* Main Navigation Menu                            */
+/* =============================================== */
+.main-nav-list {
+  flex-grow: 1;
+  overflow-y: auto; // Allow this part to scroll if needed
+
+  // Hide scrollbar but keep functionality
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+  -ms-overflow-style: none; // IE and Edge
+  scrollbar-width: none; // Firefox
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+// Styling for each clickable navigation item
+.main-nav-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid $divider-color; // The divider line
+  padding: $nav-item-vertical-padding 0; // Vertical padding creates space between items
+  font-size: $base-font-size;
+  color: $text-primary;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $interactive-hover-bg;
+  }
+
+  .chevron {
+    color: $text-secondary; // A slightly dimmer color for the chevron
+    font-size: $header-font-size;
+  }
+}

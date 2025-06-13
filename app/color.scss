@@ -24,18 +24,30 @@
   color: #006699;
 }
 
-// -- Colors SideBarMenu
-$sidebar-bg: #212121;
-$text-primary: #e0e0e0;
-$text-secondary: #a0a0a0;
-$border-color: #333;
-$border-color-strong: #444;
-$interactive-hover-bg: #333;
-$interactive-hover-text: #fff;
-$accent-color: #4caf50; // Accent for active states
+/* =============================================== */
+/* THEME VARIABLES                                 */
+/* =============================================== */
 
-// -- Spacing & Sizing
-$base-padding: 16px;
-$icon-button-size: 28px;
-$header-font-size: 1.2em;
-$base-font-size: 1em;
+// --- Colors ---
+$sidebar-bg:               #212121;
+$text-primary:             #e0e0e0;
+$text-secondary:           #a0a0a0;
+$border-color:             #212121;
+$divider-color:            #333333; // For borders between items
+$interactive-hover-bg:     #333333;
+$interactive-hover-text:   #ffffff;
+$accent-color:             #4caf50; // For active states
+
+// --- Spacing & Sizing ---
+$base-padding:               16px;
+$nav-item-vertical-padding:  18px;
+$icon-button-size:           28px;
+$help-icon-size:             24px; // More specific size for the '?' icon
+
+// --- Borders ---
+$help-icon-border-width:   1.5px;
+
+// --- Typography ---
+$base-font-size:           1em;
+$header-font-size:         1.2em; // For larger text like the chevron
+$header-title-font-size:   1.1em; // For the "Patient's dentition" title

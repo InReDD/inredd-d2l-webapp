@@ -36,7 +36,7 @@ export default function DashboardLayout({ children }) {
         <Paragraph2 className="dashboardparagraph2">
           Dashboard
         </Paragraph2>
-        <ButtonLink href={routes.IMAGE_VIEWER}>D2L-Viewer</ButtonLink>
+        <ButtonLink style="width: 40px;" href={routes.IMAGE_VIEWER}>D2L-Viewer</ButtonLink>
         {/* You can add user profile info here */}
       </header>
 

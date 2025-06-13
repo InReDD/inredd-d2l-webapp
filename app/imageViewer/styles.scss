@@ -17,8 +17,6 @@ html {
   box-sizing: border-box;
 }
 
-
-
 //===============================================
 // Main Grid Layout
 //===============================================
@@ -147,63 +145,6 @@ html {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-}
-
-// --- Detailed Sidebar ---
-.viewer-sidebar-details {
-  background-color: #1e1e1e;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  overflow-y: auto; // Allow scrolling
-  // Hide scrollbar but keep functionality
-  &::-webkit-scrollbar { width: 0 !important; }
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-
-  .sidebar-title-search {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.1em;
-    font-weight: 600;
-    .search-icon {
-        cursor: pointer;
-    }
-  }
-
-  .sidebar-search-input {
-    width: 100%;
-    padding: 8px 10px;
-    background-color: #333;
-    border: 1px solid #555;
-    color: white;
-    border-radius: 4px;
-    outline: none;
-    &:focus {
-        border-color: #777;
-    }
-  }
-
-  .dental-chart-container {
-    padding: 10px;
-  }
-
-  .sidebar-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    li {
-      padding: 12px 10px;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-      &:hover {
-        background-color: #333;
-      }
-    }
-  }
 }
 
 // --- Reusable Placeholder Icon ---

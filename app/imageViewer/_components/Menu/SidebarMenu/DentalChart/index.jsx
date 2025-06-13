@@ -44,9 +44,9 @@ const DentalChart = () => {
 
   return (
     // NEW: A wrapper div to ensure proper sizing and padding within the sidebar
-    <div className={styles.chartWrapper}>
+    <div className="chartWrapper">
       <svg
-        className={styles.odontogramChart}
+        className="odontogramChart"
         // UPDATED: viewBox is taller for a larger, more proportional chart
         viewBox="0 0 620 350"
         preserveAspectRatio="xMidYMid meet"
@@ -58,12 +58,12 @@ const DentalChart = () => {
           return (
             <g
               key={tooth.id}
-              className={styles.odontogramTooth}
+              className="odontogramTooth"
               transform={`translate(${tooth.x}, ${tooth.y})`}
               onClick={() => handleClick(tooth.key)}
             >
               <text
-                className={styles.toothNumber}
+                className="toothNumber"
                 x="0" y="-30" // Position number above the tooth
                 textAnchor="middle"
               >
@@ -71,7 +71,7 @@ const DentalChart = () => {
               </text>
               <image
                 // Only add the 'highlighted' class if needed. Base style is now white.
-                className={`${styles.toothImage} ${toothStateClass}`}
+                className="toothNumber"
                 href={`/icons/imageViewer/dentalChartIcons/${tooth.id}.svg`}
                 width="40" height="60"
                 x="-20" y="-25" // Center the image

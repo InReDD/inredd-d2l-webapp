@@ -3,7 +3,7 @@
 /* NEW: Wrapper to control padding and sizing within the sidebar */
 .chartWrapper {
   width: 100%;
-  padding: 10px;
+  padding: 4px;
   box-sizing: border-box;
 }
 
@@ -23,7 +23,8 @@
   }
 
   .toothNumber {
-    fill: #a0a0a0;
+    color: white;
+    fill: white;
     font-size: 16px;
     font-weight: 600;
     pointer-events: none;
