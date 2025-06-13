@@ -1,9 +1,10 @@
-
+import SideBar from "./_components/SideBar";
 
 export default function PortalLayout({ children }) {
   return (
-    <>
-      {children}
-    </>
+      <div id="D2L-dashboard">
+        <SideBar />
+        {children}
+      </div>
   );
 }

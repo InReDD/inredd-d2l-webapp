@@ -3,7 +3,6 @@ import "../styles.scss";
 import { generateMetadata as generate } from "@/helpers";
 // Navbar and Paragraph2 are now handled by DashboardInteractiveHeader
 // Image is also handled by DashboardInteractiveHeader
-import SideBar from "../_components/SideBar"; // Adjust path if necessary
 import { Paragraph2, Paragraph3 } from "@/app/_components/Typography";
 import { Button } from "@/app/_components";
 import Image from "next/image";
@@ -18,9 +17,6 @@ export async function generateMetadata() {
 
 export default async function DashboardHome() {
   return (
-    <div id="dashboardhome" className="home">
-      <SideBar />
-
       <div className="container-fluid">
         <div className="row">
           <div className="col-12 homepage pl-28 row">
@@ -152,7 +148,5 @@ export default async function DashboardHome() {
 
         </div>
       </div>
-
-    </div>
   );
 }
