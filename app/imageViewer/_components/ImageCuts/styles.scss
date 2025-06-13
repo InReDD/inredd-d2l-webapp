@@ -1,0 +1,125 @@
+/* --- Variables for easy theming --- */
+$bg-color: #1e1e1e;
+$text-primary: #e0e0e0;
+$text-secondary: #a0a0a0;
+$border-color: #333;
+$accent-color: #00bcd4;
+
+/* --- Main Component Container --- */
+.image-cuts-viewer {
+  background-color: $bg-color;
+  padding: 20px;
+  color: $text-primary;
+  font-family: sans-serif;
+  border-radius: 8px;
+}
+
+/* --- Toolbar Styles --- */
+.viewer-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+
+  label {
+    font-size: 1em;
+    color: $text-secondary;
+  }
+
+  select {
+    background-color: transparent;
+    border: none;
+    color: $text-primary;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 4px;
+
+    &:focus {
+      outline: 1px solid $accent-color;
+      border-radius: 4px;
+    }
+  }
+
+  .separator {
+    color: $border-color;
+    font-size: 1.5em;
+    line-height: 1;
+  }
+
+  .title {
+    font-size: 1em;
+  }
+}
+
+/* --- Carousel Styles --- */
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-arrow {
+  background-color: rgba(40, 40, 40, 0.8);
+  border: 1px solid $border-color;
+  color: $text-primary;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 2em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: #333;
+    transform: scale(1.1);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: scale(1);
+  }
+}
+
+.image-list-wrapper {
+  flex-grow: 1;
+  overflow: hidden; /* This hides the scrollbar */
+}
+
+.image-list {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 10px;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.image-cut-item {
+  text-align: center;
+  flex-shrink: 0; // Prevent images from shrinking
+
+  img {
+    width: 200px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid $border-color;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+    }
+  }
+
+  .caption {
+    color: $text-secondary;
+    font-weight: 500;
+  }
+}

@@ -16,6 +16,7 @@ import ImageViewer from './_components/ImageViewer';
 import Upload from './_components/Upload';
 import DentalChart from './_components/Menu/DentalChart';
 import ButtonLink from '@/app/_components/ButtonLink';
+import ImageCutsViewer from './_components/ImageCuts';
 
 // Placeholder Icon components
 const PlaceholderIcon = ({ label, onClick }) => (
@@ -38,7 +39,6 @@ export default function D2LViewer() {
   const menuItems = [
     { id: 'models', title: 'Models', Component: ModelsMenu},
     { id: 'findings', title: 'Findings', Component: FindingsMenu },
-    { id: 'saved_cuts', title: 'Saved cuts', Component: () => <PlaceholderMenu title="Saved Cuts" /> },
     { id: 'annotations', title: 'Annotations', Component: () => <PlaceholderMenu title="Anottations"/> },
     { id: 'export', title: 'Export', Component: () => <PlaceholderMenu title="Export" /> },
   ];
@@ -117,8 +117,7 @@ export default function D2LViewer() {
             <ImageViewer />
           </div>
           <div className="image-cuts-area">
-            {/* You can map over image thumbnails here */}
-            <p>Image Cuts / Thumbnails Area</p>
+            <ImageCutsViewer />
           </div>
         </section>
 
