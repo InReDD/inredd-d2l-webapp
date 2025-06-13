@@ -9,7 +9,6 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 0 $base-padding; // Add horizontal padding to the main container
 }
 
 
@@ -43,6 +42,51 @@
   }
 }
 
+/* =============================================== */
+/* Section View (e.g., Models, Findings)           */
+/* =============================================== */
+.section-view-header {
+  display: flex;
+  align-items: center;
+  gap: $base-padding; // Space between back-button and title
+  padding: $base-padding 0;
+  border-bottom: 1px solid $divider-color;
+  margin-bottom: $base-padding;
+
+  // --- The Large Title (e.g., "Models") ---
+  h2 {
+    margin: 0;
+    font-size: 2.2em; // Make the title significantly larger
+    font-weight: 600; // Make it bolder
+    color: $text-primary;
+    line-height: 1.2;
+  }
+
+  // --- Back Button '<' ---
+  .back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $icon-button-size;
+    height: $icon-button-size;
+    padding-bottom: 2px; // Visual alignment for the '<' character
+
+    background: none;
+    border: 1px solid $text-secondary;
+    border-radius: 50%;
+    color: $text-secondary;
+    font-size: 1.5em;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background: $interactive-hover-bg;
+      color: $interactive-hover-text;
+      border-color: $interactive-hover-bg;
+    }
+  }
+}
 
 /* =============================================== */
 /* Dental Chart                                    */
@@ -83,7 +127,7 @@
   background: none;
   border: none;
   border-bottom: 1px solid $divider-color; // The divider line
-  padding: $nav-item-vertical-padding 0; // Vertical padding creates space between items
+  padding: $nav-item-vertical-padding $nav-item-horizontal-padding;  
   font-size: $base-font-size;
   color: $text-primary;
   cursor: pointer;
