@@ -1,10 +1,11 @@
+import Image from "next/image"
+
 import { Paragraph2, Paragraph3 } from "@/app/_components/Typography";
-import { Input } from "./Form";
-import Image from "next/image";
+import { Input } from "@/app/_components/Form";
 import AccordionDashboard from "@/app/_components/AccordionDasboardNavbar";
 import Dropdown from "@/app/_components/Dropdown";
 
-const Navbar = () => {
+const SideBar = () => {
     return (
         <div className="sidenav active">
             <div className="col-12 mt-16 pr-10 pl-10 d-flex justify-content-between align-items-baseline">
@@ -77,4 +78,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default SideBar

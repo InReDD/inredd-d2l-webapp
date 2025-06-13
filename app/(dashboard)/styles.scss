@@ -1,137 +1,82 @@
-@import "../default-imports.scss";
+@import "@/app/color.scss";
 
+/* --- Configuration Variables --- */
+$sidebar-width: 280px;
+$header-height: 70px;
+$content-padding: 24px;
+
+/* --- Basic Reset --- */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* --- Main Dashboard Container --- */
+// This prevents the entire page from scrolling
 #D2L-dashboard {
-  body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    color: $neutral-1;
-  }
+  height: 100vh;
+  overflow: hidden;
+}
 
-  header {
-    background: $neutral-2;
-    color: $neutral-1;
-    font-size: 20px;
-    font-family: var(--font-ibm_plex_sans_devanagari);
-    border-bottom: 1px solid #777777;
-  }
-
-  .homepage {
-    position: relative;
-    left: 283px; // Aligns content to the right of the sidebar
-    width: calc(100% - 283px); // Takes up the remaining width
-
-    // --- SCROLLING FIX ---
-    height: 100vh; // Makes the container the full height of the viewport
-    overflow-y: auto; // Allows ONLY this container to scroll vertically
-    padding-top: 90px; // Adds space at the top to prevent content from hiding under the fixed header
-  }
-
-  .card-content {
+/* --- FIXED SIDEBAR (Left) --- */
+#D2L-sidebar {
+  // 1. This is the most important rule: It locks the sidebar to the screen
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: $sidebar-width;
+  height: 100%;
+  background: $text-primary;
+  border-right: 1px solid #dee2e6;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column; // Stacks header and content vertically
+  
+  .sidebar-header {
+    background-color: $text-secondary;
+    flex-shrink: 0; // Prevents the header from shrinking
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: #d9d9d9;
-    color: #333;
-    width: 79px;
-    height: 79px;
-    border-radius: 50%;
-    font-size: 24px;
-    font-weight: bold;
-    flex-shrink: 0;
-    box-shadow: 0px 4px 10px $grey-2;
-    border: 2px solid #ffffff;
+    padding: 0 16px;
+    height: $header-height;
+    border-bottom: 1px solid #dee2e6;
+    color: #000; // Text color for the logo
   }
 
-  .black-box {
-    width: 100%;
-    height: 399px;
-    background-color: #000;
-    border-radius: 10px;
+  .sidebar-content {
+    flex-grow: 1; // Takes up the remaining vertical space
+    overflow-y: auto; // Makes ONLY the list of patients scrollable if it's too long
   }
+}
 
-  .edit-icon-custom {
-    margin-bottom: 0;
-    margin: 0;
-  }
+/* --- FIXED HEADER (Top) --- */
+#D2L-header {
+  // 2. This locks the header to the top
+  position: fixed;
+  top: 0;
+  left: $sidebar-width; // Starts where the sidebar ends
+  width: calc(100% - #{$sidebar-width}); // Fills the rest of the screen
+  height: $header-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $content-padding;
+  background: $sidebar-bg; 
+  border-bottom: 1px solid #dee2e6;
+  z-index: 1000;
+  color: $text-primary;
+}
 
-  .btn-black {
-    height: 35px;
-    font-weight: 600;
-    font-size: 18px;
-    padding: 6px 6px;
-  }
-
-  .visit-table-header {
-    font-size: 14px;
-    color: #000;
-  }
-
-  .visit-row {
-    font-size: 14px;
-
-    .btn-black {
-      margin-left: 4px;
-    }
-  }
-
-  .divider-line {
-    border-bottom: 1px solid #333;
-    width: 100%;
-  }
-
-  .sidenav {
-    width: 283px;
-    background: $neutral-2;
-    position: fixed;
-    height: 100vh; // Changed from 95vh to be full height
-    left: 0; // sidenav is visible by default now in this structure
-    transition: all 0.3s;
-    border-right: 1px solid #777777;
-    // Note: The logic for toggling with the '.active' class to hide/show it remains valid.
-  }
-
-  .dashboardheader {
-    background: $neutral-1;
-    color: $neutral-2;
-    font-size: 20px;
-    font-family: var(--font-ibm_plex_sans_devanagari);
-    position: fixed;
-    top: 0px;
-    left: 282px;
-    height: 90px;
-
-    // --- LAYOUT FIX ---
-    // The header should not take up 100% width, but the remaining space.
-    width: calc(100% - 282px);
-  }
-
-  .dashboardparagraph2 {
-    font-size: 20px;
-    font-family: var(--font-ibm_plex_sans_devanagari);
-  }
-
-  ul {
-    padding: 0;
-  }
-
-  ul li {
-    list-style-type: none;
-  }
-
-  a {
-    color: $neutral-1;
-  }
-
-  a:hover,
-  a:active {
-    color: blue;
-  }
-
-  .paragrafo {
-    color: $neutral-1;
-    font-size: 20px;
-    display: block;
-    border-radius: 4px;
-  }
+/* --- SCROLLABLE MAIN CONTENT --- */
+#D2L-content {
+  // 3. This creates the main content area that scrolls
+  margin-left: $sidebar-width;
+  margin-top: $header-height;
+  padding: $content-padding;
+  height: calc(100vh - #{$header-height}); // Fills the available vertical space
+  overflow-y: auto; // THE KEY: This makes the content area scroll
 }
