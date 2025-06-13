@@ -1,13 +1,7 @@
-/* --- Variables for easy theming --- */
-$bg-color: #1e1e1e;
-$text-primary: #e0e0e0;
-$text-secondary: #a0a0a0;
-$border-color: #333;
-$accent-color: #00bcd4;
+@import "@/app/color.scss";
 
 /* --- Main Component Container --- */
 .image-cuts-viewer {
-  background-color: $bg-color;
   padding: 20px;
   color: $text-primary;
   font-family: sans-serif;

@@ -124,8 +124,6 @@ export default function D2LViewer() {
         {/* Vertical Icons Sidebar */}
         <aside className="icons-sidebar-vertical">
           <PlaceholderIcon label="Camera" />
-          <PlaceholderIcon label="Tools" />
-          {/* This button will toggle the detailed sidebar */}
           <PlaceholderIcon
             label={isDetailsVisible ? "Hide" : "Show"}
             onClick={() => setIsDetailsVisible(!isDetailsVisible)}
