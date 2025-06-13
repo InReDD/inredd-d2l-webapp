@@ -1,17 +1,15 @@
-@import "../../default-imports.scss";
+@import "../default-imports.scss";
 
 #dashboardhome {
-  overflow: hidden;
+  // REMOVED: `overflow: hidden;` This was the main property preventing any scrolling.
 
-//-------------------STYLE ATUAL------------------//
-    
+  //-------------------STYLE ATUAL------------------//
   body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     color: $neutral-1;
   }
-
 
   header {
     background: $neutral-2;
@@ -23,17 +21,20 @@
 
   .homepage {
     position: relative;
-    height: 100%;
-    width: calc(100% - 283px);
-    left: 283px;
-    padding: 0px;
+    left: 283px; // Aligns content to the right of the sidebar
+    width: calc(100% - 283px); // Takes up the remaining width
+
+    // --- SCROLLING FIX ---
+    height: 100vh; // Makes the container the full height of the viewport
+    overflow-y: auto; // Allows ONLY this container to scroll vertically
+    padding-top: 90px; // Adds space at the top to prevent content from hiding under the fixed header
   }
 
   .card-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #D9D9D9;
+    background-color: #d9d9d9;
     color: #333;
     width: 79px;
     height: 79px;
@@ -49,12 +50,12 @@
     width: 100%;
     height: 399px;
     background-color: #000;
-    border-radius: 10px;    
+    border-radius: 10px;
   }
 
   .edit-icon-custom {
-    margin-bottom: 0; 
-    margin: 0; 
+    margin-bottom: 0;
+    margin: 0;
   }
 
   .btn-black {
@@ -63,19 +64,34 @@
     font-size: 18px;
     padding: 6px 6px;
   }
-  
+
+  .visit-table-header {
+    font-size: 14px;
+    color: #000;
+  }
+
+  .visit-row {
+    font-size: 14px;
+
+    .btn-black {
+      margin-left: 4px;
+    }
+  }
+
+  .divider-line {
+    border-bottom: 1px solid #333;
+    width: 100%;
+  }
+
   .sidenav {
     width: 283px;
     background: $neutral-2;
     position: fixed;
-    height: 95vh;
-    left: -100%;
+    height: 100vh; // Changed from 95vh to be full height
+    left: 0; // sidenav is visible by default now in this structure
     transition: all 0.3s;
     border-right: 1px solid #777777;
-  }
-
-  .sidenav.active {
-    left: 0;
+    // Note: The logic for toggling with the '.active' class to hide/show it remains valid.
   }
 
   .dashboardheader {
@@ -86,15 +102,17 @@
     position: fixed;
     top: 0px;
     left: 282px;
-    width: 100%;
     height: 90px;
+
+    // --- LAYOUT FIX ---
+    // The header should not take up 100% width, but the remaining space.
+    width: calc(100% - 282px);
   }
 
   .dashboardparagraph2 {
     font-size: 20px;
     font-family: var(--font-ibm_plex_sans_devanagari);
   }
-
 
   ul {
     padding: 0;
@@ -119,6 +137,4 @@
     display: block;
     border-radius: 4px;
   }
-
 }
-

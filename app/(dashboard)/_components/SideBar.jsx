@@ -1,14 +1,11 @@
 // app/dashboard/DashboardInteractiveHeader.jsx
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Navbar from "@/app/_components/Navbar";
 import { Paragraph2 } from "@/app/_components/Typography";
 
 export default function DashboardInteractiveHeader() {
-  const [showNav, setShowNav] = useState(false);
-
   return (
     <>
       <header>
@@ -20,8 +17,6 @@ export default function DashboardInteractiveHeader() {
               width={35}
               height={35}
               alt="D2L Icon"
-              onClick={() => setShowNav(!showNav)}
-              style={{ cursor: "pointer" }} // Added for better UX to indicate clickability
             />
             <Paragraph2 className="paragrafo ml-10">
               Dental Second Look
@@ -35,8 +30,7 @@ export default function DashboardInteractiveHeader() {
         </div>
         
       </header>
-      {/* Conditionally render the Navbar based on the showNav state */}
-      {showNav && <Navbar />}
+      <Navbar />
     </>
   );
 }

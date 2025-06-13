@@ -1,7 +1,7 @@
 import { Paragraph2, Paragraph3 } from "@/app/_components/Typography";
 import { Input } from "./Form";
 import Image from "next/image";
-import AccordionDashboard from "@/app/_components/AccordionDasboard";
+import AccordionDashboard from "@/app/_components/AccordionDasboardNavbar";
 import Dropdown from "@/app/_components/Dropdown";
 
 const Navbar = () => {
