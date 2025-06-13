@@ -63,6 +63,25 @@
     font-size: 18px;
     padding: 6px 6px;
   }
+
+  .visit-table-header {
+    font-size: 14px;
+    color: #000;
+  }
+
+  .visit-row {
+    font-size: 14px;
+
+    .btn-black {
+      margin-left: 4px;
+    }
+  }
+
+  .divider-line {
+    border-bottom: 1px solid #333;
+    width: 100%;
+  }
+
   
   .sidenav {
     width: 283px;

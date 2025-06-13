@@ -1,0 +1,66 @@
+@import "../../variables.module.scss";
+
+.accordion-container {
+  width: 100%;
+  margin-bottom: 14px;
+
+  .details {
+    .summary {
+      list-style: none;
+      border-bottom: 1px solid #DDDDDD;
+      font-size: 24px !important;
+      font-weight: 400 !important;
+      color: $neutral-1;
+      display: flex;
+      justify-content: flex-start;
+
+      &::-webkit-details-marker {
+        display: none; 
+      }
+    }
+
+    
+    .image {
+      display: flex;
+      justify-content: end;
+    }
+
+    .children {
+      margin-top: 5px;
+      line-height: 20px;
+      font-size: 12px;
+      width: 100%;
+
+      & > p {
+        font-size: 16px;
+      }
+    }
+
+    &[open] .summary {
+      border-bottom: none;
+    } 
+
+    &[open] .is-open-line {
+      border-bottom: 1px solid #DDDDDD;
+      margin-top: 24px !important;
+    }
+
+    &:not([open]) .is-open-line {
+      margin-top: 8px !important;
+      margin-bottom: 24px;
+    }
+  } 
+
+}
+
+@media screen and (max: 756px) {
+  .accordion-container {
+    .details {
+      .children {
+        margin-top: 16px;
+        line-height: 18px;
+        width: 100%;
+      }
+    }
+  }
+}
