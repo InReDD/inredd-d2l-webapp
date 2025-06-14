@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import routes from "@/helpers/routes";
 import './styles.scss';
 
+
 // Import the new self-contained sidebar component
 import SidebarMenu from './_components/Menu/SidebarMenu';
 

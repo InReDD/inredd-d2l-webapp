@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import "./styles.scss"
+import './main-nav.scss'
+import './section.scss';
 
 // Import your section components
 import ModelsMenu from './ModelsMenu';
@@ -24,7 +26,7 @@ export default function SidebarMenu() {
   const menuItems = [
     { id: 'models', title: 'Models', Component: ModelsMenu },
     { id: 'findings', title: 'Findings', Component: FindingsMenu },
-    { id: 'annotations', title: 'Annotations', Component: () => <PlaceholderMenu title="Annotations"/> },
+    { id: 'annotations', title: 'Annotations', Component: () => <PlaceholderMenu title="Annotations" /> },
     { id: 'export', title: 'Export', Component: () => <PlaceholderMenu title="Export" /> },
   ];
 
@@ -32,18 +34,30 @@ export default function SidebarMenu() {
   const currentView = menuItems.find(item => item.id === activeView);
   const ActiveComponent = currentView?.Component;
 
-  // --- RENDER LOGIC ---
-
   // If we are in a specific section view (not 'main'), render the detailed view
   if (activeView !== 'main' && ActiveComponent) {
     return (
       <aside className="viewer-sidebar-details section-view">
-        <div className="section-view-header">
-          <button onClick={navigateBack} className="back-button">
-            &lt;
-          </button>
-          <h2>{currentView.title}</h2>
+        {/* Wrap header and description for shared styling and border */}
+        <div className="section-intro-block">
+          <div className="section-view-header">
+            <button onClick={navigateBack} className="back-button">
+              &lt;
+            </button>
+
+            {/* The title now grows to fill space */}
+            <h2 className="section-title">{currentView.title}</h2>
+
+            {/* Added help icon */}
+            <button className="help-icon">?</button>
+          </div>
+
+          {/* Description is now outside the header */}
+          <div className="section-view-description">
+            <p>Lorem ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
         </div>
+
         <div className="section-view-content">
           <ActiveComponent />
         </div>

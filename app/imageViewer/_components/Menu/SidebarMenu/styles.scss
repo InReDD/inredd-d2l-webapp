@@ -1,7 +1,7 @@
 @import "@/app/globals.scss";
 
 /* =============================================== */
-/* Sidebar Base & Layout                           */
+/* BASE SIDEBAR LAYOUT                             */
 /* =============================================== */
 .viewer-sidebar-details {
   background-color: $sidebar-bg;
@@ -11,16 +11,16 @@
   height: 100%;
 }
 
-
 /* =============================================== */
-/* Header ("Patient's dentition")                  */
+/* SHARED HEADER STYLES                            */
 /* =============================================== */
-.sidebar-header {
+// A generic header style for the top of any view
+.view-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: $base-padding 0; // Vertical padding, horizontal is inherited
-  flex-shrink: 0; // Prevent header from shrinking
+  padding: $base-padding 0;
+  flex-shrink: 0;
 
   h2 {
     margin: 0;
@@ -43,103 +43,49 @@
 }
 
 /* =============================================== */
-/* Section View (e.g., Models, Findings)           */
+/* COMPONENT: TOGGLE SWITCH                        */
 /* =============================================== */
-.section-view-header {
-  display: flex;
-  align-items: center;
-  gap: $base-padding; // Space between back-button and title
-  padding: $base-padding 0;
-  border-bottom: 1px solid $divider-color;
-  margin-bottom: $base-padding;
-
-  // --- The Large Title (e.g., "Models") ---
-  h2 {
-    margin: 0;
-    font-size: 2.2em; // Make the title significantly larger
-    font-weight: 600; // Make it bolder
-    color: $text-primary;
-    line-height: 1.2;
-  }
-
-  // --- Back Button '<' ---
-  .back-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: $icon-button-size;
-    height: $icon-button-size;
-    padding-bottom: 2px; // Visual alignment for the '<' character
-
-    background: none;
-    border: 1px solid $text-secondary;
-    border-radius: 50%;
-    color: $text-secondary;
-    font-size: 1.5em;
-    line-height: 1;
-    cursor: pointer;
-    transition: all 0.2s;
-
-    &:hover {
-      background: $interactive-hover-bg;
-      color: $interactive-hover-text;
-      border-color: $interactive-hover-bg;
-    }
-  }
-}
-
-/* =============================================== */
-/* Dental Chart                                    */
-/* =============================================== */
-.dental-chart-container {
-  margin-bottom: $base-padding; // Space between chart and the menu
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 51px;
+  height: 31px;
+  margin-left: auto;
   flex-shrink: 0;
 }
 
-
-/* =============================================== */
-/* Main Navigation Menu                            */
-/* =============================================== */
-.main-nav-list {
-  flex-grow: 1;
-  overflow-y: auto; // Allow this part to scroll if needed
-
-  // Hide scrollbar but keep functionality
-  &::-webkit-scrollbar {
-    width: 0 !important;
-  }
-  -ms-overflow-style: none; // IE and Edge
-  scrollbar-width: none; // Firefox
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-// Styling for each clickable navigation item
-.main-nav-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  background: none;
-  border: none;
-  border-bottom: 1px solid $divider-color; // The divider line
-  padding: $nav-item-vertical-padding $nav-item-horizontal-padding;  
-  font-size: $base-font-size;
-  color: $text-primary;
+.slider {
+  position: absolute;
   cursor: pointer;
-  text-align: left;
-  transition: background-color 0.2s;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: $switch-bg-off;
+  transition: .4s;
+  border-radius: 34px;
+}
 
-  &:hover {
-    background-color: $interactive-hover-bg;
-  }
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 27px;
+  width: 27px;
+  left: 2px;
+  bottom: 2px;
+  background-color: $interactive-hover-text;
+  transition: .4s;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
 
-  .chevron {
-    color: $text-secondary; // A slightly dimmer color for the chevron
-    font-size: $header-font-size;
-  }
+input:checked + .slider {
+  background-color: $accent-color;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
 }

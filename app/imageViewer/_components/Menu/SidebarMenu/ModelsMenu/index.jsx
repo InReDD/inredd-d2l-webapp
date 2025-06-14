@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ToggleItem from "@/app/_components/ToggleItem";
-import "./style.scss";
 
 const ModelsMenu = ({ onClose }) => {
   // 1. Use a single state object to manage all toggles

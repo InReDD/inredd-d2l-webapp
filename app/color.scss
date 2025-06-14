@@ -24,26 +24,69 @@
   color: #006699;
 }
 
+
+/* =============================================== */
+/* MENU COLORS VARIABLES                                 */
+/* =============================================== */
+$carie-color:             #ffb74d;
+$bone-loss-color:         #4dd0e1;
+$switch-bg-off:           #4f4f4f;
+$accent-border-color:     #007aff; // Bright blue for the list border
+$button-secondary-bg:     #3a3a3a;
+$button-secondary-border: #555;
+
 /* =============================================== */
 /* THEME VARIABLES                                 */
 /* =============================================== */
-
-// --- Colors ---
 $sidebar-bg:               #212121;
 $text-primary:             #e0e0e0;
 $text-secondary:           #a0a0a0;
-$border-color:             #212121;
-$divider-color:            #333333; // For borders between items
+$divider-color:            #333333;
 $interactive-hover-bg:     #333333;
 $interactive-hover-text:   #ffffff;
-$accent-color:             #4caf50; // For active states
+$accent-color:             #4caf50; // For active states, switches, etc.
+$border-color:             #4f4f4f;
 
-
-
-// --- Borders ---
-$help-icon-border-width:   1.5px;
 
 // --- Typography ---
-$base-font-size:           1em;
-$header-font-size:         1.2em; // For larger text like the chevron
-$header-title-font-size:   1.1em; // For the "Patient's dentition" title
+// Defines the font sizes and weights used across components.
+$base-font-size:           1rem;
+$font-size-small:          0.9em;
+$header-title-font-size:   1.1em;
+$header-font-size:         1.2em;
+$section-title-font-size:  2.2em; // For large titles like "Models"
+$base-line-height:         1.2;
+$font-weight-medium:       500;
+$font-weight-semibold:     600;
+$font-weight-bold:         700;
+
+
+// --- Sizing & Spacing ---
+// Consistent spacing units for padding, margins, and gaps.
+$base-padding:               16px;
+$container-gap:              24px;
+$menu-item-gap:              12px;
+$menu-item-vertical-padding: 14px;
+$list-item-vertical-padding: 12px;
+
+// --- Buttons & Icons ---
+// Sizes for interactive elements.
+$icon-button-size:         28px;
+$action-button-size:       32px;
+$help-icon-size:           24px;
+$label-dot-size:           12px;
+
+
+// --- Borders & Radius ---
+// Defines border thickness and corner rounding.
+$base-border-width:        1px;
+$accent-border-width:      2px;
+$help-icon-border-width:   1.5px;
+$border-radius-small:      6px;
+$border-radius-medium:     8px;
+$border-radius-circle:     50%;
+
+
+// --- Effects & Transitions ---
+// For animations and visual feedback.
+$transition-duration:      0.2s;

@@ -1,0 +1,208 @@
+@import "@/app/globals.scss";
+
+/* =============================================== */
+/* SECTION VIEW (Sub-menus like Models, Findings)  */
+/* =============================================== */
+
+// New wrapper for the header/description block
+.section-intro-block {
+  padding: $base-padding;
+  border-bottom: 1px solid $divider-color;
+}
+
+// Improved header to support 3 items (back, title, help)
+.section-view-header {
+  display: flex;
+  align-items: center;
+  gap: $base-padding;
+
+  .section-title {
+    margin: 0;
+    font-size: 1.3em; // Reduced font-size to match image
+    font-weight: 600;
+    color: $text-primary;
+    flex-grow: 1; // Allows title to take up available space
+  }
+
+  .back-button, .help-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; // Prevent icons from shrinking
+    width: $icon-button-size;
+    height: $icon-button-size;
+    background: none;
+    border: 1.5px solid $text-secondary;
+    border-radius: 50%;
+    color: $text-secondary;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background: $interactive-hover-bg;
+      color: $interactive-hover-text;
+      border-color: $interactive-hover-bg;
+    }
+  }
+  
+  .back-button {
+      font-size: 1.5em;
+      line-height: 1;
+      padding-bottom: 2px;
+  }
+  
+  .help-icon {
+      font-size: 1.1em;
+      font-weight: bold;
+  }
+}
+
+// Styles for the description paragraph below the header
+.section-view-description {
+  padding: 8px 0 0 0; // Space from the header
+  p {
+    margin: 0;
+    color: $text-secondary;
+    font-size: $font-size-small;
+    line-height: 1.5;
+  }
+}
+
+// Container for the main scrollable content
+.section-view-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  // Hide scrollbar but keep functionality
+  &::-webkit-scrollbar { width: 0 !important; }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+// Base styles for any item in a list (nav links, toggles, etc.)
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid $divider-color;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+// Main navigation items now follow the unified pattern
+.main-nav-item {
+  @extend .menu-item; // Inherit base spacing and divider
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none; // Border is handled by the parent li/container now
+  color: $text-primary;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s;
+  font-size: $base-font-size;
+
+  &:hover {
+    background-color: $interactive-hover-bg;
+  }
+
+  .chevron {
+    color: $text-secondary;
+    font-size: $header-font-size;
+  }
+}
+
+// Toggle items also follow the pattern
+.toggle-item {
+  @extend .menu-item;
+
+  .label-text {
+    font-size: 1rem;
+    flex-grow: 1;
+  }
+}
+
+.label-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.label-dot.carie { background-color: $carie-color; }
+.label-dot.bone-loss { background-color: $bone-loss-color; }
+
+
+/* =============================================== */
+/* COMPONENT: FINDINGS MENU                        */
+/* =============================================== */
+.menu-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-section {
+  border: 2px solid $accent-border-color;
+  padding: $base-padding;
+
+  h3 {
+    margin: 0 0 16px 0;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: $text-secondary;
+  }
+}
+
+.findings-list-header,
+.finding-item {
+  display: grid;
+  grid-template-columns: 2.5fr 1.5fr 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  font-size: 0.95em;
+  border-bottom: 1px solid $divider-color;
+}
+
+.findings-list-header {
+  font-weight: bold;
+  color: $text-primary;
+  font-size: 0.9em;
+  padding-bottom: 12px;
+}
+
+.findings-list .finding-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.findings-list .finding-item:first-child {
+  padding-top: 12px;
+}
+
+.possibility {
+  color: $text-secondary;
+  font-weight: 500;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+  background-color: $button-secondary-bg;
+  border: 1px solid $button-secondary-border;
+  color: $text-primary;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $interactive-hover-bg;
+    border-color: $interactive-hover-bg;
+  }
+}
+

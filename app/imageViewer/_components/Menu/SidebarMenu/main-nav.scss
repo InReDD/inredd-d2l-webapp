@@ -1,0 +1,137 @@
+@import "@/app/globals.scss";
+
+/* =============================================== */
+/* DENTAL CHART COMPONENT                          */
+/* =============================================== */
+.dental-chart-container {
+  margin-bottom: $base-padding;
+  flex-shrink: 0;
+  padding: 4px;
+  box-sizing: border-box;
+
+  .odontogramChart {
+    width: 100%;
+    height: auto;
+  }
+
+  .odontogramTooth {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    .toothNumber {
+      fill: $text-primary;
+      font-size: 16px;
+      font-weight: 600;
+      pointer-events: none;
+    }
+
+    .toothImage {
+      transition: filter 0.2s ease-in-out;
+      filter: brightness(0) invert(1) drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.5));
+
+      &.highlighted {
+        filter: drop-shadow(0px 0px 8px #ff9800) drop-shadow(0px 0px 4px #ffc966) brightness(1.1);
+      }
+    }
+
+    &:hover .toothImage {
+      filter: drop-shadow(0px 0px 8px #00bcd4);
+    }
+  }
+}
+
+/* =============================================== */
+/* MAIN MENU STYLES                        */
+/* =============================================== */
+
+// A general container for all menu-like lists
+.menu-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  &::-webkit-scrollbar { width: 0 !important; }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+// A general container for all menu-like lists
+.menu-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  &::-webkit-scrollbar { width: 0 !important; }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+// Use the .menu-list class for the main navigation
+.main-nav-list {
+  @extend .menu-list;
+}
+
+// Base styles for any item in a list (nav links, toggles, etc.)
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid $divider-color;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.main-nav-item {
+  @extend .menu-item; // Inherit base spacing and divider
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none; // Border is handled by the parent li/container now
+  color: $text-primary;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s;
+  font-size: $base-font-size;
+
+  &:hover {
+    background-color: $interactive-hover-bg;
+  }
+
+  .chevron {
+    color: $text-secondary;
+    font-size: $header-font-size;
+  }
+}
+
+.toggle-item {
+  @extend .menu-item;
+
+  .label-text {
+    font-size: 1rem;
+    flex-grow: 1;
+  }
+}
+
+.label-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.label-dot.carie { background-color: $carie-color; }
+.label-dot.bone-loss { background-color: $bone-loss-color; }

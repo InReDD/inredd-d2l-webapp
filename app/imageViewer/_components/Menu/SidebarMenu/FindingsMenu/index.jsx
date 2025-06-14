@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import ToggleItem from "@/app/_components/ToggleItem"
-import './style.scss'; // We'll create this file for styling
 
 // Mock data based on the design. In a real app, this would come from props or an API.
 const allFindings = [
@@ -22,25 +21,25 @@ const FindingsMenu = () => {
   });
 
   return (
-    // This would be a `<li>` if it's inside a `<ul>` as in your SideMenu example
-    <div className="findings-menu-container">
+    <div className="menu-container">
       <div className="toggle-group">
-        {/* 2. Use the new ToggleItem component */}
-        <ToggleItem
-          label="Caries"
-          type="carie" // Corresponds to the .carie CSS class
-          checked={showCaries}
-          onChange={() => setShowCaries(!showCaries)}
-        />
+        <div className="menu-section">
+          <ToggleItem
+            label="Caries"
+            type="carie" // Corresponds to the .carie CSS class
+            checked={showCaries}
+            onChange={() => setShowCaries(!showCaries)}
+          />
 
-        <ToggleItem
-          label="Bone loss"
-          type="bone-loss" // Corresponds to the .bone-loss CSS class
-          checked={showBoneLoss}
-          onChange={() => setShowBoneLoss(!showBoneLoss)}
-        />
+          <ToggleItem
+            label="Bone loss"
+            type="bone-loss" // Corresponds to the .bone-loss CSS class
+            checked={showBoneLoss}
+            onChange={() => setShowBoneLoss(!showBoneLoss)}
+          />
+        </div>
       </div>
-      <div className="findings-list-section">
+      <div className="menu-section">
         <h3>Findings list ({filteredFindings.length})</h3>
 
         <div className="findings-list-header">

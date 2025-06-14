@@ -2,8 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import { useViewer } from '@/app/context/ViewerContext';
 
-import styles from './styles.scss';
-
 /**
  * DentalChart: Renders a scalable SVG odontogram.
  */
@@ -53,7 +51,7 @@ const DentalChart = () => {
       >
         {teethData.map((tooth) => {
           const isHighlighted = highlightedTeethKeys.includes(tooth.key);
-          const toothStateClass = isHighlighted ? styles.highlighted : '';
+          const toothStateClass = isHighlighted ? '' : '';
 
           return (
             <g
