@@ -1,37 +1,27 @@
 import React, { useState } from "react";
 import ToggleItem from "@/app/_components/ToggleItem";
 
-const ModelsMenu = ({ onClose }) => {
-  // 1. Use a single state object to manage all toggles
-  const [modelToggles, setModelToggles] = useState({
-    mouthDetection: true,
-    teethSegmentation: true, 
-  });
-
-  // 2. Create a single handler function to update the state
-  const handleToggleChange = (toggleName) => {
-    setModelToggles((prevState) => ({
-      ...prevState,
-      [toggleName]: !prevState[toggleName],
-    }));
-  };
-
+const ModelsMenu = () => {
+  const [showCaries, setShowCaries] = useState(true);
+  const [showBoneLoss, setShowBoneLoss] = useState(false);
+  
   return (
-    <div className="Menu">
+    <div className="menu-section-container">
       <div className="toggle-group">
-        <ToggleItem
-          label="Mouth detection"
-          type="yellow"
-          checked={modelToggles.mouthDetection}
-          onChange={() => handleToggleChange("mouthDetection")}
-        />
+        <div className="menu-section">
+          <ToggleItem
+            label="Caries"
+            type="carie" // Corresponds to the .carie CSS class
+            onChange={() => setShowCaries(!showCaries)}
+          />
 
-        <ToggleItem
-          label="Teeth Segmentation"
-          type="pink"
-          checked={modelToggles.implants}
-          onChange={() => handleToggleChange("teethSegmentation")}
-        />
+          <ToggleItem
+            label="Bone loss"
+            type="bone-loss" // Corresponds to the .bone-loss CSS class
+            checked={showBoneLoss}
+            onChange={() => setShowBoneLoss(!showBoneLoss)}
+          />
+        </div>
       </div>
     </div>
   );

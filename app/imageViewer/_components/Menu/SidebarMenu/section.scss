@@ -135,9 +135,9 @@
 
 
 /* =============================================== */
-/* COMPONENT: FINDINGS MENU                        */
+/*  MENU SECTION                      */
 /* =============================================== */
-.menu-container {
+.menu-section-container {
   display: flex;
   flex-direction: column;
 }
@@ -154,8 +154,8 @@
   }
 }
 
-.findings-list-header,
-.finding-item {
+.menu-section-list-header,
+.menu-section-item {
   display: grid;
   grid-template-columns: 2.5fr 1.5fr 1fr;
   align-items: center;
@@ -165,18 +165,18 @@
   border-bottom: 1px solid $divider-color;
 }
 
-.findings-list-header {
+.menu-section-list-header {
   font-weight: bold;
   color: $text-primary;
   font-size: 0.9em;
   padding-bottom: 12px;
 }
 
-.findings-list .finding-item:last-child {
+.menu-section-list .finding-item:last-child {
   border-bottom: none;
   padding-bottom: 0;
 }
-.findings-list .finding-item:first-child {
+.menu-section-list .finding-item:first-child {
   padding-top: 12px;
 }
 

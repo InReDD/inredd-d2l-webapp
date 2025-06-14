@@ -1,4 +1,5 @@
 import React from 'react';
+import "./styles.scss";
 
 /**
  * A reusable toggle switch component.

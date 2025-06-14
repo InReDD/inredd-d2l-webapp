@@ -1,8 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
-import "./styles.scss"
-import './main-nav.scss'
+import "./styles.scss"; 
 import './section.scss';
 
 // Import your section components
@@ -26,6 +25,7 @@ export default function SidebarMenu() {
   const menuItems = [
     { id: 'models', title: 'Models', Component: ModelsMenu },
     { id: 'findings', title: 'Findings', Component: FindingsMenu },
+    { id: 'saved_cuts', title: 'Saved cuts', Component: () => <PlaceholderMenu title="Saved cuts" /> },
     { id: 'annotations', title: 'Annotations', Component: () => <PlaceholderMenu title="Annotations" /> },
     { id: 'export', title: 'Export', Component: () => <PlaceholderMenu title="Export" /> },
   ];
@@ -38,26 +38,18 @@ export default function SidebarMenu() {
   if (activeView !== 'main' && ActiveComponent) {
     return (
       <aside className="viewer-sidebar-details section-view">
-        {/* Wrap header and description for shared styling and border */}
         <div className="section-intro-block">
           <div className="section-view-header">
             <button onClick={navigateBack} className="back-button">
               &lt;
             </button>
-
-            {/* The title now grows to fill space */}
             <h2 className="section-title">{currentView.title}</h2>
-
-            {/* Added help icon */}
             <button className="help-icon">?</button>
           </div>
-
-          {/* Description is now outside the header */}
           <div className="section-view-description">
-            <p>Lorem ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Description for the {currentView.title} section.</p>
           </div>
         </div>
-
         <div className="section-view-content">
           <ActiveComponent />
         </div>
@@ -70,7 +62,7 @@ export default function SidebarMenu() {
     <aside className="viewer-sidebar-details main-menu-view">
       <div className="sidebar-header">
         <h2>Patient's dentition</h2>
-        <span className="help-icon">?</span>
+        <button className="help-icon">?</button>
       </div>
       <div className="dental-chart-container">
         <DentalChart />
@@ -78,7 +70,7 @@ export default function SidebarMenu() {
       <nav className="main-nav-list">
         <ul>
           {menuItems.map(({ id, title }) => (
-            <li key={id}>
+            <li className="main-nav-list-item" key={id}>
               <button className="main-nav-item" onClick={() => navigateTo(id)}>
                 <span>{title}</span>
                 <span className="chevron">&gt;</span>

@@ -1,0 +1,49 @@
+@import "@/app/globals.scss";
+
+/* =============================================== */
+/* COMPONENT: TOGGLE SWITCH                        */
+/* =============================================== */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 51px;
+  height: 31px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: $switch-bg-off;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 27px;
+  width: 27px;
+  left: 2px;
+  bottom: 2px;
+  background-color: $interactive-hover-text;
+  transition: .4s;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+input:checked + .slider {
+  background-color: $accent-color;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
