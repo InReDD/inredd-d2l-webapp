@@ -13,7 +13,7 @@ import { ViewerProvider } from '../context/ViewerContext';
 import ImageViewer from './_components/ImageViewer';
 import Upload from './_components/Upload';
 import ButtonLink from '@/app/_components/ButtonLink';
-import ImageCutsViewer from './_components/ImageCuts';
+import ImageCutsViewer from './_components/Menu/ImageCuts';
 
 // Placeholder Icon components
 const PlaceholderIcon = ({ label, onClick }) => (

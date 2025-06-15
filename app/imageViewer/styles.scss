@@ -83,11 +83,12 @@ html {
   
   .patient-info {
     font-weight: 600;
+    color: white;
   }
 
   .visit-date {
     font-size: 0.8em;
-    color: #aaa;
+    color: white;
   }
   
   .header-button {
@@ -107,15 +108,12 @@ html {
 // --- Main Content Pane ---
 .viewer-pane {
   background-color: #333;
-  padding: 15px;
   display: grid;
   grid-template-rows: 1fr auto;
-  gap: 15px;
   overflow: hidden;
 
   .xray-display-area {
     background-color: #000;
-    border-radius: 8px;
     overflow: auto;
     display: flex;
     justify-content: center;
@@ -126,13 +124,11 @@ html {
   .image-cuts-area {
     background-color: #2a2a2a;
     border: 1px solid #555;
-    border-radius: 8px;
-    padding: 10px;
     overflow-x: auto;
     white-space: nowrap;
     min-height: 100px;
-    display: flex;
     align-items: center;
+    margin-bottom: 30px;
   }
 }
 

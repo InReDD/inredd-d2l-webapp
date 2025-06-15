@@ -1,0 +1,197 @@
+@import "@/app/color.scss"; // Assuming this file contains your color variables
+
+/*
+ * ===============================================
+ * DESIGN TOKENS (VARIABLES)
+ * ===============================================
+ */
+
+// Spacing & Gaps
+$spacing-xs: 4px;
+$spacing-s: 8px;
+$spacing-m: 16px;
+$spacing-l: 20px;
+$spacing-xl: 24px;
+
+// Sizing
+$image-width: 200px;
+$image-height: 140px;
+$arrow-button-size: 40px;
+
+// Borders
+$border-radius-main: 8px;
+$border-radius-small: 4px;
+$border-main: 1px solid $border-color;
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-smooth: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+// Z-Index
+$z-index-nav: 10;
+
+/*
+ * ===============================================
+ * MIXINS
+ * ===============================================
+ */
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+ * ===============================================
+ * MAIN COMPONENT: Image Cuts Viewer
+ * ===============================================
+ */
+
+.image-cuts-viewer {
+  padding: $spacing-l;
+  color: $text-primary;
+  font-family: sans-serif;
+  border-radius: $border-radius-main;
+
+  /* --- TOOLBAR ELEMENT --- */
+  &__toolbar {
+    display: flex;
+    align-items: center;
+    gap: $spacing-m;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__toolbar-label,
+  &__toolbar-title {
+    font-size: 1em;
+  }
+
+  &__toolbar-label {
+    color: $text-secondary;
+  }
+
+  &__toolbar-separator {
+    color: $border-color;
+    font-size: 1.5em;
+    line-height: 1;
+  }
+
+  /* --- Custom Select Wrapper & Element --- */
+  &__select-wrapper {
+    position: relative;
+
+    // Custom dropdown arrow
+    &::after {
+      content: '›';
+      position: absolute;
+      top: 50%;
+      right: $spacing-s;
+      transform: translateY(-50%) scaleX(0.7) rotate(90deg);
+      font-size: 1.5em;
+      color: $text-secondary;
+      pointer-events: none; // Allows clicks to pass through to the select
+    }
+  }
+
+  &__select {
+    background-color: transparent;
+    border: none;
+    color: $text-primary;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    padding: $spacing-xs $spacing-m $spacing-xs $spacing-xs; // Room for arrow
+    appearance: none; // Hides default browser arrow
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &:focus {
+      outline: 1px solid $accent-color;
+      border-radius: $border-radius-small;
+    }
+  }
+
+  /* --- CAROUSEL ELEMENT --- */
+  &__carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: $spacing-m;
+  }
+
+  &__image-list-wrapper {
+    flex-grow: 1;
+    overflow: hidden;
+  }
+
+  &__image-list {
+    display: flex;
+    gap: $spacing-l;
+    transition: transform $transition-smooth;
+  }
+}
+
+/*
+ * ===============================================
+ * COMPONENT PART: Navigation Arrow
+ * ===============================================
+ */
+
+.nav-arrow {
+  @include flex-center;
+  background-color: rgba(40, 40, 40, 0.8);
+  border: $border-main;
+  color: $text-primary;
+  border-radius: 50%;
+  width: $arrow-button-size;
+  height: $arrow-button-size;
+  font-size: 2em;
+  cursor: pointer;
+  line-height: 0;
+  transition: background-color $transition-fast, transform $transition-fast;
+  z-index: $z-index-nav;
+
+  &:hover {
+    background-color: #333; // Consider using a variable: $hover-bg-color
+    transform: scale(1.1);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: scale(1);
+  }
+}
+
+/*
+ * ===============================================
+ * COMPONENT PART: Image Cut Item
+ * ===============================================
+ */
+
+.image-cut-item {
+  text-align: center;
+  flex-shrink: 0;
+
+  &__img {
+    width: $image-width;
+    height: $image-height;
+    object-fit: cover;
+    border-radius: $border-radius-main;
+    margin-bottom: $spacing-s;
+    transition: transform $transition-fast, box-shadow $transition-fast;
+    border: $border-main;
+    display: block;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0, 188, 212, 0.5); // Corresponds to $accent-color
+    }
+  }
+
+  &__caption {
+    color: $text-secondary;
+    font-weight: 500;
+  }
+}
