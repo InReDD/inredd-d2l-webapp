@@ -2,80 +2,67 @@ import Image from "next/image"
 
 import { Paragraph2, Paragraph3 } from "@/app/_components/Typography";
 import { Input } from "@/app/_components/Form";
-import AccordionDashboard from "@/app/_components/AccordionDasboardNavbar";
+import AccordionDashboard from "@/app/_components/AccordionDasboardNavbar"; // Assuming this is your Accordion
 import Dropdown from "@/app/_components/Dropdown";
 
 const SideBar = () => {
+    // This is a mock structure for your patient data
+    const patients = [
+        { id: '#44651', name: 'Paciente 123', initials: 'AA', active: true, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis interdum lorem...' },
+        { id: '#44652', name: 'Paciente 124', initials: 'BB', active: false, content: '...' },
+        { id: '#44653', name: 'Paciente 125', initials: 'CC', active: false, content: '...' },
+        { id: '#44654', name: 'Paciente 126', initials: 'DD', active: false, content: '...' },
+    ];
+
     return (
-        <div className="sidenav active">
-            <div className="col-12 mt-16 pr-10 pl-10 d-flex justify-content-between align-items-baseline">
-                <Paragraph2 className="paragrafo">
-                    Pacients
-                </Paragraph2>
+        // The component is placed inside the <div class="sidebar-content">
+        <>
+            <div className="patients-header">
+                <h2 className="patients-title">Patients</h2>
                 <ul>
                     <li>
                         <a href="/">Add new+</a>
                     </li>
                 </ul>
             </div>
-            <div className="w-100 mt-4 pr-10 pl-10 d-flex justify-content-between">
-            <Input
-                placeholder="Search for a pacient..."
-            />
-            <Image
-                className="Search.png mt-5 ml-5"
-                src={"/icons/Search.png"}
-                width={25}
-                height={25}
-                alt="Search Icon"
-            />
-            </div>
-            <div className="col-12 mt-24 pl-10 pt-8 pd-8 d-flex justify-content-between align-items-baseline p-0">
-                <div className="paragrafo3">
-                    <Paragraph3>
-                        1-10 of 200
-                    </Paragraph3>
-                </div>
-                <div className="paragrafo3 mr-10 d-flex justify-content-between align-items-baseline">
-                    <Paragraph3>
-                        Page:
-                    </Paragraph3>
-                    <div className="ml-8">
-                        <Dropdown></Dropdown>
-                    </div>
-                </div>
-            </div>
-            <div className="accordion mt-20">
-                <AccordionDashboard className="accordion ml-10">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Maecenas quis interdum lorem. Maecenas at orci sapien. 
-                    In in finibus nisl.
-                </AccordionDashboard>
-            </div>
-            <div className="accordion mt-20">
-                <AccordionDashboard className="accordion ml-10">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Maecenas quis interdum lorem. Maecenas at orci sapien. 
-                    In in finibus nisl.
-                </AccordionDashboard>
-            </div>
-            <div className="accordion mt-20">
-                <AccordionDashboard className="accordion ml-10">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Maecenas quis interdum lorem. Maecenas at orci sapien. 
-                    In in finibus nisl.
-                </AccordionDashboard>
-            </div>
-            <div className="accordion mt-20">
-                <AccordionDashboard className="accordion ml-10">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Maecenas quis interdum lorem. Maecenas at orci sapien. 
-                    In in finibus nisl.
-                </AccordionDashboard>
+
+            <div className="search-container">
+                <Input
+                    className="search-input"
+                    placeholder="Search for a patient..."
+                />
+                <Image
+                    className="search-icon"
+                    src={"/icons/Search.png"} // Update this path if necessary
+                    width={20}
+                    height={20}
+                    alt="Search Icon"
+                />
             </div>
 
-        </div>
+            <div className="pagination-controls">
+                <span>1-10 of 200</span>
+                <div className="page-selector">
+                    <span>Page:</span>
+                    <Dropdown />
+                </div>
+            </div>
+
+            <div className="patient-list">
+                {/* Map over your patient data.
+                  The AccordionDashboard component should handle its own state (expanded/collapsed).
+                  The `active` class is for styling the selected patient as in the image.
+                */}
+                {patients.map(patient => (
+                    <div key={patient.id} className={`patient-accordion ${patient.active ? 'active' : ''}`}>
+                        <AccordionDashboard title={`${patient.initials} ${patient.id} - ${patient.name}`}>
+                            {patient.content}
+                        </AccordionDashboard>
+                    </div>
+                ))}
+            </div>
+        </>
     )
 }
 
-export default SideBar
+export default SideBar;

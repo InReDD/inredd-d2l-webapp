@@ -4,6 +4,8 @@ import { Paragraph2, Paragraph3 } from "@/app/_components/Typography";
 import { Button } from "@/app/_components";
 import Image from "next/image";
 import AccordionDashboardD2L from "@/app/(dashboard)/_components/AccordionDasboard";
+import routes from "@/helpers/routes";
+import ButtonLink from "@/app/_components/ButtonLink";
 
 export async function generateMetadata() {
   return generate({
@@ -27,7 +29,7 @@ export default async function DashboardHome() {
                   <Paragraph2 className="paragrafo2 fw-bold">
                     Paciente 123
                   </Paragraph2>
-                  <Button type="submit" className="btn-black" size={"small"}>
+                  <ButtonLink href={routes.EDIT_PAGE} type="submit" className="btn-black" size={"small"}>
                     <Image
                       width={16}
                       height={16}
@@ -36,7 +38,7 @@ export default async function DashboardHome() {
                       className="edit-icon-custom mr-8"
                     />
                     Edit
-                  </Button>
+                  </ButtonLink>
                 </div>
                 <Paragraph3 className="paragrafo3">
                   Since 05/03/2024
