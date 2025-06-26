@@ -107,18 +107,14 @@ body {
   gap: 8px;
 }
 
-
-
-/* --- FIXED HEADER (Top) --- */
 #D2L-header {
   grid-area: header;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 var(--content-padding);
-  background: var(--header-bg); /* Changed to dark gray to match the image */
-  color: var(--header-text);    /* Changed to light text for contrast */
-  border-bottom: 1px solid #495057; /* Darker border */
+  background: var(--header-bg);
+  color: var(--header-text);    
+  border-bottom: 1px solid #495057;
   z-index: 1000;
   position: fixed;
   top: 0;
@@ -131,19 +127,9 @@ body {
     margin: 0;
 }
 
-.header-center .tabs-nav {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 8px;
-}
-
-/* --- SCROLLABLE MAIN CONTENT --- */
 #D2L-content {
   grid-area: content;
   overflow-y: auto;
-  background-color: var(--content-bg); /* Changed to white */
+  background-color: var(--content-bg); 
   padding: var(--content-padding);
-  /* The margin-top and margin-left are gone because we use grid for the layout */
 }

@@ -1,35 +1,17 @@
 import "./styles.scss";
 
-import ButtonLink from "@/app/_components/ButtonLink";
-import routes from "@/helpers/routes";
-import UserProfile from "../_components/Dashboard/UserProfile"
 import Image from "next/image";
 import { Paragraph2 } from "@/app/_components/Typography";
 import SideBar from "@/app/_components/Dashboard/SideBar";
+import DashboardNavbar from "@/app/_components/Dashboard/Navbar"
 
 export default function DashboardLayout({ children }) {
-    const navLinks = [
-        { name: "Resume", href: routes.DASHBOARD_HOME }, 
-        { name: "Advanced Search", href: routes.SEARCH },
-    ];
+
 
     return (
         <div id="D2L-dashboard">
             <header id="D2L-header">
-                <nav className="header-center">
-                    <ul className="tabs-nav">
-                        {navLinks.map((link) => (
-                            <li key={link.name}>
-                                <ButtonLink href={link.href}>
-                                    {link.name}
-                                </ButtonLink>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
-                <div className="header-right">
-                    <UserProfile />
-                </div>
+                <DashboardNavbar/>
             </header>
 
             <aside id="D2L-sidebar">

@@ -1,5 +1,7 @@
 import { Input } from "@/app/_components/Form";
 
+import "./styles.scss"
+
 export default function AdvancedSearchPage() {
   return (
     <div className="advanced-search-container">
