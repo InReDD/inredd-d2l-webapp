@@ -3,7 +3,7 @@ import { generateMetadata as generate } from "@/helpers";
 import { Paragraph2, Paragraph3 } from "@/app/_components/Typography";
 import { Button } from "@/app/_components";
 import Image from "next/image";
-import AccordionDashboardD2L from "@/app/(dashboard)/_components/AccordionDasboard";
+import AccordionDashboardD2L from "@/app/_components/Dashboard/AccordionItem";
 import routes from "@/helpers/routes";
 import ButtonLink from "@/app/_components/ButtonLink";
 

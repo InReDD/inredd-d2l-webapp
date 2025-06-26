@@ -1,0 +1,21 @@
+.resume-sidebar-content {
+  // --- Search Bar ---
+  .search-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+
+    // Assuming your Input component renders an <input> tag
+    .search-input {
+      width: 100%;
+      padding-right: 35px; // Make space for the icon
+    }
+    
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      pointer-events: none; // Prevents the icon from blocking input clicks
+    }
+  }
+}

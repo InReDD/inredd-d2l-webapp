@@ -1,8 +1,10 @@
-"use client";
+"use client"
+
 import { useState } from "react";
-import "./style.scss";
 import Image from "next/image";
 import { Paragraph1 } from "@/app/_components/Typography";
+
+import "./styles.scss";
 
 export default function AccordionDashboardD2L({ children, summary, initOpen, title, iconSrc }) {
   const [isOpen, setIsOpen] = useState(initOpen);

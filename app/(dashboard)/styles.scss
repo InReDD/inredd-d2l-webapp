@@ -65,30 +65,6 @@ body {
   overflow-y: auto; 
 }
 
-.sidebar-content .patients-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 1rem;
-}
-
-.patients-header .patients-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--text-color-primary);
-}
-
-.patients-header a {
-  color: var(--primary-blue);
-  text-decoration: none;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
-.patients-header a:hover {
-  text-decoration: underline;
-}
-
 /* --- Search Bar --- */
 .sidebar-content .search-container {
   position: relative;
@@ -131,52 +107,7 @@ body {
   gap: 8px;
 }
 
-/* --- Patient List (Accordion) --- */
-.sidebar-content .patient-list {
-    list-style: none;
-    margin: 0;
-}
 
-.patient-list .patient-accordion {
-  border-top: 1px solid var(--border-color);
-}
-.patient-list .patient-accordion:last-child {
-    border-bottom: 1px solid var(--border-color);
-}
-
-
-/* Active state for the selected patient */
-.patient-list .patient-accordion.active {
-  background-color: var(--light-blue-bg);
-  border-left: 4px solid var(--primary-blue);
-}
-
-.patient-list .patient-accordion.active .accordion-header {
-  /* Adjust padding to account for the new left border */
-  padding-left: 12px;
-}
-
-/* This would be the clickable header of your accordion */
-.patient-accordion .accordion-header {
-  padding: 16px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--text-color-primary);
-  transition: background-color 0.2s ease-in-out;
-}
-
-.patient-accordion .accordion-header:hover {
-  background-color: var(--content-bg-alt);
-}
-
-/* This is the content that shows when expanded */
-.patient-accordion .accordion-content {
-  padding: 0 16px 16px 16px;
-  font-size: 0.85rem;
-  color: var(--text-color-secondary);
-  line-height: 1.5;
-}
 
 /* --- FIXED HEADER (Top) --- */
 #D2L-header {

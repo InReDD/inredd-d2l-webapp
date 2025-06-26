@@ -1,12 +1,14 @@
-import Image from "next/image"
+"use client"
 
-import { Paragraph2, Paragraph3 } from "@/app/_components/Typography";
+import Image from "next/image"
 import { Input } from "@/app/_components/Form";
-import AccordionDashboard from "@/app/_components/AccordionDasboardNavbar"; // Assuming this is your Accordion
+import AccordionDashboard from "@/app/_components/Dashboard/SideBar/AccordionSideBarItem";
 import Dropdown from "@/app/_components/Dropdown";
 
-const SideBar = () => {
-    // This is a mock structure for your patient data
+import "./styles.scss"
+import SideBarHeader from "../SidebarHeader";
+
+const ResumeSideBar = () => {
     const patients = [
         { id: '#44651', name: 'Paciente 123', initials: 'AA', active: true, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis interdum lorem...' },
         { id: '#44652', name: 'Paciente 124', initials: 'BB', active: false, content: '...' },
@@ -15,16 +17,9 @@ const SideBar = () => {
     ];
 
     return (
-        // The component is placed inside the <div class="sidebar-content">
-        <>
-            <div className="patients-header">
-                <h2 className="patients-title">Patients</h2>
-                <ul>
-                    <li>
-                        <a href="/">Add new+</a>
-                    </li>
-                </ul>
-            </div>
+        <div className="resume-sidebar-content">
+
+            <SideBarHeader title="Patients"/>
 
             <div className="search-container">
                 <Input
@@ -33,26 +28,23 @@ const SideBar = () => {
                 />
                 <Image
                     className="search-icon"
-                    src={"/icons/Search.png"} // Update this path if necessary
+                    src={"/icons/Search.png"}
                     width={20}
                     height={20}
                     alt="Search Icon"
                 />
-            </div>
 
-            <div className="pagination-controls">
-                <span>1-10 of 200</span>
-                <div className="page-selector">
-                    <span>Page:</span>
-                    <Dropdown />
-                </div>
+                <a href="/">add new +</a>
             </div>
-
             <div className="patient-list">
-                {/* Map over your patient data.
-                  The AccordionDashboard component should handle its own state (expanded/collapsed).
-                  The `active` class is for styling the selected patient as in the image.
-                */}
+                <div className="pagination-controls">
+                    <span>1-10 of 200</span>
+                    <div className="page-selector">
+                        <span>Page:</span>
+                        <Dropdown />
+                    </div>
+                </div>
+
                 {patients.map(patient => (
                     <div key={patient.id} className={`patient-accordion ${patient.active ? 'active' : ''}`}>
                         <AccordionDashboard title={`${patient.initials} ${patient.id} - ${patient.name}`}>
@@ -61,8 +53,8 @@ const SideBar = () => {
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     )
 }
 
-export default SideBar;
+export default ResumeSideBar;

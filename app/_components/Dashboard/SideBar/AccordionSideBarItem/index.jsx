@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "./style.scss";
 import Image from "next/image";
-import { Paragraph3 } from "../Typography";
+import { Paragraph3 } from "@/app/_components/Typography";
 
 export default function AccordionDashboard({ children, summary, initOpen }) {
   const [isOpen, setIsOpen] = useState(initOpen);

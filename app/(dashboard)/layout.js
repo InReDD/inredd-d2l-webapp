@@ -2,10 +2,10 @@ import "./styles.scss";
 
 import ButtonLink from "@/app/_components/ButtonLink";
 import routes from "@/helpers/routes";
-import UserProfile from "./_components/UserProfile"
+import UserProfile from "../_components/Dashboard/UserProfile"
 import Image from "next/image";
 import { Paragraph2 } from "@/app/_components/Typography";
-import SideBar from "@/app/(dashboard)/_components/SideBar";
+import SideBar from "@/app/_components/Dashboard/SideBar";
 
 export default function DashboardLayout({ children }) {
     const navLinks = [
