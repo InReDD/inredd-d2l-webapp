@@ -1,198 +1,218 @@
-@import "@/app/color.scss";
-
 /* --- Configuration Variables --- */
-$sidebar-width: 280px;
-$header-height: 70px;
-$content-padding: 24px;
-$border-color: #dee2e6; // A light gray for borders
-$primary-blue: #007bff;     // A standard blue for links and highlights
-$light-blue-bg: #e9f2ff;   // Background for the active patient
-$text-color-primary: #212529; // Dark text for titles
-$text-color-secondary: #6c757d; // Lighter gray text for meta info
+:root {
+  --sidebar-width: 280px;
+  --header-height: 70px;
+  --content-padding: 4px;
+  --border-color: #dee2e6; /* A light gray for borders */
+  --primary-blue: #007bff;   /* A standard blue for links and highlights */
+  --light-blue-bg: #e9f2ff;  /* Background for the active patient */
+  --text-color-primary: #212529; /* Dark text for titles */
+  --text-color-secondary: #6c757d; /* Lighter gray text for meta info */
+  --header-bg: #343a40; /* Dark background for the header to match the image */
+  --header-text: #f8f9fa; /* Light text for the header */
+  --content-bg: #ffffff; /* White content background */
+  --content-bg-alt: #f8f9fa; /* Very light gray for alternate backgrounds */
+}
 
 /* --- Basic Reset --- */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-color-primary);
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* --- Main Dashboard Container --- */
 #D2L-dashboard {
   height: 100vh;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-rows: var(--header-height) 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar content";
 }
 
-/* --- FIXED SIDEBAR (Left) --- */
 #D2L-sidebar {
-  position: absolute;  
-  top: 0;
-  left: 0;
-  width: $sidebar-width;
-  height: 100%;
-  background: #fff; // Changed to white as per the image
-  border-right: 1px solid $border-color;
+  grid-area: sidebar;
+  background: #fff;
+  border-right: 1px solid var(--border-color);
   z-index: 1001;
   display: flex;
   flex-direction: column;
+  height: 100vh; /* Full height of the viewport */
+  position: fixed; /* Fix the sidebar */
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+}
 
-  .sidebar-header {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
-    height: $header-height;
-    border-bottom: 1px solid $border-color;
-    color: #000;
-    // Assuming the "Dental Second Look" logo goes here
-    // For the image provided, this part seems to be integrated into the sidebar-content
-  }
+.sidebar-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: var(--header-height);
+  border-bottom: 1px solid var(--border-color);
 
-  .sidebar-content {
-    flex-grow: 1;
-    overflow-y: auto; // Makes ONLY the list of patients scrollable
+}
 
-    // --- Patients Header ---
-    .patients-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1rem;
+.sidebar-content {
+  flex-grow: 1;
+  overflow-y: auto; 
+}
 
-      .patients-title {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: $text-color-primary;
-      }
+.sidebar-content .patients-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
 
-      a {
-        color: $primary-blue;
-        text-decoration: none;
-        font-size: 0.875rem;
-        font-weight: 500;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-      ul {
-          margin: 0;
-          padding: 0;
-          list-style: none;
-      }
-    }
+.patients-header .patients-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color-primary);
+}
 
-    // --- Search Bar ---
-    .search-container {
-        position: relative;
-        margin-bottom: 1.5rem;
-        .search-input {
-            padding-right: 35px; // Make space for the icon
-            // Assuming your Input component creates an <input> tag
-            input {
-                width: 100%;
-                padding: 8px 12px;
-                border: 1px solid $border-color;
-                border-radius: 4px;
-                font-size: 0.9rem;
-            }
-        }
-        .search-icon {
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
-        }
-    }
+.patients-header a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.patients-header a:hover {
+  text-decoration: underline;
+}
+
+/* --- Search Bar --- */
+.sidebar-content .search-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.search-container .search-input {
+  width: 100%;
+  padding: 8px 35px 8px 12px; /* Make space for the icon */
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.search-container .search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: var(--text-color-secondary); /* Give icon a color */
+}
+
+/* --- Pagination --- */
+.sidebar-content .pagination-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.8rem;
+  color: var(--text-color-secondary);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 0.5rem;
+}
+
+.pagination-controls .page-selector {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+/* --- Patient List (Accordion) --- */
+.sidebar-content .patient-list {
+    list-style: none;
+    margin: 0;
+}
+
+.patient-list .patient-accordion {
+  border-top: 1px solid var(--border-color);
+}
+.patient-list .patient-accordion:last-child {
+    border-bottom: 1px solid var(--border-color);
+}
 
 
-    // --- Pagination ---
-    .pagination-controls {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      font-size: 0.8rem;
-      color: $text-color-secondary;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid $border-color;
+/* Active state for the selected patient */
+.patient-list .patient-accordion.active {
+  background-color: var(--light-blue-bg);
+  border-left: 4px solid var(--primary-blue);
+}
 
-      .page-selector {
-        display: flex;
-        align-items: baseline;
-        gap: 8px;
-      }
-    }
+.patient-list .patient-accordion.active .accordion-header {
+  /* Adjust padding to account for the new left border */
+  padding-left: 12px;
+}
 
-    // --- Patient List (Accordion) ---
-    .patient-list {
-      .patient-accordion {
-        border-top: 1px solid $border-color;
+/* This would be the clickable header of your accordion */
+.patient-accordion .accordion-header {
+  padding: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-color-primary);
+  transition: background-color 0.2s ease-in-out;
+}
 
-        // Active state for the selected patient
-        &.active {
-          background-color: $light-blue-bg;
-          border-left: 4px solid $primary-blue;
-          // Adjust padding to account for the new left border
-          .accordion-header {
-            padding-left: 12px;
-          }
-        }
-        
-        &:last-child {
-            border-bottom: 1px solid $border-color;
-        }
-        
-        // This would be the clickable header of your accordion
-        .accordion-header {
-            padding: 16px 16px 16px 16px; // Adjusted left padding for alignment
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: $text-color-primary;
+.patient-accordion .accordion-header:hover {
+  background-color: var(--content-bg-alt);
+}
 
-            &:hover {
-                background-color: #f8f9fa;
-            }
-        }
-
-        // This is the content that shows when expanded
-        .accordion-content {
-          font-size: 0.85rem;
-          color: $text-color-secondary;
-          line-height: 1.5;
-        }
-      }
-    }
-  }
+/* This is the content that shows when expanded */
+.patient-accordion .accordion-content {
+  padding: 0 16px 16px 16px;
+  font-size: 0.85rem;
+  color: var(--text-color-secondary);
+  line-height: 1.5;
 }
 
 /* --- FIXED HEADER (Top) --- */
 #D2L-header {
-  position: absolute;
-  top: 0;
-  left: $sidebar-width;
-  width: calc(100% - #{$sidebar-width});
-  height: $header-height;
+  grid-area: header;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 $content-padding;
-  background: #fff; // Changed to white as per the image
-  border-bottom: 1px solid $border-color;
+  padding: 0 var(--content-padding);
+  background: var(--header-bg); /* Changed to dark gray to match the image */
+  color: var(--header-text);    /* Changed to light text for contrast */
+  border-bottom: 1px solid #495057; /* Darker border */
   z-index: 1000;
-  color: $text-color-primary;
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
+}
+
+#D2L-header h1 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.header-center .tabs-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
 }
 
 /* --- SCROLLABLE MAIN CONTENT --- */
 #D2L-content {
-  margin-left: $sidebar-width;
-  margin-top: $header-height;
-  padding: $content-padding;
-  height: calc(100vh - #{$header-height});
+  grid-area: content;
   overflow-y: auto;
-  background-color: #f8f9fa; // A very light gray for the content background
+  background-color: var(--content-bg); /* Changed to white */
+  padding: var(--content-padding);
+  /* The margin-top and margin-left are gone because we use grid for the layout */
 }
