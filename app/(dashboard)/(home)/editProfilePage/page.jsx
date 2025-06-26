@@ -2,26 +2,16 @@
 
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
-import { generateMetadata as generate } from "@/helpers";
 import { Paragraph3 } from "@/app/_components/Typography";
-import { Input, TextArea } from "@/app/_components/Form"; // Assuming you have these form components
+import { Input, TextArea } from "@/app/_components/Form"; 
 import routes from "@/helpers/routes";
 import { Button } from "@/app/_components";
 
 import "./styles.scss"
 
-// Note: generateMetadata is for Server Components. For a Client Component's title,
-// you would typically manage it using state or a library like react-helmet.
-// export async function generateMetadata() {
-//   return generate({
-//     title: "Edit Patient",
-//     description: "Edit Patient Details",
-//   });
-// }
-
 export default function PatientEditPage() {
-    const router = useRouter(); // Initialize the router
-    // Initialize state with patient data (you would fetch this data in a real app)
+    const router = useRouter(); 
+    
     const [formData, setFormData] = useState({
         name: "Patient 123",
         address: "Brazil, São Paulo, Ribeirão Preto",
@@ -41,10 +31,7 @@ export default function PatientEditPage() {
 
     const handleSave = (e) => {
         e.preventDefault();
-        // Logic to save the form data would go here (e.g., API call)
         console.log("Saving data:", formData);
-
-        // After successfully saving, redirect to the home page
         router.push(routes.DASHBOARD_HOME);
     };
 

@@ -2,11 +2,11 @@
 
 import Image from "next/image"
 import { Input } from "@/app/_components/Form";
+import SideBarHeader from "@/app/_components/Dashboard/SideBar/SidebarHeader";
 import AccordionDashboard from "@/app/_components/Dashboard/SideBar/AccordionSideBarItem";
 import Dropdown from "@/app/_components/Dropdown";
 
 import "./styles.scss"
-import SideBarHeader from "../SidebarHeader";
 
 const ResumeSideBar = () => {
     const patients = [

@@ -1,0 +1,258 @@
+$color-primary: #007bff;
+$color-primary-hover: #0056b3;
+$color-secondary: #6c757d;
+$color-secondary-hover: #5a6268;
+$color-background: #f8f9fa;
+$color-surface: #ffffff;
+$color-border: #dee2e6;
+$color-text-primary: #212529;
+$color-text-secondary: #495057;
+$color-text-muted: #6c757d;
+$color-alert-bg: #fff3cd;
+$color-alert-text: #856404;
+$color-alert-border: #ffeeba;
+
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$spacing-unit: 8px;
+$border-radius: 6px;
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+.pageContainer {
+    font-family: $font-family;
+    background-color: $color-background;
+    padding: $spacing-unit * 3 $spacing-unit * 4;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-unit * 3;
+    
+    h1 {
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: $color-text-primary;
+    }
+}
+
+.headerActions {
+    display: flex;
+    gap: $spacing-unit * 1.5;
+}
+
+.button {
+    padding: $spacing-unit * 1.25 $spacing-unit * 2.5;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: $border-radius;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: $shadow-sm;
+    }
+}
+
+.buttonPrimary {
+    background-color: $color-primary;
+    color: white;
+    &:hover {
+        background-color: $color-primary-hover;
+    }
+}
+
+.buttonSecondary {
+    background-color: $color-surface;
+    color: $color-text-secondary;
+    border-color: $color-border;
+    &:hover {
+        background-color: #e9ecef;
+    }
+}
+
+// --- Form Container ---
+.formContainer {
+    background-color: $color-surface;
+    border-radius: $border-radius;
+    border: 1px solid $color-border;
+    box-shadow: $shadow-sm;
+    overflow: hidden; // To contain border-radius
+}
+
+// --- Patient Header Section ---
+.patientHeader {
+    display: flex;
+    align-items: center;
+    gap: $spacing-unit * 2.5;
+    padding: $spacing-unit * 3;
+    border-bottom: 1px solid $color-border;
+}
+
+.avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-color: $color-primary;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.patientName {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: $color-text-primary;
+}
+
+.patientMeta {
+    font-size: 0.9rem;
+    color: $color-text-muted;
+    margin-top: $spacing-unit * 0.5;
+}
+
+.metaDivider {
+    margin: 0 $spacing-unit;
+}
+
+// --- Medical Alert Banner ---
+.medicalAlert {
+    background-color: $color-alert-bg;
+    color: $color-alert-text;
+    border-bottom: 1px solid $color-alert-border;
+    padding: $spacing-unit * 1.5 $spacing-unit * 3;
+    font-size: 0.9rem;
+    
+    strong {
+        margin-right: $spacing-unit;
+    }
+}
+
+
+// --- Main Grid and Form Sections ---
+.contentGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0;
+}
+
+.formSection {
+    padding: $spacing-unit * 3;
+    
+    &:not(:last-child) {
+      border-right: 1px solid $color-border;
+    }
+}
+
+.fullWidthSection {
+    border-top: 1px solid $color-border;
+}
+
+
+.sectionTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $color-text-primary;
+    margin-top: 0;
+    margin-bottom: $spacing-unit * 2.5;
+    display: flex;
+    align-items: center;
+    gap: $spacing-unit;
+}
+
+.headingIcon {
+    color: $color-primary;
+}
+
+.fieldsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-unit * 2.5;
+}
+
+// --- Reusable Form Group for Editing ---
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    
+    label {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: $color-text-muted;
+        margin-bottom: $spacing-unit * 0.5;
+    }
+}
+
+.formControl {
+    width: 100%;
+    padding: $spacing-unit * 1.25;
+    font-size: 1rem;
+    border: 1px solid $color-border;
+    border-radius: $border-radius;
+    background-color: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    
+    &:focus {
+        outline: none;
+        border-color: $color-primary;
+        box-shadow: 0 0 0 3px rgba($color-primary, 0.15);
+    }
+}
+
+textarea.formControl {
+    resize: vertical;
+    min-height: 80px;
+}
+
+
+// --- Reusable Info Fields for Viewing ---
+.infoField {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoLabel {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: $color-text-muted;
+    margin-bottom: $spacing-unit * 0.5;
+}
+
+.infoValue {
+    font-size: 1rem;
+    color: $color-text-primary;
+    margin: 0;
+    line-height: 1.5;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .contentGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .formSection:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid $color-border;
+    }
+    
+    .pageContainer {
+        padding: $spacing-unit * 2;
+    }
+    
+    .pageHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: $spacing-unit * 2;
+    }
+}
