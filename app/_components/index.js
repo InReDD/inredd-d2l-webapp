@@ -13,3 +13,4 @@ export { default as BackButton } from "./BackButton";
 export { default as ProfilePicture } from "./ProfilePicture";
 export { default as Table } from "./Table";
 export { default as Editor } from "./Editor";
+export { default as AccordionDashboardD2L } from "./Dashboard/AccordionItem";

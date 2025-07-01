@@ -1,10 +1,9 @@
-import AccordionDashboardD2L from "@/app/_components/Dashboard/AccordionItem";
-import { Button } from "@/app/_components";
+import { Button, ButtonLink, AccordionDashboardD2L} from "@/app/_components";
+import routes from "@/helpers/routes";
 
 const PatientsVisits = () => {
     return (
         <div className="">
-
             <div className="accordion mt-20">
                 <AccordionDashboardD2L
                     initOpen={false}
@@ -29,15 +28,13 @@ const PatientsVisits = () => {
                                 consectetur
                             </div>
                             <div className="col-3 d-flex justify-content-end gap-2">
-                                {/* <Button type="submit" className="btn-black" size="small">Analysis</Button> */}
-                                <Button type="submit" className="btn-black" size="small">Record</Button>
+                                <ButtonLink href={`${routes.RECORD_PAGE}/${id}`} type="submit" className="btn-black" size="small">Record</ButtonLink>
                                 <Button type="submit" className="btn-black" size="small">Viewer</Button>
                             </div>
                         </div>
                     ))}
                 </AccordionDashboardD2L>
             </div>
-
         </div>
     )
 }
