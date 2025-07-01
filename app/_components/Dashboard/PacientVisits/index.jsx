@@ -19,7 +19,7 @@ const PatientsVisits = () => {
                     <div className="divider-line mt-2 mb-3"></div>
 
                     {/* Linhas da tabela */}
-                    {[12, 13, 14, 15].map((id) => (
+                    {[1, 2, 3, 4].map((id) => (
                         <div key={id} className="visit-row d-flex justify-content-between align-items-start px-3 py-2">
                             <div className="col-1">{id}</div>
                             <div className="col-3">05/10/2024 10:00pm</div>
