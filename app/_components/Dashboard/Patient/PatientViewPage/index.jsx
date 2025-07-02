@@ -62,9 +62,9 @@ export default function PatientViewPage({ patient, onEditClick  }) {
                     Edit
                   </Button>
                 </div>
-                {/* <Paragraph3 className="paragrafo3">
-                  Paciente desde {new Date(patient.createdAt).toLocaleDateString()}
-                </Paragraph3> */}
+                <Paragraph3 className="paragrafo3">
+                  Paciente desde {new Date(createdAt).toLocaleDateString()}
+                </Paragraph3>
               </div>
             </div>
             <div className="d-flex align-items-center">
@@ -104,7 +104,7 @@ export default function PatientViewPage({ patient, onEditClick  }) {
             </AccordionDashboardD2L>
           </div>
 
-          <PatientsVisits patientId={patient.id} />
+          <PatientsVisits patient={patient} />
 
           <div className="accordion mt-20">
             <AccordionDashboardD2L
