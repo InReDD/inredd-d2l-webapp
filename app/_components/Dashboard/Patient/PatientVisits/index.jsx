@@ -24,7 +24,7 @@ const PatientsVisits = ({ patient }) => {
             <div className="accordion mt-20">
                 <AccordionDashboardD2L
                     initOpen={false}
-                    summary={<span>Pacient’s visits (08)</span>}
+                    summary={<span>Pacient’s visits ({patient.visits.length})</span>}
                 >
                     <div className="visit-table-header d-flex justify-content-between px-3 pt-3">
                         <div className="col-1 fw-bold">ID</div>
