@@ -1,0 +1,185 @@
+$color-primary: #007bff;
+$color-primary-hover: #0056b3;
+$color-secondary: #6c757d;
+$color-secondary-hover: #5a6268;
+$color-background: #f8f9fa;
+$color-surface: #ffffff;
+$color-border: #dee2e6;
+$color-text-primary: #212529;
+$color-text-secondary: #495057;
+$color-text-muted: #6c757d;
+
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$spacing-unit: 8px;
+$border-radius: 6px;
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+.pageContainer {
+    font-family: $font-family;
+    padding: $spacing-unit * 3 $spacing-unit * 4;
+    margin: 0 auto;
+}
+
+.pageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-unit * 3;
+    
+    h1 {
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: $color-text-primary;
+    }
+}
+
+.headerActions {
+    display: flex;
+    gap: $spacing-unit * 1.5;
+}
+
+.button {
+    padding: $spacing-unit * 1.25 $spacing-unit * 2.5;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: $border-radius;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: $shadow-sm;
+    }
+}
+
+.buttonPrimary {
+    background-color: $color-primary;
+    color: white;
+    &:hover {
+        background-color: $color-primary-hover;
+    }
+}
+
+.buttonSecondary {
+    background-color: $color-surface;
+    color: $color-text-secondary;
+    border-color: $color-border;
+    &:hover {
+        background-color: #e9ecef;
+    }
+}
+
+.recordContainer {
+    box-shadow: $shadow-sm;
+    overflow: hidden;
+}
+
+.contentGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 0;
+}
+
+.formSection {
+    padding: $spacing-unit * 3;
+    
+    &:not(:last-child) {
+        border-right: 1px solid $color-border;
+    }
+}
+
+.sectionTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $color-text-primary;
+    margin-top: 0;
+    margin-bottom: $spacing-unit * 3;
+    padding-bottom: $spacing-unit * 1.5;
+    border-bottom: 2px solid $color-primary;
+    display: inline-block;
+}
+
+.subSectionTitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: $color-text-secondary;
+    margin-top: $spacing-unit * 3;
+    margin-bottom: $spacing-unit * 2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #f0f2f5;
+    padding-bottom: $spacing-unit;
+}
+
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $spacing-unit * 2.5;
+    
+    label {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: $color-text-secondary;
+        margin-bottom: $spacing-unit * 0.75;
+    }
+}
+
+.formControl {
+    width: 100%;
+    padding: $spacing-unit * 1.25;
+    font-size: 1rem;
+    border: 1px solid $color-border;
+    border-radius: $border-radius;
+    background-color: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    
+    &:focus {
+        outline: none;
+        border-color: $color-primary;
+        box-shadow: 0 0 0 3px rgba($color-primary, 0.15);
+    }
+}
+
+textarea.formControl {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.checkboxGroup {
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacing-unit * 1.5;
+
+    label {
+        margin-left: $spacing-unit;
+        font-size: 0.95rem;
+        color: $color-text-primary;
+        cursor: pointer;
+    }
+}
+
+.formCheckbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.infoField {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px
+}
+
+
+@media (max-width: 900px) {
+    .contentGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .formSection:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid $color-border;
+    }
+}

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Input, Select } from "@/app/_components/Form";
 import { searchVisits } from "@/services/visit";
-import { Button } from '@/app/_components';
+import { Button, ButtonLink } from '@/app/_components';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 import "./styles.scss";
@@ -32,6 +32,7 @@ export default function AdvancedSearchPage() {
     setResults(null);
     try {
       const data = await searchVisits(criteria);
+      console.log(data)
       setResults(data);
     } catch (err) {
       setError("Search failed. Please try again.");
@@ -185,7 +186,7 @@ const SearchResultItem = ({ visit }) => {
       <div className="col-date">{new Date(visit.visitDate).toLocaleDateString()}</div>
       <div className="col-register">{visit.mainComplaint}</div>
       <div className="col-actions">
-        <Button size="small" href={`/patient/${visit.patientId}/recordPage/${visit.id}`}>View Record</Button>
+        <ButtonLink size="small" href={`/patient/${visit.patientId}/recordPage/${visit.id}`}>View Record</ButtonLink>
       </div>
     </div>
   );

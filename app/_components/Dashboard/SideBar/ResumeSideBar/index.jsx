@@ -18,7 +18,7 @@ const ResumeSideBar = () => {
 
             <SideBarHeader title="Patients"/>
 
-            <div className="search-container">
+            {/* <div className="search-container">
                 <Input
                     className="search-input"
                     placeholder="Search for a patient..."
@@ -31,15 +31,15 @@ const ResumeSideBar = () => {
                     alt="Search Icon"
                 />
 
-                <a href="/">add new +</a>
-            </div>
+                </div> */}
             <div className="patient-list">
+                <a href="/">add new +</a>
                 <div className="pagination-controls">
-                    <span>1-10 of 200</span>
+                    {/* <span>1-10 of 200</span>
                     <div className="page-selector">
                         <span>Page:</span>
                         <Dropdown />
-                    </div>
+                    </div> */}
                 </div>
 
                 <AccordionSideBarList patients={patients}/>

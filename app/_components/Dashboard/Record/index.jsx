@@ -5,6 +5,8 @@ import { updateVisit } from "@/services/visit";
 import VisitRecordView from "./PatientRecordView";
 import VisitRecordEdit from "./PatientRecordEdit";
 
+import './styles.scss';
+
 export default function VisitManager({ visit: initialVisit }) {
     const [visit, setVisit] = useState(initialVisit);
     const [formData, setFormData] = useState(null);
