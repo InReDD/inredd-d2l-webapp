@@ -61,6 +61,12 @@ $border-radius-md: 8px;
   margin-top: $spacing-unit * 2.5; // 20px
 }
 
+.bottom {
+  display: flex;
+  margin-top: 1.2rem;
+  justify-content: space-between;
+}
+
 .formGroup {
   display: flex;
   flex-direction: column;

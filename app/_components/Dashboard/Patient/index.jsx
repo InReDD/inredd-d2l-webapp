@@ -1,13 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import PatientEditPage from "./PatientEditPage";
 import PatientViewPage from "./PatientViewPage";
 
-export default function PatientDetailPage({ patient }) {
-    const [formData, setFormData] = useState(null);
-    const [isEditing, setIsEditing] = useState(false)
+export default function PatientPage({ patient: initialPatient }) {
+    const [patient, setPatient] = useState(initialPatient);
+    const [isEditing, setIsEditing] = useState(false);
+    const [formData, setFormData] = useState({
+        fullName: initialPatient.fullName,
+        sex: initialPatient.sex,
+        dateOfBirth: initialPatient.dateOfBirth,
+    });
+    const [error, setError] = useState(null);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -15,7 +21,6 @@ export default function PatientDetailPage({ patient }) {
     };
 
     const handleCancel = () => {
-        // Reset form data to original state and exit edit mode
         setFormData({
             fullName: patient.fullName,
             address: patient.address,
@@ -28,15 +33,14 @@ export default function PatientDetailPage({ patient }) {
     const handleSave = async (e) => {
         e.preventDefault();
         try {
-            // The payload must match the backend's PatientCreateDTO structure
             const updatePayload = {
                 fullName: formData.fullName,
                 address: formData.address,
                 sex: formData.sex,
                 dateOfBirth: formData.dateOfBirth,
             };
-            const updatedPatient = await updatePatient(patientId, updatePayload);
-            
+            const updatedPatient = await updatePatient(patient.id, updatePayload);
+
             setPatient(updatedPatient);
             setIsEditing(false);
 
@@ -46,8 +50,7 @@ export default function PatientDetailPage({ patient }) {
         }
     };
 
-    // --- Render Logic ---
-    if (!patient) return null; // Or a "not found" component
+    if (error) return <div className="p-4 text-danger">{error}</div>;
 
     return (
         <div className="container-fluid">
@@ -59,7 +62,6 @@ export default function PatientDetailPage({ patient }) {
                             onInputChange={handleInputChange}
                             onSave={handleSave}
                             onCancel={handleCancel}
-                            patient={patient}
                         />
                     ) : (
                         <PatientViewPage

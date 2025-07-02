@@ -11,6 +11,7 @@ export default function Select({
   value,
   onChange,
   placeholder,
+  options = [], 
   children,
   className,
   classNameError,
@@ -45,6 +46,13 @@ export default function Select({
             {placeholder}
           </option>
         )}
+        {/* Map over the options array to render <option> elements */}
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+        {/* Still renders children for flexibility */}
         {children}
       </select>
       {!disableValidation && (

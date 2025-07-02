@@ -4,26 +4,19 @@ import Patient from "@/app/_components/Dashboard/Patient"
 
 import "./styles.scss";
 
-const getPatientInitials = (name) => {
-    if (!name) return "?";
-    const parts = name.split(' ');
-    return parts.length > 1 ? parts[0][0] + parts[parts.length - 1][0] : parts[0][0];
-};
-
 export default async function PatientDetailPage({ params }) {
-    const { patientId } = params;
-    const patient = await getPatientById(patientId)
+    let patient = null;
+    let error = null;
 
-    if (!patient) return null;
+    try {
+        patient = await getPatientById(params.patientId);
+    } catch (e) {
+        console.error("Failed to fetch patient on server:", e);
+        error = e.message || "Could not load patient data.";
+    }
 
-    return (
-        <div className="container-fluid">
-            <div className="row">
-                <div className="col-12 homepage pl-28 row">
-                    <Patient patient={patient}/>
-                </div>
-            </div>
-        </div>
-    );
+    if (error) return <div className="p-4 text-danger">{error}</div>;
+    if (!patient) return <div className="p-4">Paciente não encontrado.</div>;
+
+    return <Patient patient={patient} />;
 }
-

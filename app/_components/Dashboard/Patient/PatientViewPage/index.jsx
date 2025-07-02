@@ -33,7 +33,6 @@ export default function PatientViewPage({ patient, onEditClick  }) {
   const { id, fullName, createdAt, address, sex, dateOfBirth } = patient;
 
   const patientDetails = [
-    { label: "Address", value: address },
     { label: "Sex", value: sex },
     { label: "Date of Birth", value: new Date(dateOfBirth).toLocaleDateString() }
   ];
@@ -63,9 +62,9 @@ export default function PatientViewPage({ patient, onEditClick  }) {
                     Edit
                   </Button>
                 </div>
-                <Paragraph3 className="paragrafo3">
+                {/* <Paragraph3 className="paragrafo3">
                   Paciente desde {new Date(patient.createdAt).toLocaleDateString()}
-                </Paragraph3>
+                </Paragraph3> */}
               </div>
             </div>
             <div className="d-flex align-items-center">
