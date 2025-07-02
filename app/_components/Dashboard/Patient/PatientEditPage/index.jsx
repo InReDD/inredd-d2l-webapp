@@ -60,7 +60,6 @@ export default function PatientEditPage() {
                     </div>
                 </div>
 
-                {/* --- Address and Email (Side-by-side) --- */}
                 <div className="row mt-20">
                     <div className="col-6">
                         <div className="form-group">
@@ -102,10 +101,10 @@ export default function PatientEditPage() {
 
             {/* --- Top Action Buttons --- */}
             <div className="form-actions">
-                <Button type="button" className="btn-secondary" onClick={handleCancel}>
+                <Button type="button" size="small" className="btn-black" onClick={handleCancel}>
                     Cancel
                 </Button>
-                <Button type="submit" className="btn-black" onClick={handleSave}>
+                <Button type="submit" size="small" className="btn-black" onClick={handleSave}>
                     Save
                 </Button>
             </div>

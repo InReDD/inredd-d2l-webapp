@@ -44,8 +44,6 @@ export default function PatientRecordPage({ params }) {
                     dob: data.dateOfBirth, // API sends dateOfBirth
                     sex: data.sex,
                     address: data.address,
-                    // Note: Other fields like email, phone, insurance, etc., are not in the API response
-                    // and have been removed from the UI for now.
                 };
 
                 setPatientData(adaptedData);

@@ -26,7 +26,7 @@ export async function getPatientById(id) {
     throw new Error("Patient ID is required.");
   }
   try {
-    const patient = await API.get({ path: `/api/v1/patients/${id}` });
+    const patient = await API.get({ path: `/patients/${id}` });
     return patient;
   } catch (err) {
     console.error(`Failed to fetch patient with ID ${id}:`, err);

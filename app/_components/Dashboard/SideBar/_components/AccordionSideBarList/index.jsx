@@ -5,12 +5,12 @@ import "./style.scss";
 import Image from "next/image";
 import { Paragraph3 } from "@/app/_components/Typography";
 import { ButtonLink } from "@/app/_components";
-import { getAllPatients } from "@/services/patient"; 
+import { getAllPatients } from "@/services/patient";
 
 const getPatientInitials = (name) => {
-    if (!name) return "?";
-    const parts = name.split(' ');
-    return parts.length > 1 ? parts[0][0] + parts[parts.length - 1][0] : parts[0][0];
+  if (!name) return "?";
+  const parts = name.split(' ');
+  return parts.length > 1 ? parts[0][0] + parts[parts.length - 1][0] : parts[0][0];
 };
 
 /**
@@ -48,12 +48,14 @@ function AccordionItem({ patient, isActive, onAccordionClick, children }) {
           />
         </summary>
         <div className="accordion-content">
-            <ButtonLink href={`/patients/${patient.id}`} className="btn-black" size={"small"}>
-                See details
-            </ButtonLink>
-            <div className="children pl-10 mt-2">
-                {children}
-            </div>
+          <div className="children pl-10 mt-2">
+            {children}
+          </div>
+        </div>
+        <div className="button-section">
+          <ButtonLink href={`/patient/${patient.id}`} className="btn-black" size={"small"}>
+            See details
+          </ButtonLink>
         </div>
         <div className="is-open-line"></div>
       </details>
@@ -84,7 +86,7 @@ export default function AccordionSideBarList() {
     }
 
     fetchPatients();
-  }, []); 
+  }, []);
 
   const handleAccordionClick = (patientId) => {
     setActivePatientId(prevActiveId => prevActiveId === patientId ? null : patientId);

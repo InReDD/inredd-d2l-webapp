@@ -21,7 +21,7 @@ export default function NotFound() {
             changed, or be temporarily unavailable
           </p>
           <div className="d-flex justify-content-center mt-28">
-            <ButtonLink size={"small"} href={routes.HOME}>
+            <ButtonLink size={"small"} href={routes.DASHBOARD_HOME}>
               Go back Home
             </ButtonLink>
           </div>

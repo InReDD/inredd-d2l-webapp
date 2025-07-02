@@ -75,7 +75,7 @@ export default async function RootLayout({ children }) {
         />
       </Head>
       <body>
-        <DemoBar />
+        {/* <DemoBar /> */}
         <div className="app-wrapper">
           <AppProvider>{children}</AppProvider>
           <Suspense>

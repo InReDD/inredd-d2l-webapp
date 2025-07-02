@@ -62,6 +62,12 @@
       }
     }
 
+    .button-section{
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 1.2rem;
+    }
+
     &[open] .summary {
       border-bottom: none;
     } 
