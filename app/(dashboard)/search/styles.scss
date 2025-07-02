@@ -1,39 +1,84 @@
 .advanced-search-container {
-  .search-grid {
+    padding: 2rem;
+    h1 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.search-form-card {
+    margin-bottom: 2rem;
+}
+
+.search-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-bottom: 32px;
-  }
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
 
-  .search-column {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    h3 {
-      margin: 0 0 8px 0;
-      font-weight: 500;
-    }
-    // Styling for the search inputs
-    input {
-      border: 1px solid #ced4da;
-      border-radius: 4px;
-      padding: 8px 12px;
-      // The red highlight from the image is a design annotation
-      // and is not included here.
-    }
-  }
+.search-column h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
 
-  .results-table-header {
+.search-actions {
     display: flex;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #343a40;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+}
+
+.results-container {
+    margin-top: 2rem;
+}
+
+.analytics-dashboard {
+    padding: 1.5rem;
+    border-radius: 8px;
+
+    h2 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.chart-container h3 {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+
+/* Results Table Styles */
+.results-table {
+    font-size: 0.9rem;
+}
+.results-table-header, .result-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 3fr 1fr;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e9ecef;
+    align-items: center;
+}
+.results-table-header {
     font-weight: 600;
-    color: #343a40;
+    background-color: #f8f9fa;
+}
 
-    .col-id { width: 10%; }
-    .col-date { width: 25%; }
-    .col-register { flex-grow: 1; }
-    .col-actions { width: 20%; text-align: right; }
-  }
+.no-results, .loading-indicator, .error-message {
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.1rem;
+    color: #6c757d;
 }

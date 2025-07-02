@@ -93,3 +93,18 @@ export async function deleteVisit(id) {
     throw err;
   }
 }
+
+/**
+ * Performs a complex search for visits based on multiple criteria.
+ * @param {object} searchCriteria - An object containing all the search filters.
+ * @returns {Promise<object>} A promise that resolves to an object containing results and stats.
+ */
+export async function searchVisits(searchCriteria) {
+  try {
+    const response = await API.post({ path: "/visits/search", data: searchCriteria });
+    return response;
+  } catch (err) {
+    console.error("Failed to perform advanced visit search:", err);
+    throw err;
+  }
+}

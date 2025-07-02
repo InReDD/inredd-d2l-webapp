@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { updateVisit } from "@/helpers/api"; 
+import { updateVisit } from "@/services/visit"; 
 import VisitRecordView from "./PatientRecordView";
 import VisitRecordEdit from "./PatientRecordEdit";
 

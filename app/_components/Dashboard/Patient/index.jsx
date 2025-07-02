@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import PatientEditPage from "./PatientEditPage";
 import PatientViewPage from "./PatientViewPage";
 
+import { updatePatient } from "@/services/patient";
+
 export default function PatientPage({ patient: initialPatient }) {
     const [patient, setPatient] = useState(initialPatient);
     const [isEditing, setIsEditing] = useState(false);
