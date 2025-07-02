@@ -97,7 +97,7 @@ const get = async ({ path, searchParams, tags, enableCache }, prefix = "") => {
     setSeverSideCookies(headers);
 
     response = await fetch(
-      `${prefix}${path}?${searchParams}`,
+      `${process.env.NEXT_PUBLIC_API_URL}${prefix}${path}?${searchParams}`,
       {
         method: "GET",
         credentials: "include",

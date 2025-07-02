@@ -5,7 +5,6 @@ import { API } from "@/helpers/api";
 
 import "./styles.scss";
 
-
 const FormField = ({ id, label, value, onChange, type = "text", component: Component = "input", rows }) => (
     <div className="formGroup">
         <label htmlFor={id}>{label}</label>

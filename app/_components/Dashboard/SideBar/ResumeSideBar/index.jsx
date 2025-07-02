@@ -7,9 +7,12 @@ import Dropdown from "@/app/_components/Dropdown";
 
 import "./styles.scss"
 
-import AccordionSideBarList from "../AccordionSideBarList";
+import AccordionSideBarList from "../_components/AccordionSideBarList";
+import { getAllPatients } from "@/services/patient";
 
 const ResumeSideBar = () => {
+    const patients = getAllPatients();
+
     return (
         <div className="resume-sidebar-content">
 
@@ -39,7 +42,7 @@ const ResumeSideBar = () => {
                     </div>
                 </div>
 
-                <AccordionSideBarList />
+                <AccordionSideBarList patients={patients}/>
             </div>
         </div>
     )

@@ -9,11 +9,9 @@ import { API } from "@/helpers/api";
 export async function getAllPatients(searchParams) {
   try {
     const patients = await API.get({ path: "/patients", searchParams });
-    console.log(patients)
     return patients;
   } catch (err) {
     console.error("Failed to fetch patients:", err);
-    // Return an empty array on failure so the UI doesn't crash
     return [];
   }
 }
