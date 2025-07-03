@@ -33,7 +33,7 @@ const ResumeSideBar = () => {
 
                 </div> */}
             <div className="patient-list">
-                <a href="/">add new +</a>
+                {/* <a href="/">add new +</a> */}
                 <div className="pagination-controls">
                     {/* <span>1-10 of 200</span>
                     <div className="page-selector">

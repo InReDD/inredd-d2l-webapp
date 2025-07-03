@@ -16,8 +16,9 @@ export default function PatientEditPage({ formData, onSave, onInputChange, onCan
             configs: {
                 placeholder: "Select sex...",
                 options: [
-                    { value: 'Masculino', label: 'Masculino' },
-                    { value: 'Feminino', label: 'Feminino' },
+                    { value: 'Male', label: 'Male' },
+                    { value: 'Female', label: 'Female' },
+                    { value: 'Other', label: 'Other' },
                 ]
             }
         },

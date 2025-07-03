@@ -45,7 +45,6 @@ export async function createPatient(patientData) {
     return newPatient;
   } catch (err) {
     console.error("Failed to create patient:", err);
-    // Re-throw the error so the component can handle it (e.g., show a toast notification)
     throw err;
   }
 }
