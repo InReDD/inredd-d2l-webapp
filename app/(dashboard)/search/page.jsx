@@ -117,8 +117,8 @@ export default function AdvancedSearchPage() {
 
         </div>
         <div className="search-actions">
-          <Button type="button" className="btn-secondary" onClick={handleClear}>Clear</Button>
-          <Button type="submit" className="btn-primary" disabled={isLoading}>
+          <Button type="button" className="btn-secondary" size="medium" onClick={handleClear}>Clear</Button>
+          <Button type="submit" className="btn-primary" size="medium" disabled={isLoading}>
             {isLoading ? 'Searching...' : 'Search'}
           </Button>
         </div>
