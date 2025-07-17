@@ -45,7 +45,7 @@ body {
   flex-direction: column;
   height: 100vh; /* Full height of the viewport */
   position: fixed; /* Fix the sidebar */
-  top: 0;
+  top: 1px;
   left: 0;
   width: var(--sidebar-width);
 }
@@ -114,7 +114,7 @@ body {
   align-items: center;
   background: var(--header-bg);
   color: var(--header-text);    
-  border-bottom: 1px solid #495057;
+  border-bottom: 1px solid #343a40;
   z-index: 1000;
   position: fixed;
   top: 0;
@@ -132,4 +132,13 @@ body {
   overflow-y: auto;
   background-color: var(--content-bg); 
   padding: var(--content-padding);
+}
+
+.d2l-icon {
+  margin: 0px;
+}
+
+.paragrafo {
+  font-weight: bold;
+  font-size: 20px;
 }

@@ -21,6 +21,8 @@
   line-height: 18px;
   color: $neutral-1;
 
+  
+
   // Remover o ícone de fundo do select
   --bs-form-select-bg-icon: none !important;
 
@@ -49,3 +51,13 @@
     }
   }
 }
+
+// Cria uma borda amarela quando em foco
+// .form-select:focus-visible {
+//     border-color: $primary-1;
+//     box-shadow: 0 0 0 3px rgba($primary-1, 0.4);
+//   }
+
+//   .form-select:focus {
+//     outline: none;
+//   }
